@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="">
 <head>
+	<script src="p5.min.js"></script>
+	<script src="p5.dom.min.js"></script>
+	<script src="sketch.js"></script>
+
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="fonts/stylesheet.css" tyle= "text/css" rel="stylesheet">
 	<title>Hoi</title>
+	<meta name="theme-color" content="#222">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 </head>
 
 <style>
@@ -20,6 +26,8 @@
 		background: #222;
 		height: 100vh;
 		width: 100vw;
+		overflow-y: hidden;
+		overflow-x: hidden;
 	}
 	a {
 		display: inline-block;
@@ -58,8 +66,8 @@
 
 <script>
     var hello = document.getElementById("hello");
-    var d = new Date();
-    var hour = d.getHours();
+    var date = new Date();
+    var hour = date.getHours();
     console.log("Het is nu ongeveer: " + hour + " uur.");
     if (hour < 12) {
         hello.innerHTML = "Goedemorgen";
