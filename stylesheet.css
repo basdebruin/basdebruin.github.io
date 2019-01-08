@@ -1,3 +1,5 @@
+/* Stylesheet voor Bas de Bruin Homepagina*/
+
 body {
 	margin: 0;
 	padding: 0;
@@ -14,7 +16,7 @@ body {
 	overflow-x: hidden;
 }
 a {
-	display: inline-block;
+	/* display: inline-block; */
 	text-decoration: none;
 	color: #ddd;
 	border: none;
