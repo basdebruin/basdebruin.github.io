@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="fonts/stylesheet.css" tyle= "text/css" rel="stylesheet">
+	<title>Hoi</title>
+</head>
+
+<style>
+	body {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+		letter-spacing: 0.3em;
+		line-height: 2.2em;
+		text-transform: uppercase;
+		color: #888;
+		background: #222;
+		height: 100vh;
+		width: 100vw;
+	}
+	a {
+		display: inline-block;
+		text-decoration: none;
+		color: #ddd;
+		border: none;
+		background: none;
+		margin: 0;
+		padding: 4px 10px;
+		border-radius: 14px;
+		margin: -4px -10px;
+		transition: background-color .5s;
+	}
+	a:hover {
+		background: #444;
+	}
+	h1 {
+		margin: 0;
+		position: absolute;
+		bottom: 15px;
+		left: 30px;
+		right: 30px;
+		font-size: 23px;
+		font-weight: 600;
+	}
+</style>	
+
+<body>
+	<h1 id="main"><span id="hello">Hallo daar</span>, <br>
+		ik ben <a href='#'>Bas de Bruin</a><br>
+		ik maak <a href="kerst/index.html">dingen voor school</a> enzo.
+	</h1>
+</body>
+</html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+    var hello = document.getElementById("hello");
+    var d = new Date();
+    var hour = d.getHours();
+    console.log("Het is nu ongeveer: " + hour + " uur.");
+    if (hour < 12) {
+        hello.innerHTML = "Goedemorgen";
+    }
+    if (12 < hour < 17) {
+        hello.innerHTML = "Goedemiddag";
+    }
+    if (hour > 17) {
+        hello.innerHTML = "Goedeavond"
+    }
+        
+	//check if mobile
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) == false) {
+        //mouse move
+		function tellPos(p){
+			let main = document.getElementById('main').style;
+			let a = document.getElementsByTagName('a');
+			main.left = (80 - (p.pageX / 50)) + 'px';
+			main.bottom = (40 + (p.pageY / 30)) + 'px';
+		}
+		addEventListener('mousemove', tellPos, false);
+
+	}
+</script>
