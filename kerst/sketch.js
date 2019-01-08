@@ -232,9 +232,9 @@ function draw() {
 		v++;
 		
 		if (hitTimer % 10 < 5) {
-			santa.draw();
-			ren01.draw();
-			ren02.draw();
+			santa.draw;
+			ren01.draw;
+			ren02.draw;
 		}
 		pres.draw;
 		
