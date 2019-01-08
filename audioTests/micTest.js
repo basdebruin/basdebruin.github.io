@@ -25,7 +25,8 @@ function draw() {
 	micLevel = mic.getLevel();
 	rect(width/2, 20, 20, micLevel*height);
 	text("mic level: " + micLevel.toFixed(2), 20, 40);
-	text("freq: " + (80 + rotationX * 5), 20, 80)
+	text("freq: " + (80 + rotationX * 5), 20, 80);
+	text("tik op het scherm als je niks hoort", 20, 100);
 	//OSC
 	osc.amp(micLevel * 2, 0.2);
 	osc.freq(80 + rotationX * 5);
