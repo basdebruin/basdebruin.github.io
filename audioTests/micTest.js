@@ -27,7 +27,7 @@ function draw() {
 	text("mic level: " + micLevel.toFixed(2), 20, 40);
 	text("freq: " + (80 + rotationX * 5), 20, 80)
 	//OSC
-	osc.amp(micLevel, 0.2);
+	osc.amp(micLevel * 2, 0.2);
 	osc.freq(80 + rotationX * 5);
 }
 
