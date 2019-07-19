@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+	<script src="p5.min.js"></script>
+	<script src="p5.dom.min.js"></script>
+	<script src="sketch.js"></script>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="stylesheet.css" rel="stylesheet" type="text/css">
+	<link href="fonts/stylesheet.css" type= "text/css" rel="stylesheet">
+	<title>Hoi</title>
+	<meta name="theme-color" content="#222">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+</head>
+
+<body>
+	<h1 id="main"><span id="hello">Hallo daar</span>, <br>
+		ik ben <a href='#'>Bas de Bruin</a><br>
+		ik maak <a href="kerst/index.html">dingen voor school</a>, <br>waaronder <a href="/audioTests">dingen met audio</a>.
+	</h1>
+</body>
+</html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+    var hello = document.getElementById("hello");
+    var date = new Date();
+    var hour = date.getHours();
+    console.log("Het is nu ongeveer: " + hour + " uur.");
+    if (hour < 12) {
+        hello.innerHTML = "Goedemorgen";
+    }
+    if (12 < hour < 16) {
+        hello.innerHTML = "Goedemiddag";
+    }
+    if (hour > 16) {
+        hello.innerHTML = "Goedeavond"
+    }
+        
+	//check if mobile
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) == false) {
+        //mouse move
+		function tellPos(p){
+			let main = document.getElementById('main').style;
+			let a = document.getElementsByTagName('a');
+			main.left = (80 - (p.pageX / 50)) + 'px';
+			main.bottom = (40 + (p.pageY / 30)) + 'px';
+		}
+		addEventListener('mousemove', tellPos, false);
+
+	}
+</script>

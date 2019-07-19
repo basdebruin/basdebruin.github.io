@@ -1,0 +1,30 @@
+var factor = 0.05;
+
+function setup() {
+    createCanvas(windowWidth, windowHeight);
+    background(0);
+    angleMode(DEGREES);
+    //frameRate(5);
+    
+    //
+    //DRAW
+    //
+    
+    strokeWeight(5);
+    noFill();
+}
+
+function draw() {
+    background(0, 0, 0, 20);
+    let time = frameCount * factor * 0.1;
+    let lastX = 0;
+    let lastY = height / 2;
+    for (let x = 0; x < width; x++) {
+        let y = (height / 2) + noise(cos(x) + time) * 500 - 250;
+        stroke(noise(y * factor + time) * 255);
+        point(sin(x) * 400 + 400, cos(y) * 400 + 400);
+        lastX = x;
+        lastY = y;
+    }
+    
+}

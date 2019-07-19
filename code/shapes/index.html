@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script src="../Library/p5.min.js"></script>
+	<!--<script src="../Library/dat.gui.js"></script>-->
+	<script src="../Library/quicksettings.js"></script>
+	<script src="../Library/p5.gui.js"></script>
+	<script src="sketch.js"></script>
+	<style>
+		body {
+			padding: 0;
+			margin: 0;
+			background-color: #000;
+			font-family: -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;
+			font-size: 16px;
+			line-height: 1.4em;
+		}
+		canvas {
+			display: block;
+			margin: auto;
+			z-index: -999;
+		}
+		.overlay {
+			position: fixed;
+			left: 30px;
+			bottom: 30px;
+			padding: 10px;
+			background: rgba(255,255,255,0.15);
+			color: #ddd;
+			border-radius: 10px;
+			z-index: 999;
+		}
+		em {
+			font-style: normal;
+			color: #777;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="overlay">
+		Move the knobs, sit back and enjoy the shapes!<br>
+		Enter = Pause, Space = Clear the screen, Left Arrow = Restart
+		<br><em>
+			made by Bas de Bruin 2019
+		</em>
+	</div>
+</body>
+
+</html>

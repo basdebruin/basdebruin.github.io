@@ -1,0 +1,41 @@
+/* Stylesheet voor Bas de Bruin Homepagina*/
+
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+	letter-spacing: 0.3em;
+	line-height: 2.2em;
+	text-transform: uppercase;
+	color: #888;
+	background: #222;
+	height: 100vh;
+	width: 100vw;
+	overflow-y: hidden;
+	overflow-x: hidden;
+}
+a {
+	/* display: inline-block; */
+	text-decoration: none;
+	color: #ddd;
+	border: none;
+	background: none;
+	margin: 0;
+	padding: 4px 10px;
+	border-radius: 14px;
+	margin: -4px -10px;
+	transition: background-color .5s;
+}
+a:hover {
+	background: #444;
+}
+h1 {
+	margin: 0;
+	position: absolute;
+	bottom: 15px;
+	left: 30px;
+	right: 30px;
+	font-size: 23px;
+	font-weight: 600;
+}

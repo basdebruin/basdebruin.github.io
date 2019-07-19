@@ -1,53 +1,64 @@
 <!DOCTYPE html>
 <html lang="">
-<head>
-	<script src="p5.min.js"></script>
-	<script src="p5.dom.min.js"></script>
-	<script src="sketch.js"></script>
 
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="stylesheet.css" rel="stylesheet" type="text/css">
-	<link href="fonts/stylesheet.css" type= "text/css" rel="stylesheet">
-	<title>Hoi</title>
-	<meta name="theme-color" content="#222">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bas de Bruin </title>
+    <meta name="discription" content="Bas de Bruin Portfolio Site."/>
+    <!-- ICONS -->
+    <link rel="apple-touch-icon" sizes="57x57" href="icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="manifest" href="icons/manifest.json">
+    <meta name="theme-color" content="#e9e9e9">
+    
+    <link rel="stylesheet" href="fonts/stylesheet.css">
+    <link rel="stylesheet" href="cards.css">
 </head>
 
 <body>
-	<h1 id="main"><span id="hello">Hallo daar</span>, <br>
-		ik ben <a href='#'>Bas de Bruin</a><br>
-		ik maak <a href="kerst/index.html">dingen voor school</a>, <br>waaronder <a href="/audioTests">dingen met audio</a>.
-	</h1>
-</body>
+    <div class="container">
+        <a id="name" href="index.html">Bas <br>de <br>Bruin</a>
+<a class="block" href="game.html">
+	<img src="images/splash-n-dash.png">
+	<h2>Game Audio</h2>
+	<p>Games I've made music and sound for.</p>
+</a>
+
+<a class="seperate card" href="design.html">
+	<img src="images/fortem.jpg">
+	<h2>Design</h2>
+	<p>Web- and Graphic Design work.</p>
+</a>
+
+<a class="card" href="code.html">
+	<img src="images/shapes.png">
+	<h2>Software</h2>
+	<p>Programs I've written for school or personal projects; including synths, visualisers etc.</p>
+</a>
+
+<!-- footer -->
+
+<hr>
+<div class="text">
+	<h2>Contact me!</h2>
+	<p>Send me an email!</p>
+	<a class="link" href="mailto:bruin998@gmail.com">Mail me</a>
+</div>
+
+<div id="footer">
+    <footer>Website made by Bas de Bruin 2019</footer>
+</div>
+</div></body>
 </html>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<script>
-    var hello = document.getElementById("hello");
-    var date = new Date();
-    var hour = date.getHours();
-    console.log("Het is nu ongeveer: " + hour + " uur.");
-    if (hour < 12) {
-        hello.innerHTML = "Goedemorgen";
-    }
-    if (12 < hour < 16) {
-        hello.innerHTML = "Goedemiddag";
-    }
-    if (hour > 16) {
-        hello.innerHTML = "Goedeavond"
-    }
-        
-	//check if mobile
-	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) == false) {
-        //mouse move
-		function tellPos(p){
-			let main = document.getElementById('main').style;
-			let a = document.getElementsByTagName('a');
-			main.left = (80 - (p.pageX / 50)) + 'px';
-			main.bottom = (40 + (p.pageY / 30)) + 'px';
-		}
-		addEventListener('mousemove', tellPos, false);
-
-	}
-</script>
