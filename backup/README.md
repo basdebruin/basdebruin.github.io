@@ -1,8 +1,3 @@
-# basdebruin.github.io
-## Bas
-### de
-#### Bruin's
-##### Public
-###### Homepage
+## backup of old website version
 
-Just used for school stuff rn.
+Not particularly interesting but the background looks cool
