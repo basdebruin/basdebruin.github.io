@@ -6,16 +6,23 @@ const noteNames = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', '
 
 const colors = {
     bg: '#333',
-    fg: '#ccc',
+    fg: '#bbb',
     active: '#fff'
 }
 
-const buttonSize = 80;
+let buttonSize = 80; 
 
 const center = {x: 0, y: 0};
 
 let buttons = [];
 let running = false;
+let reverb;
+
+
+let layout = {};
+function preload() {
+    layout = loadJSON("layouts/" + loc + ".json");
+}
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
@@ -24,27 +31,42 @@ function setup() {
     ellipseMode(CENTER);
     textAlign(CENTER, CENTER);
     textSize(16);
+
     center.x = width*0.5;
     center.y = height*0.5;
-    //
-    let yAmt = 6;
-    let i = 37;
-    for (let y = 0; y < yAmt; y++) {
-        let xAmt = 6 + y % 2;
-        for (let x = 0; x < xAmt; x++) {
+    //buttonSize = width / 20;
 
-            buttons.push(
-                new Button(
-                    center.x + (x - xAmt*0.5) * buttonSize * 1.2 + buttonSize*0.5, 
-                    center.y + (y - yAmt*0.5) * buttonSize * 1.1 + buttonSize*0.5,
-                    i
-                )
-            )
-            i += 2;
+    // sound FX
+    lpf = new p5.LowPass();
+    lpf.freq(1500);
+    reverb = new p5.Reverb();
+    reverb.set(3, 3);
+    reverb.drywet(0.6);
+    lpf.connect(reverb);
+    
+    let i = 0;
+    for (let y = 0; y < layout.y_amount; y++) {
+        let x_amount = layout.x_amount + y % 2;
+        for (let x = 0; x < x_amount; x++) {
+
+            let note = layout.notes[i];
+            if (note !== null) {
+                buttons.push(
+                    new Button(
+                        center.x + (x - x_amount*0.5) * buttonSize * layout.x_mult + buttonSize * 0.5, 
+                        center.y + (y - layout.y_amount*0.5) * buttonSize * layout.y_mult + buttonSize * 0.5,
+                        note.note,
+                        note.name
+                    )
+                );
+            }
+            i++;
 
         }
-        i-=5;
     }
+
+    
+
 }
 
 function draw() {
@@ -54,7 +76,11 @@ function draw() {
         for (let b of buttons) {
             b.draw();
         }
+        push();
         fill(colors.fg);
+        textAlign(LEFT);
+        text(layout.name, 20, 30);
+        pop();
 
     } else {
 

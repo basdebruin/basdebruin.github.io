@@ -4,30 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
 
-    <script src="../lib/p5.min.js"></script>
-    <script src="../lib/p5.sound.min.js"></script>
-    <script src="../lib//p5.collide2d.min.js"></script>
-    <script src="button.js"></script>
-    <script src="sketch.js"></script>
-    <title>title</title>
+    <title>Touch Piano</title>
 </head>
 
-<style type="text/css">
-    body, html {
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-    }
-
-    canvas {
-        position: fixed;
-        top: 0;
-        left: 0;
-    }
-</style>
-
 <body>
+    <section class="container">
+        <h1>Touch Piano</h1>
+        <h2>by Bas de Bruin</h2>
+
+        <p>An online audio experiment made for iPad.<br>
+        (make sure to turn off don't disturb)</p>
+
+        <h3>Select a layout:</h3>
+        <div class="select">
+            <a href="play.html?piano">4 Octave Piano (regular)</a>
+            <a href="play.html?wholestep">Whole Note Grid</a>
+            <a href="play.html?alternate">Alternating Whole Tone</a>
+            <a href="play.html?7-tet">Gamelan (7-tet)</a>
+        </div>
+    </section>
 </body>
 
 </html>

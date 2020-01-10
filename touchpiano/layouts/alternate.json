@@ -1,0 +1,72 @@
+{
+    "name": "Alternating Whole Tone",
+    "y_amount": 6,
+    "x_amount": 8,
+
+    "x_mult": 1.2,
+    "y_mult": 1.1,
+
+    "notes": [
+
+        {"note": 61},
+        {"note": 63},
+        {"note": 65},
+        {"note": 67},
+        {"note": 69},
+        {"note": 71},
+        {"note": 73},
+        {"note": 75},
+
+        {"note": 60},
+        {"note": 62},
+        {"note": 64},
+        {"note": 66},
+        {"note": 68},
+        {"note": 70},
+        {"note": 72},
+        {"note": 74},
+        {"note": 76},
+
+
+        {"note": 49},
+        {"note": 51},
+        {"note": 53},
+        {"note": 55},
+        {"note": 57},
+        {"note": 59},
+        {"note": 61},
+        {"note": 63},
+
+        {"note": 48},
+        {"note": 50},
+        {"note": 52},
+        {"note": 54},
+        {"note": 56},
+        {"note": 58},
+        {"note": 60},
+        {"note": 62},
+        {"note": 64},
+
+
+        {"note": 37},
+        {"note": 39},
+        {"note": 41},
+        {"note": 43},
+        {"note": 45},
+        {"note": 47},
+        {"note": 49},
+        {"note": 51},
+
+        {"note": 36},
+        {"note": 38},
+        {"note": 40},
+        {"note": 42},
+        {"note": 44},
+        {"note": 46},
+        {"note": 48},
+        {"note": 50},
+        {"note": 52}
+
+
+    ]
+}

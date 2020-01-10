@@ -1,20 +1,19 @@
 // touch piano button
 
 class Button {
-    constructor(x, y, note, name) {
+    constructor(x, y, note) {
         this.x = x;
         this.y = y;
         this.rad = buttonSize;
         //
         this.note = note;
-        this.name = name || "";
-        this.black = noteNames[int(note) % 12].includes('#');
+        this.name = noteNames[note % 12];
+        this.black = this.name.includes('#');
+        console.log('note name: ' + this.name + ' black: ' + this.black);
         //
         this.active = false;
         this.osc = new p5.TriOsc(midiToFreq(this.note));
         this.osc.amp(0);
-        this.osc.disconnect()
-        this.osc.connect(lpf);
         this.osc.start();
     }
 
@@ -28,7 +27,7 @@ class Button {
 
             noFill();
             stroke(col);
-            strokeWeight(3);
+            strokeWeight(2);
 
             ellipse(this.x, this.y, this.rad);
             //
@@ -53,7 +52,7 @@ class Button {
 
     play() {
         if (this.active) {
-            this.osc.amp(0.1, 0.01);
+            this.osc.amp(0.05, 0.01);
         } else {
             this.osc.amp(0, 0.01);
         }
@@ -70,10 +69,9 @@ class Button {
             this.active = collidePointCircle(mouseX, mouseY, this.x, this.y, this.rad) ? true : this.active;
         }
 
-        // print touches
-        // fill(colors.fg);
-        // for (let i in touches) {
-        //     text(i + ": x: " + touches[i].x + ",y: " + touches[i].y,100, 20*i + 20);
-        // }
+        fill(colors.fg);
+        for (let i in touches) {
+            text(i + ": x: " + touches[i].x + ",y: " + touches[i].y,100, 20*i + 20);
+        }
     }
 }
