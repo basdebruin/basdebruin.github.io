@@ -25,6 +25,9 @@ body {
     //
     background: $background;
     color: $color;
+    & * {
+        box-sizing: border-box;
+    }
 }
 
 .container {
@@ -59,6 +62,7 @@ a {
     text-decoration: none;
     display: block;
     font-weight: bold;
+    width: 100%;
 }
 .select > a {
     background: #050505;

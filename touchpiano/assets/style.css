@@ -21,6 +21,10 @@ body * {
   font-weight: normal;
 }
 
+body * {
+  box-sizing: border-box;
+}
+
 .container {
   text-align: center;
   width: 100%;
@@ -54,6 +58,7 @@ a {
   text-decoration: none;
   display: block;
   font-weight: bold;
+  width: 100%;
 }
 
 .select > a {
