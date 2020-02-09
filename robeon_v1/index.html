@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ROBEON</title>
+
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,600,700|IBM+Plex+Sans:300,400,500,600,700&display=swap" rel="stylesheet">
+
+    <!-- LOAD PAGE STYLES --> 
+    <!-- TODO add absolute links -->
+    <link rel="stylesheet" href="assets/css/stylesheet.css" type="text/css">
+
+    <!-- smooth scroll -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+
+
+</head>
+
+<body>
+    <!-- HEADER -->
+    <img id="logo" src="assets/images/logo.svg">
+    <nav id="nav">
+        <a href="#de-wereld-van">De wereld van Robeon</a>
+        <a href="#robeon">Robeon</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+
+<div class="hero">
+    <video width="1000" height="1000" autoplay muted loop>
+        <source src="assets/video/video_edit.mp4" type="video/mp4">
+        video not found
+    </video>
+</div>
+
+<main>
+    <section>
+    <h1>be one of a kind</h1>
+
+    <h3>unique; separate; exquisite; special; exclusive; sole; incomparable; inimitable; unparalleled; on its own; isolated; the one and only; once in a life time; one and only; once only; strange; extraordinary; rare; prodigious; seldom; rarely; uncommon; odd; phenomenal; funny; hardly ever;</h3>
+
+    <hr />
+
+    <h3>Wees uniek. Onderscheid je en heb lef. Eén object. Zeldzaam en exclusief. Val op door vorm en controverse. Persoonlijk en op zichzelf staand.</h3>
+</section>
+
+<section id="de-wereld-van" class="grijs">
+    <h1>De wereld van Robeon</h1>
+    <p>Volg robeon op instagram:</p>
+    <div id="insta"></div>
+</section>
+
+<section id="robeon">
+    <h1>meestergoudsmid</h1>
+    <p>
+        Robean Visschers is meestergoudsmid. <br />
+        Door naar de wereld te kijken creëert Robean met lef, liefde en ambacht een eigen collectie. Zijn handschrift kenmerkt zich door constructief lijnwerk maar kan ook uit organische vormen bestaan. Hierdoor onderscheidt Robean zich ten opzichte van de traditionele juwelier.
+    </p>
+    <img src="assets/images/handtekening.png" />
+</section>
+
+</main>
+
+
+<footer>
+    <div class="container">
+        <p>ROBEAN VISSCHERS</p>
+        <p>WOLVENPLEIN 27 - CEL 23</p>
+        <p>3512 CK UTRECHT</p>
+        <a href="tel:0625031394"> 06 250 313 94</a>
+        <a href="mailto:hallo@robean.nl">hallo@robean.nl</a>
+    </div>
+</footer>
+
+</body>
+
+<!-- SCRIPTS -->
+<script src="/assets/js/InstagramFeed.min.js"></script>
+<script src="/assets/js/instagramGetter.js"></script>
+<script src="/assets/js/logoScript.js"></script>
+
+</html>

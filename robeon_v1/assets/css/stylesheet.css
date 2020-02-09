@@ -1,0 +1,75 @@
+html { scroll-behavior: smooth; }
+
+html, body { margin: 0; padding: 0; overflow-x: hidden; }
+
+body, body * { box-sizing: border-box; }
+
+:root { font-size: 17px; }
+
+@media (max-width: 950px) { :root { font-size: 16px; } }
+
+body { background: #fff; color: #000; font-size: 1rem; font-family: -apple-system, sans-serif; font-weight: normal; letter-spacing: 1px; line-height: 1.5em; }
+
+h1, h2, h3, h4, h5 { font-weight: bold; text-align: center; text-transform: uppercase; }
+
+h1, h2 { font-size: 2rem; margin: 3rem 0; line-height: 2rem; }
+
+@media (max-width: 950px) { h1, h2 { font-size: 1.5rem; } }
+
+h3 { font-size: 1rem; font-weight: bold; margin: 2rem 0; }
+
+p { letter-spacing: 0.03em; }
+
+a { display: block; text-decoration: none; color: #000; font-weight: bold; margin: 1rem 0; transition: all .2s; }
+
+a:hover { opacity: 0.6; }
+
+img { object-fit: cover; }
+
+p > img, p > picture { width: 100%; margin: 1rem 0 0 0; }
+
+hr { width: 8rem; margin: 3rem auto; border: solid 0.5px #000; }
+
+#logo { position: fixed; top: 0; left: 2rem; width: 8rem; height: auto; z-index: 999; transition: all .4s; }
+
+.small { width: 5rem !important; }
+
+nav { position: fixed; top: 0; right: 0; padding: 2rem; display: flex; flex-flow: row nowrap; z-index: 999; transition: all .4s; }
+
+nav a { margin: 0; margin-left: 2rem; text-transform: uppercase; }
+
+.hidden { opacity: 0; visibility: hidden; }
+
+@media (max-width: 950px) { nav { visibility: hidden; }
+  #logo { width: 5rem !important; left: 1rem; }
+  .small { opacity: 0; visibility: hidden; } }
+
+.hero { width: 100%; height: 80vh; margin-bottom: -8rem; display: flex; align-items: center; justify-content: center; }
+
+.hero video { width: 100%; height: auto; max-width: 600px; max-height: 600px; }
+
+.container { margin: 0 auto; width: 100%; max-width: 950px; padding: 0.5rem; text-align: center; }
+
+section { display: block; width: 100%; max-width: 950px; margin: 8rem auto; padding: 0 1rem; text-align: center; }
+
+.grijs { background: #eee; width: 100%; max-width: 100%; margin-left: 0; margin-right: 0; padding: 1rem calc(50% - 475px); }
+
+footer { display: block; color: #fff; background: #000; margin: 4rem 0 0 0; padding: 2rem 0; width: 100%; }
+
+footer a { display: block; margin: 1rem 0; }
+
+footer * { color: #fff; text-align: left; font-size: 0.8rem; margin: 0 !important; }
+
+footer .container { margin: 0 auto !important; }
+
+.instagram_gallery { box-sizing: border-box; display: flex; flex-flow: row wrap; position: relative; height: auto !important; margin: 0.5rem 0; width: 100%; }
+
+.instagram_gallery a { margin: 0.05rem; overflow: hidden; display: block; width: calc(33% - 0.05rem); height: auto; transition: all .2s; }
+
+.instagram_gallery a img { width: 100%; height: 100%; object-fit: cover; }
+
+.instagram_gallery a * { transition: all .2s; }
+
+.instagram_gallery a:hover img { transform: scale(1.1); opacity: 0.8; }
+
+/*# sourceMappingURL=stylesheet.css.map */
