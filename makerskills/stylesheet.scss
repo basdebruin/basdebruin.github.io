@@ -1,0 +1,173 @@
+// stylesheet for makerskills 2c website
+
+$color: #2a2a2a;
+$background: #fafafa;
+//
+$fonts: 'Barlow', -apple-system, sans-serif;
+//
+$break: 700px;
+
+
+html, body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+:root {
+    font-size: 18px;
+}
+
+body {
+    box-sizing: border-box;
+    font-size: 1rem;
+    width: 100%;
+    padding: 1rem;
+    background: $background url('dot_pattern.png') repeat;
+    background-size: 0.4rem;
+    color: $color;
+    font-family: $fonts;
+    letter-spacing: 0.03em;
+    * {
+        font-weight: normal;
+        box-sizing: border-box;
+    };
+}
+
+// CONTAINER
+
+section {
+    background: $background;
+    display: block;
+    padding: 1rem;
+    width: 100%;
+    max-width: $break;
+    margin: 2rem auto;
+
+    /*
+    & > :first-child {
+        margin-top: 0;
+    }
+    & > :last-child {
+        margin-bottom: 0;
+    }*/
+}
+
+hero {
+    @extend section;
+    background: none;
+    margin: 6rem auto;
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+}
+
+h1, h2 {
+    background: $background;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 1rem auto;
+    text-transform: uppercase;
+}
+
+// STYLES
+
+h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+h3 {
+    @extend h2;
+    background: none;
+    margin: 0.5rem 0;
+    padding: 0;
+}
+
+h4 {
+    @extend h3;
+    margin: 1rem 0;
+    font-size: 1rem;
+}
+
+img, picture, video {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+label {
+    margin: -1rem -2rem 1rem -1rem;
+    box-sizing: content-box;
+    padding: 0.5rem 1rem;
+    display: block;
+    width: 100%;
+    background: $color;
+    color: $background;
+    text-align: right;
+}
+
+hr {
+    background: $color;
+    background-position: center;
+    border: none;
+    height: 1px;
+    width: 4rem;
+    padding: none;
+    margin: 2rem auto;
+}
+
+// LISTS
+
+ol {
+    margin: 0 0 3rem 0;
+    counter-reset: ol-li-counter;
+    list-style: none;
+
+    li {
+        margin: 2rem 0 2rem 2rem;
+        counter-increment: ol-li-counter;
+
+        &::before {
+            content: counter(ol-li-counter);
+            //
+            background: $color;
+            color: $background;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 1rem -2.2rem -4rem;
+            padding-top: 0.5rem;
+            display: block;
+            height: 2.5rem;
+            width: 3rem;
+            border-radius: 100%;
+            text-align: center;
+        }
+
+        h4 {
+            margin: 0 0 0.5rem 0;
+        }
+    }
+}
+
+nav {
+    a {
+        display: block;
+        color: $color;
+        text-decoration: none;
+        border-bottom: $color 1px solid;
+        padding: 1rem 0.5rem;
+        padding-left: 0;
+        margin: 0.5rem 0;
+
+        transition: all .2s;
+        &:hover {
+            background: $color;
+            color: $background;
+            padding-left: 1rem;
+        }
+    }
+}
