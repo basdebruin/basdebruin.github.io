@@ -1,5 +1,5 @@
 // logo shrink script 
-// for: Robeon website
+// for: Robean website
 // author: Bas de Bruin
 
 var logo = document.getElementById("logo");
