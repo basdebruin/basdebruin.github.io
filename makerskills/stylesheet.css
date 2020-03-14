@@ -42,6 +42,22 @@ section, hero {
     }*/
 }
 
+#up-arrow {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  width: 50px;
+  height: 50px;
+}
+
+#up-arrow img {
+  transition: all .2s;
+}
+
+#up-arrow:hover img {
+  filter: contrast(200%);
+}
+
 hero {
   background: none;
   margin: 6rem auto;

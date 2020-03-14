@@ -4,13 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Je eigen sensors maken.</title>
+    <title>CAPACITEIT SENSORS MAKEN</title>
     <link rel="stylesheet" href="stylesheet.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Barlow:400,600,700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
 
     <hero>
         <h1>Capiciteit Sensors Maken</h1>
@@ -30,6 +29,7 @@
         <h4>Ga direct naar:</h4>
         <nav>
             <a href="#process">Process</a>
+            <a href="#teensy-vs-bare">Teensy vs Bare Conductive</a>
             <a href="#stappen">Stappenplan</a>
             <a href="#conclusie">Conclusie</a>
         </nav>
@@ -70,21 +70,58 @@
             Het werkt dus eigenlijk te goed.
         </p>
 
+        <h4>Test 4: Koper Tape</h4>
+        <img src="assets/copper_tape.jpg">
+        <p>
+            Koper tape is even geleidend als de Bare Conductive Verf, je kan gemakkelijk een lange lijn van koper maken en dit verbinden met onderdelen. <br> 
+            Waar het koper tape nog het meest handig voor is gebleken is om verschillende onderdelen aan elkaar vast te maken zonder te hoeven solderen, bijvoorbeeld het verbinden van een draad aan alluminum folie.
+        </p>
+
+    </section>
+
+    <section id="teensy-vs-bare">
+        <h3>Teensy en Bare Conductive Board</h3>
+        <p></p>
+        <img src="assets/tvsbc.jpg">
+        <p>We hebben de Bare Conductive Touch Board en een Teensy 3.2 met de <a href="https://github.com/adrianfreed/FastTouch"> FastTouch Library </a> getest. Het zijn allebij arduino chips met capacitieve meetmogelijkheden maar in gebruik zijn ze nèt anders.</p>
+
+        <hr>
+
+        <h4>Voordelen van de Teensy 3.2</h4>
+        <ul>
+            <li>Makkelijker in gebruik (makkelijker te programmeren)</li>
+            <li>Ingebouwde functies voor MIDI en controller over USB</li>
+            <li>Bijna alle pins zijn te gebruiken voor capaciteit meten, in totaal meer pins dan de Bare Conductive</li>
+            <li>Goedkoper</li>
+        </ul>
+
+        <h4>Voordelen van de Bare Conductive Touch Board</h4>
+        <ul>
+            <li>Data is beter, je kan langere afstanden meten</li>
+            <li>De pins beïnvloeden elkaar niet, dit kan een probleem zijn met de teensy</li>
+            <li>Je kan makkelijker onderdelen verbinden aan de touch board m.b.v. aligator clips</li>
+        </ul>
     </section>
 
 
     <section id="stappen">
         <h3>Het stappenplan</h3>
+        <p>Voor het maken van een capacitieve sensor met Teensy of Bare Conductive</p>
         <ol>
             <li>
-                <h4>Stap 1</h4>
-                <p>Beschrijving</p>
+                <h4>Kies je materiaal</h4>
+                <p>Kies waar je de sensor van wil maken, zie de <a href="#process">tests</a> voor de verschillen tussen materialen.</p>
             </li>
             <li>
-                <h4>Stap 2</h4>
+                <h4>Kies je board</h4>
+                <p>Kies tussen Teensy of Bare Conductive, zie <a href="#teensy-vs-bare">de verschillen tussen de chips</a></p>
             </li>
         </ol>
     </section>
+
+    <a id="up-arrow" href="#" title="Ga naar boven">
+        <img src="assets/up_arrow.svg">
+    </a>
 
 
 </body>
