@@ -20,7 +20,10 @@
         <label>Een Makerskills 2C 2020 Project</label>
         <h3>Het concept</h3>
         <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias accusantium sapiente soluta et necessitatibus repellendus asperiores numquam cum inventore sint? Blanditiis dolore quaerat ullam natus recusandae similique officia, atque saepe?
+            Voor Makerskills wouden wij touch sensoren onderzoeken en hier een synthesizer mee maken. <br>
+            We hebben verschillende geleidende materialen getest en vergeleken. <br>
+            Het ging om een poster waar we met verschillend materiaal zoals potlood en verf sensoren op hebben getekend. <br>
+            Als eindresultaat heeft de poster 8 verschillende knoppen, elk met een sample.
         </p>
 
     </section>
@@ -31,7 +34,7 @@
             <a href="#process">Process</a>
             <a href="#teensy-vs-bare">Teensy vs Bare Conductive</a>
             <a href="#stappen">Stappenplan</a>
-            <a href="#conclusie">Conclusie</a>
+            <a href="#eindresultaat">Ons Eindresultaat</a>
         </nav>
     </section>
 
@@ -83,7 +86,7 @@
         <h3>Teensy en Bare Conductive Board</h3>
         <p></p>
         <img src="assets/tvsbc.jpg">
-        <p>We hebben de Bare Conductive Touch Board en een Teensy 3.2 met de <a href="https://github.com/adrianfreed/FastTouch"> FastTouch Library </a> getest. Het zijn allebij arduino chips met capacitieve meetmogelijkheden maar in gebruik zijn ze nèt anders.</p>
+        <p>We hebben de Bare Conductive Touch Board en een Teensy 3.2 met de <a href="https://github.com/adrianfreed/FastTouch">FastTouch Library</a> getest. Het zijn allebij arduino chips met capacitieve meetmogelijkheden maar in gebruik zijn ze nèt anders.</p>
 
         <hr>
 
@@ -116,8 +119,43 @@
                 <h4>Kies je board</h4>
                 <p>Kies tussen Teensy of Bare Conductive, zie <a href="#teensy-vs-bare">de verschillen tussen de chips</a></p>
             </li>
+            <li>
+                <h4>Teken of verf</h4>
+                <p>een dikke lijn of vlak met potlood, verf of ander materiaal.</p>
+            </li>
+            <li>
+                <h4>Verbind met board</h4>
+                <p>Verbind de lijn of het vlak met je teensy/Bare Conductive met kabels,verschillende kabels geven lichte variaties in data, let daarop bij het programmeren.</p>
+            </li>
+            <li>
+                <h4>Programmeer je board</h4>
+                <p>
+                    Lees de data uit met de FastTouch library op teensy of met de standard functies in de Bare Conductive<br>
+                    Stuur deze data naar je computer via MIDI of OSC. <br>
+                    Zie onze <a href="#">voorbeeldcode</a>.
+                </p>
+            </li>
         </ol>
     </section>
+
+
+    <section id="eindresultaat">
+        <h3>Eindresultaat</h3>
+        <p></p>
+        <video controls>
+            <source src="assets/eindresultaat.mp4">
+        </video>
+        <p>
+            Voor het eindresultaat hebben we besloten om met potlood een poster te maken. <br>
+            We begonnen met een ontwerp op de computer, hebben dit uitgeprint en hebben hier overeen getekend met een dikke laag potlood.
+        </p>
+        <p>
+            Een teensy met breadboard is achterop een stuk karton bevestigd. <br>
+            Elke knop is met breadboard kabels door het karton verbonden met de teensy.
+        </p>
+        <img src="assets/eindresultaat_achterkant.jpg">
+    </section>
+
 
     <a id="up-arrow" href="#" title="Ga naar boven">
         <img src="assets/up_arrow.svg">
