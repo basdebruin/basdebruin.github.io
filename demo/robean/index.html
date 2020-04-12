@@ -22,9 +22,10 @@
 	if (is_chrome && is_safari) is_safari = false;
 
 	if (is_safari) {
-		console.log("Safari detected, enabling smooth scroll")
+		console.log("Safari detected, enabling smooth scroll");
 
 		$(document).ready(function () {
+
 			// Add smooth scrolling to all links
 			$("a").on('click', function (event) {
 
@@ -63,13 +64,16 @@
         <a href="#contact">Contact</a>
     </nav>
 
-<div class="hero">
-    <!-- <video width="1000" height="1000" autoplay muted loop playsinline>
+<div id="hero">
+    <!-- 
+    <video width="1000" height="1000" autoplay muted loop playsinline>
         <source src="assets/video/video_edit.mp4" type="video/mp4">
         video not found
-    </video> -->
-    <img src="assets/images/Robean_Visschers_Straatbeeld_VoorModel2_Madeleine-Sars_OPT.jpg">
+    </video> 
+    <img src="assets/images/Robean_Visschers_Straatbeeld_VoorModel2_Madeleine-Sars_OPT.jpg"> 
+    -->
 </div>
+<script src="/assets/js/videoLoader.js"></script>
 
 <main>
     <section>
