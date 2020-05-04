@@ -1,0 +1,272 @@
+// style scss
+// by bas de bruin
+
+@import 'head';
+
+#header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    margin: 0;
+    width: 100%;
+    padding: 1rem;
+
+    @include fade($background, 0.9);
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+
+    nav {
+        display: block;
+        margin: 0;
+        padding: 0;
+
+        a, button {
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+    }
+
+    #menu-button {
+        display: none;
+    }
+
+    @media (max-width: $breakPoint) {
+        padding: 0.5rem 0;
+
+        nav {
+            display: none;
+        }
+
+        #menu-button {
+            display: block;
+        }
+
+        &.active {
+            nav {
+                display: block;
+                position: fixed;
+                top: 3.3rem;
+                left: 0;
+
+                width: 100%;
+
+                @include fade($background, 0.9);
+
+                padding: 1rem;
+                padding-top: 5rem;
+
+                a {
+                    display: block;
+                    margin-bottom: 0.5rem;
+                }
+            }
+            #menu-button {
+                background: $red;
+            }
+        }
+    }
+}
+#logo {
+    position: fixed;
+    top: 1rem;
+    right: calc(50% - #{$breakPoint*0.5});
+
+    width: 7rem;
+    height: auto;
+
+    @media (max-width: $breakPoint) {
+        right: 1.5rem;
+        width: 5rem;
+    }
+}
+
+// TitleBlock
+
+gppac-titleblock {
+    display: block;
+    flex-flow: column nowrap;
+    
+    max-width: $breakPoint * 0.5;
+    @media (max-width: $breakPoint) { max-width: $breakPoint * 0.4 }
+
+    margin: 0;
+    margin-bottom: 2rem;
+
+    h1, h2, h3, h4, h5, p {
+        display: inline-block;
+
+        color: $background;
+        background: $color;
+        
+        padding: 0.5rem 1rem 0.7rem 1rem;
+        margin: 0;
+    }
+
+    h1 {
+        background: $light-blue;
+        padding-top: 0.3rem;
+    }
+    h2 {
+        background: $dark-blue;
+    }
+    h3, h4 {
+        background: $yellow;
+    }
+
+    &.right {
+        margin-left: 0;
+        @media (min-width: $breakPoint) {
+            margin-left: $breakPoint * 0.3;
+        }
+    }
+}
+.offset {
+    transform: translateY(-1.5rem);
+}
+.compensate {
+    margin-top: 2rem !important;
+
+    @media (max-width: $breakPoint) {
+        margin-top: 100% !important;
+    }
+}
+
+// Containers
+
+.container {
+    display: block;
+    width: 100%;
+    max-width: $breakPoint;
+    margin: 0 auto;
+    padding: 0 $padding;
+    overflow-y: visible;
+}
+.big {   max-width: $breakPoint * 1.2 }
+.small { max-width: $breakPoint * 0.8 }
+
+// Color Block
+
+.color-block {
+    padding: 4rem 0;
+    margin: 0;
+    width: 100%;
+    
+    background: $color;
+
+    h1, h2, h3, h4, p {
+        color: $background;
+    }
+    h3 {
+        margin-top: -0.5em;
+    }
+
+    gppac-titleblock {
+        margin-top: -4rem;
+    }
+
+    .left {
+        @media (min-width: $breakPoint) {
+            padding-right: 25rem;
+        }
+    }
+}
+.light-blue { background: $light-blue; }
+.dark-blue  { background: $dark-blue; }
+.yellow     { background: $yellow; }
+.red        { background: $red; }
+
+
+// Image Block
+
+.image-block {
+    @extend .color-block;
+
+    background-size: cover;
+    background-position: top;
+}
+.image-right {
+    background-position-x: right;
+    background-position-y: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @media (max-width: $breakPoint) {
+        background-size: cover;
+        background-position-x: center;
+        background-position-y: top;
+    }
+}
+.tall { 
+    min-height: 80vh;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.quote {
+    min-height: 80vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+// Color Squares
+img {
+    max-width: 100%;
+
+    z-index: 0;
+
+    &.left {
+        width: $breakPoint * 0.6;
+    }
+}
+
+gppac-colorsquare {
+    display: block;
+    background: $red;
+    color: $background;
+    padding: 0.5rem 2rem;
+
+    width: 100%;
+    max-width: 100%;
+
+    overflow-y: visible;
+
+    transform: translateY(-10rem);
+    margin-bottom: -5rem;
+
+    a { margin-bottom: 1rem }
+
+    &.right {
+        @media (min-width: $breakPoint) {
+            margin-left: 40%;
+            width: 60%;
+        }
+        @media (max-width: $breakPoint) {
+            transform: none;
+            margin-bottom: 0;
+        }
+    }
+}
+
+.extend {
+    padding-bottom: 15rem;
+    margin-bottom: -10rem;
+}
+
+
+// Next Page
+
+gppac-next-page {
+    display: block;
+    @extend .color-block;
+    @extend .yellow;
+
+    padding: 3rem 0;
+
+    p {
+        margin: 0.8rem 0 1.5rem 0;
+    }
+}
