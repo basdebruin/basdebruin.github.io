@@ -256,7 +256,7 @@ gppac-colorsquare {
             width: 60%;
         }
         @media (max-width: $breakPoint) {
-            transform: translateY(-2rem);
+            transform: none;
             margin-bottom: 4rem;
         }
     }

@@ -403,7 +403,7 @@ gppac-colorsquare > a {
 
 @media (max-width: 60rem) {
   gppac-colorsquare.right {
-    transform: translateY(-2rem);
+    transform: none;
     margin-bottom: 4rem;
   }
 }
