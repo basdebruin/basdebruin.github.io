@@ -28,10 +28,35 @@ img {
   object-fit: cover;
 }
 
-button, a {
+hr {
+  margin: 2rem auto;
+  width: 4rem;
+  height: 1px;
+  border: none;
+  background: #FFF;
+}
+
+a {
+  font-weight: bold;
+  color: inherit;
+  transition: all .15s;
+  display: inline-block;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+p > a {
+  display: inline;
+}
+
+button, #header nav a, #header nav button, .button {
   display: inline-block;
   padding: 0.5rem 0.7rem;
   font-size: 1rem;
+  font-weight: normal;
+  text-decoration: none;
   border: none;
   border-radius: 0;
   background: #FAB405;
@@ -40,12 +65,9 @@ button, a {
   transition: all .15s ease-out;
 }
 
-button:hover, a:hover, button:active, a:active {
+button:hover, #header nav a:hover, #header nav button:hover, button:active, #header nav a:active, #header nav button:active, .button:hover, .button:active {
   background: #76C3E2;
-}
-
-a {
-  text-decoration: none;
+  opacity: 1;
 }
 
 .hover-red:hover {
@@ -121,13 +143,18 @@ gppac-spacer {
   padding: 0;
 }
 
-#header nav a, #header nav button, #header nav a {
+#header nav a, #header nav a, #header nav button {
   display: inline-block;
   margin-right: 0.5rem;
 }
 
 #header #menu-button {
   display: none;
+}
+
+#header #menu-button img {
+  width: 1rem;
+  height: auto;
 }
 
 @media (max-width: 60rem) {
@@ -143,7 +170,7 @@ gppac-spacer {
   #header.active nav {
     display: block;
     position: fixed;
-    top: 3.3rem;
+    top: 3.2rem;
     left: 0;
     width: 100%;
     background: rgba(255, 255, 255, 0.9);
@@ -179,7 +206,7 @@ gppac-titleblock {
   flex-flow: column nowrap;
   max-width: 30rem;
   margin: 0;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
 }
 
 @media (max-width: 60rem) {
@@ -220,16 +247,17 @@ gppac-titleblock.right {
 }
 
 .offset {
-  transform: translateY(-1.5rem);
+  transform: translateY(-50%);
 }
 
 .compensate {
   margin-top: 2rem !important;
+  margin-bottom: 0;
 }
 
 @media (max-width: 60rem) {
   .compensate {
-    margin-top: 100% !important;
+    margin-top: 75% !important;
   }
 }
 
@@ -257,7 +285,7 @@ gppac-titleblock.right {
   background: #000;
 }
 
-.color-block h1, .image-block h1, gppac-next-page h1, .color-block h2, .image-block h2, gppac-next-page h2, .color-block h3, .image-block h3, gppac-next-page h3, .color-block h4, .image-block h4, gppac-next-page h4, .color-block p, .image-block p, gppac-next-page p {
+.color-block h1, .image-block h1, gppac-next-page h1, .color-block h2, .image-block h2, gppac-next-page h2, .color-block h3, .image-block h3, gppac-next-page h3, .color-block h4, .image-block h4, gppac-next-page h4, .color-block p, .image-block p, gppac-next-page p, .color-block a, .image-block a, gppac-next-page a {
   color: #FFF;
 }
 
@@ -289,6 +317,23 @@ gppac-titleblock.right {
 
 .red {
   background: #CD3C0A;
+}
+
+.green {
+  background: #5F9641;
+}
+
+.dark-grey {
+  background: #BFB2B5;
+}
+
+.light-grey {
+  background: #D8D8D8;
+}
+
+.white {
+  background: #FFF;
+  color: #3180A4 !important;
 }
 
 .image-block {
@@ -345,7 +390,7 @@ gppac-colorsquare {
   margin-bottom: -5rem;
 }
 
-gppac-colorsquare a {
+gppac-colorsquare > a {
   margin-bottom: 1rem;
 }
 
@@ -358,8 +403,8 @@ gppac-colorsquare a {
 
 @media (max-width: 60rem) {
   gppac-colorsquare.right {
-    transform: none;
-    margin-bottom: 0;
+    transform: translateY(-2rem);
+    margin-bottom: 4rem;
   }
 }
 
@@ -370,9 +415,62 @@ gppac-colorsquare a {
 
 gppac-next-page {
   display: block;
-  padding: 3rem 0;
+  padding: 5rem 0;
 }
 
 gppac-next-page p {
   margin: 0.8rem 0 1.5rem 0;
+}
+
+.columns {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+.columns > * {
+  width: 100%;
+  padding: 2rem;
+}
+
+.columns > * gppac-titleblock {
+  margin: 1rem 0;
+}
+
+.columns > *:first-child {
+  padding-left: 0;
+}
+
+.columns > *:last-child {
+  padding-right: 0;
+}
+
+.columns img {
+  width: auto;
+  height: auto;
+}
+
+@media (max-width: 60rem) {
+  .columns {
+    flex-flow: row wrap;
+  }
+  .columns > * {
+    padding: 1rem 0;
+  }
+  .columns > * img {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 60rem) {
+  .static {
+    flex-flow: row nowrap;
+  }
+}
+
+.static img {
+  object-fit: contain;
+  width: auto;
+  height: 100%;
 }

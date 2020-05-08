@@ -2,6 +2,7 @@
 // by Bas de Bruin
 
 var header, menuButton;
+var activeClass = 'active';
 
 function init() {
     console.log('init');
@@ -21,9 +22,9 @@ function init() {
 }
 
 function toggleMenu() {
-    if (header.classList.contains('active')) {
-        header.classList.remove('active')
+    if (header.classList.contains(activeClass)) {
+        header.classList.remove(activeClass)
     } else {
-        header.classList.add('active');
+        header.classList.add(activeClass);
     }
 }

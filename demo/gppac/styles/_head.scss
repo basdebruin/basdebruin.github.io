@@ -56,10 +56,35 @@ img {
     object-fit: cover;
 }
 
-button {
+hr {
+    margin: 2rem auto;
+    width: 4rem;
+    height: 1px;
+    border: none;
+    background: $background;
+}
+
+a {
+    font-weight: bold;
+    color: inherit;
+    transition: all .15s;
+    display: inline-block;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+p > a {
+    display: inline;
+}
+
+button, .button {
     display: inline-block;
     padding: 0.5rem 0.7rem;
     font-size: 1rem;
+    font-weight: normal;
+    text-decoration: none;
     border: none;
     border-radius: $border-radius;
     background: $accent;
@@ -69,12 +94,8 @@ button {
     transition: all .15s ease-out;
     &:hover, &:active {
         background: $light-blue;
+        opacity: 1;
     }
-}
-
-a {
-    text-decoration: none;
-    @extend button;
 }
 .hover-red:hover { background: $red }
 

@@ -28,10 +28,35 @@ img {
   object-fit: cover;
 }
 
-button, a {
+hr {
+  margin: 2rem auto;
+  width: 4rem;
+  height: 1px;
+  border: none;
+  background: #FFF;
+}
+
+a {
+  font-weight: bold;
+  color: inherit;
+  transition: all .15s;
+  display: inline-block;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+p > a {
+  display: inline;
+}
+
+button, .button {
   display: inline-block;
   padding: 0.5rem 0.7rem;
   font-size: 1rem;
+  font-weight: normal;
+  text-decoration: none;
   border: none;
   border-radius: 0;
   background: #FAB405;
@@ -40,12 +65,9 @@ button, a {
   transition: all .15s ease-out;
 }
 
-button:hover, a:hover, button:active, a:active {
+button:hover, button:active, .button:hover, .button:active {
   background: #76C3E2;
-}
-
-a {
-  text-decoration: none;
+  opacity: 1;
 }
 
 .hover-red:hover {
