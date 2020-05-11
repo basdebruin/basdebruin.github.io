@@ -257,7 +257,7 @@ gppac-titleblock.right {
 
 @media (max-width: 60rem) {
   .compensate {
-    margin-top: 75% !important;
+    margin-top: 70% !important;
   }
 }
 
@@ -402,8 +402,8 @@ gppac-colorsquare > a {
 }
 
 @media (max-width: 60rem) {
-  gppac-colorsquare.right {
-    transform: none;
+  gppac-colorsquare {
+    transform: translateY(-1rem);
     margin-bottom: 4rem;
   }
 }

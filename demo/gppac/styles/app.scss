@@ -138,7 +138,7 @@ gppac-titleblock {
     margin-bottom: 0;
 
     @media (max-width: $breakPoint) {
-        margin-top: 75% !important;
+        margin-top: 70% !important;
     }
 }
 
@@ -255,10 +255,10 @@ gppac-colorsquare {
             margin-left: 40%;
             width: 60%;
         }
-        @media (max-width: $breakPoint) {
-            transform: none;
-            margin-bottom: 4rem;
-        }
+    }
+    @media (max-width: $breakPoint) {
+        transform: translateY(-1rem);
+        margin-bottom: 4rem;
     }
 }
 
