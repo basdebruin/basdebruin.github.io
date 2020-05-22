@@ -222,6 +222,9 @@ gppac-titleblock {
     flex-flow: column nowrap;
     justify-content: center;
 }
+.align-center {
+    background-position: center;
+}
 
 // Color Squares
 img {
@@ -275,7 +278,7 @@ gppac-next-page {
     @extend .color-block;
     @extend .yellow;
 
-    padding: 5rem 0;
+    padding: 5rem 0 3rem 0;
 
     p {
         margin: 0.8rem 0 1.5rem 0;
@@ -325,5 +328,75 @@ gppac-next-page {
         object-fit: contain;
         width: auto;
         height: 100%;
+    }
+}
+
+
+//  Buttons
+
+.button {
+    @extend button;
+    background: $dark-blue;
+    color: $background !important;
+    opacity: 1;
+
+    padding: 0.5rem 1rem;
+    margin-right: 1rem;
+
+    &:hover {
+        background: $dark-blue;
+        color: $background !important;
+        opacity: 0.9;
+    }
+
+    // colors
+    &.red {
+        background: $red;
+        &:hover {
+            background: $red;
+        }
+    }
+    &.light-blue {
+        background: $light-blue;
+        &:hover {
+            background: $light-blue;
+        }
+    }
+    &.yellow {
+        background: $yellow;
+        &:hover {
+            background: $yellow;
+        }
+    }
+}
+.podcast {
+    position: relative;
+    padding-left: 3.7rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    &::before {
+        content: ' ';
+        position: absolute;
+        top: 0.75rem;
+        left: 0.75rem;
+        width: 2.5rem;
+        height: 2rem;
+        background-image: url('../assets/images/podcast-icon-white.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    &:not(.button) {
+        padding: 0;
+        padding-left: 3.7rem;
+        &::before {
+            top: 0.5rem;
+            left: 0;
+        }
+    }
+}
+.video {
+    @extend .podcast;
+    &::before {
+        background-image: url('assets/images/video-icon-white.svg')
     }
 }

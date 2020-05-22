@@ -79,7 +79,7 @@ p > a {
     display: inline;
 }
 
-button, .button {
+button {
     display: inline-block;
     padding: 0.5rem 0.7rem;
     font-size: 1rem;
@@ -97,7 +97,6 @@ button, .button {
         opacity: 1;
     }
 }
-.hover-red:hover { background: $red }
 
 // Titles and text
 

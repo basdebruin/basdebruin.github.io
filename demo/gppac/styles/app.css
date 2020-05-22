@@ -65,13 +65,9 @@ button, #header nav a, #header nav button, .button {
   transition: all .15s ease-out;
 }
 
-button:hover, #header nav a:hover, #header nav button:hover, button:active, #header nav a:active, #header nav button:active, .button:hover, .button:active {
+button:hover, #header nav a:hover, #header nav button:hover, .button:hover, button:active, #header nav a:active, #header nav button:active, .button:active {
   background: #76C3E2;
   opacity: 1;
-}
-
-.hover-red:hover {
-  background: #CD3C0A;
 }
 
 h1 {
@@ -143,7 +139,7 @@ gppac-spacer {
   padding: 0;
 }
 
-#header nav a, #header nav a, #header nav button {
+#header nav a, #header nav a, #header nav button, #header nav .button {
   display: inline-block;
   margin-right: 0.5rem;
 }
@@ -369,6 +365,10 @@ gppac-titleblock.right {
   justify-content: center;
 }
 
+.align-center {
+  background-position: center;
+}
+
 img {
   max-width: 100%;
   z-index: 0;
@@ -415,7 +415,7 @@ gppac-colorsquare > a {
 
 gppac-next-page {
   display: block;
-  padding: 5rem 0;
+  padding: 5rem 0 3rem 0;
 }
 
 gppac-next-page p {
@@ -473,4 +473,75 @@ gppac-next-page p {
   object-fit: contain;
   width: auto;
   height: 100%;
+}
+
+.button {
+  background: #3180A4;
+  color: #FFF !important;
+  opacity: 1;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+}
+
+.button:hover {
+  background: #3180A4;
+  color: #FFF !important;
+  opacity: 0.9;
+}
+
+.button.red {
+  background: #CD3C0A;
+}
+
+.button.red:hover {
+  background: #CD3C0A;
+}
+
+.button.light-blue {
+  background: #76C3E2;
+}
+
+.button.light-blue:hover {
+  background: #76C3E2;
+}
+
+.button.yellow, gppac-next-page.button {
+  background: #FAB405;
+}
+
+.button.yellow:hover, gppac-next-page.button:hover {
+  background: #FAB405;
+}
+
+.podcast, .video {
+  position: relative;
+  padding-left: 3.7rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.podcast::before, .video::before {
+  content: ' ';
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  width: 2.5rem;
+  height: 2rem;
+  background-image: url("../assets/images/podcast-icon-white.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.podcast:not(.button), .video:not(.button) {
+  padding: 0;
+  padding-left: 3.7rem;
+}
+
+.podcast:not(.button)::before, .video:not(.button)::before {
+  top: 0.5rem;
+  left: 0;
+}
+
+.video::before {
+  background-image: url("assets/images/video-icon-white.svg");
 }

@@ -51,7 +51,7 @@ p > a {
   display: inline;
 }
 
-button, .button {
+button {
   display: inline-block;
   padding: 0.5rem 0.7rem;
   font-size: 1rem;
@@ -65,13 +65,9 @@ button, .button {
   transition: all .15s ease-out;
 }
 
-button:hover, button:active, .button:hover, .button:active {
+button:hover, button:active {
   background: #76C3E2;
   opacity: 1;
-}
-
-.hover-red:hover {
-  background: #CD3C0A;
 }
 
 h1 {
