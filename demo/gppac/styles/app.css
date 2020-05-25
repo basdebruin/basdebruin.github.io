@@ -481,6 +481,11 @@ gppac-next-page p {
   opacity: 1;
   padding: 0.5rem 1rem;
   margin-right: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.button:last-child {
+  margin-bottom: 1.5rem;
 }
 
 .button:hover {
@@ -513,17 +518,17 @@ gppac-next-page p {
   background: #FAB405;
 }
 
-.podcast, .video {
+.podcast, .video, .download {
   position: relative;
   padding-left: 3.7rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
 
-.podcast::before, .video::before {
+.podcast::before, .video::before, .download::before {
   content: ' ';
   position: absolute;
-  top: 0.75rem;
+  top: calc(50% - 1rem);
   left: 0.75rem;
   width: 2.5rem;
   height: 2rem;
@@ -532,16 +537,21 @@ gppac-next-page p {
   background-repeat: no-repeat;
 }
 
-.podcast:not(.button), .video:not(.button) {
+.podcast:not(.button), .video:not(.button), .download:not(.button) {
   padding: 0;
   padding-left: 3.7rem;
 }
 
-.podcast:not(.button)::before, .video:not(.button)::before {
+.podcast:not(.button)::before, .video:not(.button)::before, .download:not(.button)::before {
   top: 0.5rem;
   left: 0;
 }
 
 .video::before {
-  background-image: url("assets/images/video-icon-white.svg");
+  background-image: url("../assets/images/video-icon-white.svg");
+}
+
+.download::before {
+  background-image: url("../assets/images/download-icon-white.svg");
+  left: 1rem;
 }

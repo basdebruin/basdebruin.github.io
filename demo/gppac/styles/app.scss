@@ -343,6 +343,11 @@ gppac-next-page {
     padding: 0.5rem 1rem;
     margin-right: 1rem;
 
+    margin-bottom: 0.5rem;
+    &:last-child {
+        margin-bottom: 1.5rem;
+    }
+
     &:hover {
         background: $dark-blue;
         color: $background !important;
@@ -377,7 +382,7 @@ gppac-next-page {
     &::before {
         content: ' ';
         position: absolute;
-        top: 0.75rem;
+        top: calc(50% - 1rem);
         left: 0.75rem;
         width: 2.5rem;
         height: 2rem;
@@ -397,6 +402,13 @@ gppac-next-page {
 .video {
     @extend .podcast;
     &::before {
-        background-image: url('assets/images/video-icon-white.svg')
+        background-image: url('../assets/images/video-icon-white.svg')
+    }
+}
+.download {
+    @extend .podcast;
+    &::before {
+        background-image: url('../assets/images/download-icon-white.svg');
+        left: 1rem;
     }
 }
