@@ -55,6 +55,7 @@ button, #header nav a, #header nav button, .button {
   display: inline-block;
   padding: 0.5rem 0.7rem;
   font-size: 1rem;
+  font-family: "sofia-pro", -apple-system, Roboto, sans-serif;
   font-weight: normal;
   text-decoration: none;
   border: none;
@@ -272,6 +273,13 @@ gppac-titleblock.right {
 
 .small {
   max-width: 48rem;
+}
+
+.padding {
+  display: block;
+  margin: 0;
+  width: 100%;
+  padding: 0.8rem;
 }
 
 .color-block, .image-block, gppac-next-page {
@@ -554,4 +562,55 @@ gppac-next-page p {
 .download::before {
   background-image: url("../assets/images/download-icon-white.svg");
   left: 1rem;
+}
+
+.accordion {
+  transition: all .2s;
+}
+
+.accordion button, .accordion #header nav a, #header nav .accordion a, .accordion #header nav button, #header nav .accordion button, .accordion .button {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 0;
+  text-align: left;
+}
+
+.accordion button::after, .accordion #header nav a::after, #header nav .accordion a::after, .accordion #header nav button::after, #header nav .accordion button::after, .accordion .button::after {
+  content: '+';
+  position: absolute;
+  right: 0.7rem;
+  top: calc(50% - 1.3rem);
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+.accordion button:hover, .accordion #header nav a:hover, #header nav .accordion a:hover, .accordion #header nav button:hover, #header nav .accordion button:hover, .accordion .button:hover {
+  background-color: unset;
+}
+
+.accordion .content {
+  padding: 1rem 0.7rem;
+  margin: 0;
+  display: none;
+}
+
+.accordion.active button::after, .accordion.active #header nav a::after, #header nav .accordion.active a::after, .accordion.active #header nav button::after, #header nav .accordion.active button::after, .accordion.active .button::after {
+  content: '-';
+}
+
+.accordion.active .content {
+  display: block;
+}
+
+@media (min-width: 60rem) {
+  .only-mobile {
+    display: none !important;
+  }
+}
+
+@media (max-width: 60rem) {
+  .only-desktop {
+    display: none !important;
+  }
 }

@@ -155,6 +155,13 @@ gppac-titleblock {
 .big {   max-width: $breakPoint * 1.2 }
 .small { max-width: $breakPoint * 0.8 }
 
+.padding {
+    display: block;
+    margin: 0;
+    width: 100%;
+    padding: $padding;
+}
+
 // Color Block
 
 .color-block {
@@ -410,5 +417,62 @@ gppac-next-page {
     &::before {
         background-image: url('../assets/images/download-icon-white.svg');
         left: 1rem;
+    }
+}
+
+// Accordion
+
+.accordion {
+    button {
+        position: relative;
+        display: block;
+        width: 100%;
+        margin: 0;
+        text-align: left;
+
+        &::after {
+            content: '+';
+            position: absolute;
+            right: 0.7rem;
+            top: calc(50% - 1.3rem);
+            font-size: 1.5rem;
+            font-weight: 200;
+        }
+
+        &:hover {
+            background-color: unset;
+        }
+    }
+
+    transition: all .2s;
+
+    .content {
+        padding: 1rem 0.7rem;
+        margin: 0;
+        display: none;
+    }
+
+    &.active {
+        button::after {
+            content: '-';
+        }
+
+        .content {
+            display: block;
+        }
+    }
+}
+
+// Simple mobile/desktop switch
+
+.only-mobile {
+    @media (min-width: $breakPoint) {
+        display: none !important;
+    }
+}
+
+.only-desktop {
+    @media (max-width: $breakPoint) {
+        display: none !important;
     }
 }

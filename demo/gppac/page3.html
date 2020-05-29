@@ -1,5 +1,4 @@
-
-<!-- header--><!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <!-- HEAD-->
@@ -12,6 +11,7 @@
     <link rel="stylesheet" href="https://use.typekit.net/nte8bpn.css">
     <!-- stylesheets-->
     <link rel="stylesheet" type="text/css" href="styles/app.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/map.min.css">
     <!-- libraries-->
     <!-- animate on scroll-->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -99,9 +99,8 @@
         
       </p>
     </div>
-    <div class="container big"><img src="assets/images/page3/gppac-members-map.svg" data-aos="fade-up"></div>
     <gppac-spacer></gppac-spacer>
-    <div class="color-block dark-blue">
+    <div class="color-block dark-blue only-desktop">
       <div class="container">
         <gppac-spacer></gppac-spacer>
         <gppac-titleblock style="max-width: 100%">
@@ -153,8 +152,10 @@
               <br><br>
               Caucasus <br>
               <a href="https://www.iccn.ge/index.php?article_id=1&amp;clang=1" target="_blank">International Center on Conflict &amp; Negotiation (ICCN) </a>
-              Western Balkans
-               <a href="https://www.nansen-dialogue.net/ndcmontenegro/" target="_blank">Nansen Dialogue Centre Montenegro-NDCMN (until 31 December 2019) </a>
+              <br><br>
+              Western Balkans<br>
+              <a href="https://www.nansen-dialogue.net/ndcmontenegro/" target="_blank">Nansen Dialogue Centre Montenegro-NDCMN (until 31 December 2019) </a>
+              <br><br>
               Mostar (from/since 1 January 2020)
               
             </p>
@@ -169,6 +170,248 @@
           </div>
         </div>
       </div>
+    </div>
+    <gppac-spacer></gppac-spacer>
+    <div class="color-block dark-blue only-mobile">
+      <div class="container small">
+        <gppac-spacer></gppac-spacer>
+        <gppac-titleblock style="max-width: 100%">
+          <h2 class="light-blue">Organisation &amp; Governance</h2>
+          <h1 class="white">GPPAC International Steering Group</h1>
+        </gppac-titleblock>
+        <gppac-spacer></gppac-spacer>
+        <div class="accordion yellow">
+          <button class="yellow">GPPAC’s Regional Representatives</button>
+          <p class="content">
+            Eastern and Central Africa <br>
+            <a href="https://cecore.or.ug/" target="_blank">Center for Conflict Resolution (CECORE)</a> <br>
+            Kampala, Uganda
+            <br><br>
+            Southern Africa <br>
+            <a href="https://www.eclfz.org/" target="_blank">Ecumenical Church Leaders Forum </a><br>
+            Bulawayo, Zimbabwe
+            <br><br>
+            West Africa <br>
+            <a href="https://www.wanep.org/wanep/" target="_blank">West Africa Network for Peacebuilding (WANEP)</a><br>
+            Accra, Ghana
+            <br><br>
+            -
+            <br><br>
+            Latin America and the Caribbean <br>
+            <a href="https://www.cries.org/" target="_blank">Regional Coordination for Economic and Social Research (CRIES)</a><br>
+            Buenos Aires, Argentina
+            <br><br>
+            North America <br>
+            <a href="https://colaboracioncivica.org/esp/" target="_blank">Centro de Colaboración Cívica</a><br>
+            Mexico City, Mexico
+            <br><br>
+            -
+            <br><br>
+            South Asia <br>
+            <a href="https://www.rcss.org/" target="_blank">Regional Centre for Strategic Studies (RCSS)</a><br>
+            Colombo, Sri Lanka
+            <br><br>
+            The Pacific <br>
+            <a href="https://transcendoceania.wordpress.com/" target="_blank">Transcend Oceania</a><br>
+            Suva, Fiji Islands
+            <br><br>
+            Southeast Asia <br>
+            <a href="https://www.iidnet.org/" target="_blank">Initiatives for International Dialogue (IID) </a><br>
+            Davao City, the Philippines
+            <br><br>
+            Northeast Asia <br>
+            <a href="https://www.peaceboat.org/english/index.php" target="_blank">Peaceboat </a><br>
+            Tokyo, Japan
+            <br><br>
+            Central Asia <br>
+            Foundation for Tolerance International (FTI) <br>
+            Bishkek, Kyrgyzstan
+            <br><br>
+            -
+            <br><br>
+            Middle East &amp; North Africa <br>
+            <a href="https://www.ppm-lebanon.org/" target="_blank">Permanent Peace Movement (PPM) </a><br>
+            Beirut, Lebanon
+            <br><br>
+            
+            
+          </p>
+        </div>
+        <div class="accordion light-blue">
+          <button class="light-blue">GPPAC’s Non-Regional ISG Members</button>
+          <p class="content"><a href="https://www.wvi.org/" target="_blank">World Vision International </a><br>
+            Berlin, Germany 
+            <br><br>
+            <a href="https://www.wfm-igp.org/" target="_blank">World Federalist Movement-Institute for Global Policy </a><br>
+            New York, United States 
+            <br><br>
+            <a href="https://eplo.org/" target="_blank">European Peacebuilding Liaison Office (EPLO) </a><br>
+            Brussels, Belgium 
+            <br><br>
+            <a href="https://unoy.org/" target="_blank">United Network of Young Peacebuilders (UNOY) 	 </a><br>
+            The Hague, the Netherlands 	
+            <br><br>
+            <a href="https://www.accord.org.za/publication/conflict-trends-2016-1/" target="_blank">African Center for the Constructive Resolution of Disputes (ACCORD)  </a><br>
+            Durban, South Africa 
+            
+            
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- MAP-->
+    <div class="container big only-desktop">
+      <gppac-titleblock>
+        <h2 class="light-blue">Organisation &amp; Governance</h2>
+      </gppac-titleblock>
+    </div>
+    <div class="padding">
+      <gppac-map><img src="assets/images/page3/gppac-map.svg">
+        <!-- Legend-->
+        <gppac-map-marker class=" right" style="right: 5%; top: 5%">
+          <gppac-map-dot></gppac-map-dot>
+          <p class="location">GPPAC’s Regional Representatives</p>
+          <div class="open">
+          </div>
+        </gppac-map-marker>
+        <gppac-map-marker class="yellow right" style="right: 5%; top: 11%">
+          <gppac-map-dot></gppac-map-dot>
+          <p class="location">GPPAC’s Non-Regional ISG Members</p>
+          <div class="open">
+          </div>
+        </gppac-map-marker>
+        <!-- Regional Representatives-->
+        <gppac-map-marker class=" left" style="left: 58%; top: 62%">
+          <gppac-map-dot></gppac-map-dot>
+          <p class="location">Kampala, Uganda</p>
+          <div class="open">
+            <p>Eastern and Central Africa <br></p><a href="https://cecore.or.ug/" target="_blank">Center for Conflict Resolution (CECORE) </a>
+          </div>
+        </gppac-map-marker>
+        <gppac-map-marker class=" left" style="left: 55.5%; top: 73.5%">
+          <gppac-map-dot></gppac-map-dot>
+          <p class="location">Bulawayo, Zimbabwe</p>
+          <div class="open">
+            <p>Southern Africa <br></p><a href="https://www.eclfz.org/" target="_blank">Ecumenical Church Leaders Forum </a>
+          </div>
+        </gppac-map-marker>
+        <gppac-map-marker class=" left" style="left: 46%; top: 61%">
+          <gppac-map-dot></gppac-map-dot>
+          <p class="location">Accra, Ghana</p>
+          <div class="open">
+            <p>West Africa <br></p><a href="https://www.wanep.org/wanep/" target="_blank">West Africa Network for Peacebuilding (WANEP)</a>
+          </div>
+        </gppac-map-marker>
+        <gppac-map-marker class=" left" style="left: 32%; top: 84%">
+          <gppac-map-dot></gppac-map-dot>
+          <p class="location">Buenos Aires, Argentina</p>
+          <div class="open">
+            <p>Latin America and the Caribbean <br></p><a href="https://www.cries.org/" target="_blank">Regional Coordination for Economic and Social Research (CRIES)</a>
+          </div>
+        </gppac-map-marker>
+        <gppac-map-marker class=" left" style="left: 22.7%; top: 58.5%">
+          <gppac-map-dot></gppac-map-dot>
+          <p class="location">Mexico City, Mexico</p>
+          <div class="open">
+            <p>North America <br></p><a href="https://colaboracioncivica.org/esp/" target="_blank">Centro de Colaboración Cívica</a>
+          </div>
+        </gppac-map-marker>
+        <gppac-map-marker class=" left" style="left: 70%; top: 59%">
+          <gppac-map-dot></gppac-map-dot>
+          <p class="location">Colombo, Sri Lanka</p>
+          <div class="open">
+            <p>South Asia <br></p><a href="https://www.rcss.org/" target="_blank">Regional Centre for Strategic Studies (RCSS)</a>
+          </div>
+        </gppac-map-marker>
+        <gppac-map-marker class=" right" style="right: 0%; top: 71%">
+          <gppac-map-dot></gppac-map-dot>
+          <p class="location">Suva, Fiji Islands</p>
+          <div class="open">
+            <p>The Pacific <br></p><a href="https://transcendoceania.wordpress.com/" target="_blank">Transcend Oceania</a>
+          </div>
+        </gppac-map-marker>
+        <gppac-map-marker class=" left" style="left: 83.5%; top: 58%">
+          <gppac-map-dot></gppac-map-dot>
+          <p class="location">Davao City, the Philippines</p>
+          <div class="open">
+            <p>Southeast Asia <br></p><a href="https://www.iidnet.org/" target="_blank">Initiatives for International Dialogue (IID) </a>
+          </div>
+        </gppac-map-marker>
+        <gppac-map-marker class=" left" style="left: 86%; top: 39%">
+          <gppac-map-dot></gppac-map-dot>
+          <p class="location">Tokyo, Japan</p>
+          <div class="open">
+            <p>Northeast Asia <br></p><a href="https://www.peaceboat.org/english/index.php" target="_blank">Peaceboat </a>
+          </div>
+        </gppac-map-marker>
+        <gppac-map-marker class=" left" style="left: 69%; top: 40%">
+          <gppac-map-dot></gppac-map-dot>
+          <p class="location">Bishkek, Kyrgyzstan</p>
+          <div class="open">
+            <p>Central Asia <br></p>
+            <p>Foundation for Tolerance International (FTI)</p>
+          </div>
+        </gppac-map-marker>
+        <gppac-map-marker class=" left" style="left: 57%; top: 45%">
+          <gppac-map-dot></gppac-map-dot>
+          <p class="location">Beirut, Lebanon</p>
+          <div class="open">
+            <p>Middle East &amp; North Africa <br></p><a href="https://www.ppm-lebanon.org/" target="_blank">Permanent Peace Movement (PPM) </a>
+          </div>
+        </gppac-map-marker>
+        <gppac-map-marker class=" left" style="left: 54.5%; top: 34%">
+          <gppac-map-dot></gppac-map-dot>
+          <p class="location">Kiev, Ukraine</p>
+          <div class="open">
+            <p>Eastern Europe </p><a href="https://nonviolenceinternational.net" target="_blank">Non-Violence International</a>
+          </div>
+        </gppac-map-marker>
+        <gppac-map-marker class=" left" style="left: 58.5%; top: 39%">
+          <gppac-map-dot></gppac-map-dot>
+          <p class="location">Tbilisi, Georgia</p>
+          <div class="open">
+            <p>Caucasus </p><a href="https://www.iccn.ge/index.php?article_id=1&amp;clang=1" target="_blank">International Center on Conflict &amp; Negotiation (ICCN)</a>
+          </div>
+        </gppac-map-marker>
+        <gppac-map-marker class=" right" style="right: 47.5%; top: 41%">
+          <gppac-map-dot></gppac-map-dot>
+          <p class="location">Mostar, Bosnia &amp; Herzegovina</p>
+          <div class="open">
+            <p>Western Balkans (from/since 1 January 2020)</p><a href="https://www.nansen-dialogue.net/ndcmontenegro/" target="_blank">Nansen Dialogue Centre Montenegro-NDCMN (until 31 December 2019)</a>
+          </div>
+        </gppac-map-marker>
+        <!-- Non-Regional ISG Members-->
+        <gppac-map-marker class="yellow extended right" style="right: 50%; top: 35%">
+          <gppac-map-dot></gppac-map-dot>
+          <p class="location">Berlin, Germany</p>
+          <div class="open"><a href="https://www.wvi.org/" target="_blank">World Vision International</a>
+          </div>
+        </gppac-map-marker>
+        <gppac-map-marker class="yellow right" style="right: 72%; top: 41%">
+          <gppac-map-dot></gppac-map-dot>
+          <p class="location">New York, United States</p>
+          <div class="open"><a href="https://www.wfm-igp.org/" target="_blank">World Federalist Movement-Institute for Global Policy</a>
+          </div>
+        </gppac-map-marker>
+        <gppac-map-marker class="yellow right" style="right: 52%; top: 37%">
+          <gppac-map-dot></gppac-map-dot>
+          <p class="location">Brussels, Belgium</p>
+          <div class="open"><a href="https://eplo.org/" target="_blank">European Peacebuilding Liaison Office (EPLO)</a>
+          </div>
+        </gppac-map-marker>
+        <gppac-map-marker class="yellow extended split right" style="right: 52.5%; top: 35%">
+          <gppac-map-dot></gppac-map-dot>
+          <p class="location">The Hague, the Netherlands</p>
+          <div class="open"><a href="https://unoy.org/" target="_blank">United Network of Young Peacebuilders (UNOY)    	</a>
+          </div>
+        </gppac-map-marker>
+        <gppac-map-marker class="yellow left" style="left: 56%; top: 78%">
+          <gppac-map-dot></gppac-map-dot>
+          <p class="location">Durban, South Africa</p>
+          <div class="open"><a href="https://www.accord.org.za/publication/conflict-trends-2016-1/" target="_blank">African Center for the Constructive Resolution of Disputes (ACCORD)</a>
+          </div>
+        </gppac-map-marker>
+      </gppac-map>
     </div>
     
     

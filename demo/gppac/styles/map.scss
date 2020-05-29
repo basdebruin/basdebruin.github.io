@@ -1,0 +1,146 @@
+// styles for interactive gppac map
+// author: Bas de Bruin
+
+gppac-map {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+
+    > img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    gppac-map-marker {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: inline-block;
+
+        // transform attribute to prevent slight position differences when scaling
+        transform: translate(1rem, -1rem);
+
+        width: auto;
+
+        padding: 0.3rem 0.5rem; // 0.5rem 0.7rem for fs 0.8rem
+        background: #3180A4;
+        color: #fff;
+
+        z-index: 900;
+
+        cursor: default;
+
+        p, a { 
+            margin: -0.2rem 0;
+            font-size: 0.8rem;
+        }
+
+        gppac-map-dot {
+            position: absolute;
+            top: 0.6rem;
+            left: -1.2rem;
+            display: block;
+            width: 0.7rem;
+            height: 0.7rem;
+            border-radius: 1rem;
+
+            border: solid 1px white;
+            background-color: inherit;
+        }
+
+        // Hover
+
+        transition: all .2s;
+        transform-origin: left center;
+        .open {
+            display: none;
+        }
+        &:hover {
+            .open { display: block; }
+
+            box-shadow: rgba(0,0,0, 0.1) 0 0 2rem;
+
+            z-index: 999;
+            transform: scale(1.02) translate(1rem, -1rem);
+        }
+        &.right:hover {
+            transform: scale(1.02) translate(-1rem, -1rem);
+        }
+
+        // Modifiers
+
+        &.right {
+            left: unset;
+            transform-origin: right center;
+            transform: translate(-1rem, -1rem);
+
+            gppac-map-dot {
+                left: unset;
+                right: -1.2rem !important;
+            }
+        }
+
+        &.extended {
+            transform: translate(1rem, -5.3rem);
+
+            gppac-map-dot {
+                left: unset;
+                right: 0.5rem !important;
+                top: 5rem;
+
+                &::before {
+                    content: ' ';
+                    position: absolute;
+                    display: block;
+                    top: -3.5rem;
+                    left: 0.3rem;
+                    width: 2px;
+                    height: 3.5rem;
+
+                    background: inherit;
+                }
+            }
+
+            &:hover {
+                transform: scale(1.02) translate(1rem, -5.3rem);
+
+                gppac-map-dot::before {
+                    top: -2rem;
+                    height: 2rem;
+                }
+            }
+        }
+
+        &.split {
+            gppac-map-dot {
+                background: linear-gradient(225deg, #fab405 49%, #3180A4 51%) !important;
+            }
+
+            // making line smaller
+            transform: translate(1rem, -2.7rem);
+            gppac-map-dot {
+                top: 2.5rem;
+                &::before {
+                    top: -1rem;
+                    height: 1rem;
+                    background: #fab405;
+                }
+            }
+            &:hover {
+                transform: scale(1.02) translate(1rem, -2.7rem);
+
+                gppac-map-dot {
+                    display: none;
+                }
+            }
+        }
+
+    }
+
+
+    @media screen and (max-width: 60rem) {
+        display: none;
+    }
+}
