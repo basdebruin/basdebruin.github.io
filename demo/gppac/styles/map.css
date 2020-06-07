@@ -9,6 +9,7 @@ gppac-map > img {
   width: 100%;
   height: auto;
   display: block;
+  z-index: 0;
 }
 
 gppac-map gppac-map-marker {
