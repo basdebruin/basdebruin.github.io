@@ -200,7 +200,6 @@ gppac-spacer {
 
 gppac-titleblock {
   display: block;
-  flex-flow: column nowrap;
   max-width: 30rem;
   margin: 0;
   margin-bottom: 0;

@@ -94,7 +94,7 @@
 
 gppac-titleblock {
     display: block;
-    flex-flow: column nowrap;
+    //flex-flow: column nowrap;
     
     max-width: $breakPoint * 0.5;
     @media (max-width: $breakPoint) { max-width: $breakPoint * 0.4 }
