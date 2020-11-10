@@ -1,0 +1,36 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Dyslexie  |  Accessibility Game</title><meta name="author" content="Bas de Bruin"><!-- google fonts--><link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&amp;display=swap" rel="stylesheet"><!-- adobe fonts--><link rel="stylesheet" href="https://use.typekit.net/ynx2moz.css"><!-- styles--><link rel="stylesheet" href="/reset.css"><link rel="stylesheet" href="/main.css"><!-- get jquery--><script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script><!--swup--><script src="/assets/js/swup.min.js"></script><script src="/assets/js/SwupScrollPlugin.min.js"></script><script src="/assets/js/init.js"></script></head><body><main id="swup"><header><a class="button light back" href="/levels/3/intro/">Ga terug</a><a href="/" id="logo"><img src="/assets/images/acc_logo.svg" alt="Logo van Stichting Accessibility"><h2>Accessibility Game</h2></a></header><div class="spacer" style="height: 5rem"></div><div id="game"><!-- The styles--><style type="text/css">#level #questions {
+    display: none;
+}
+#level span {
+    transition: all .5s;
+    text-align: center;
+}
+span.flip {
+    transition: all .5s;
+    display: inline-block;
+    transform: scaleX(-1);
+}
+
+/*  Question page  */
+
+#level.on-questions #text      { display: none; }
+#level.on-questions #questions { display: block; }
+
+#questions .container {
+    margin: 3rem auto;
+}
+#questions .container.buttons {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    width: 100%;
+}
+#questions h2 {
+    margin: 2rem 0;
+}
+</style><!-- The page layout--><div id="level"><div id="text"><article class="container" id="content"><h1>Dyslexie</h1>
+<p>Al in 1881 werd de aandoening door Oswald Berkhan beschreven, maar het was Rudolf Berlin die in 1887 hiervoor de term 'dyslexie' bedacht. De term werd gebruikt om het geval van een jongen te beschrijven die ernstige moeite had met het leren lezen en schrijven, terwijl hij buiten deze gebieden wel over een normale intelligentie leek te beschikken.</p>
+<h2>Oorzaak</h2>
+<p>Onderzoek heeft uitgewezen dat dyslexie een neurologische oorzaak heeft. Ook al zijn er talrijke varianten en oorzaken voor dyslexie, in veel gevallen zijn de hersenen niet goed in staat visuele of auditieve informatie te interpreteren. De hersenen kunnen dit op verschillende manieren deels, of in het geval van een milde vorm volledig compenseren door andere hersenfuncties te gebruiken. Dit is afhankelijk van de omvang van de aandoening. Op jonge leeftijd kan stimulering en training van de hersenen tot betere compensatie leiden. Dyslexie heeft voornamelijk invloed op de leesvaardigheid, spelling en woordenschat.</p>
+</article><div class="container center"><button class="button" onclick="dyslexie.changePage()">Volgende pagina</button></div></div><div id="questions"><div class="container"><h2>Beantwoordt nu de vragen over dyslexie</h2><label for="question_0">Wanneer is de term dyslexie bedacht?</label><input id="question_0" type="field"/><label for="question_1">Waar heeft dyslexie voornamelijk invloed op?</label><input id="question_1" type="field"/></div><div class="container buttons"><button class="button back light" onclick="dyslexie.changePage()">Vorige pagina</button><button class="button">Verzenden</button></div></div></div><!-- Script--><script data-src="/assets/js/level-dyslexie.js" type="text/javascript" data-load-script="data-load-script"></script><div class="container center"><a class="button" href="/levels/3/outro/">Speel level uit</a></div></div></main></body></html>
