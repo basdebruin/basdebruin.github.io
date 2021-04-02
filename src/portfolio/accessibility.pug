@@ -1,0 +1,71 @@
+---
+index: 1
+tags: portfolio
+layout: layouts/page.pug
+title: Accessibility Game
+client: Stichting Accessibility
+discription: A Web-Game that creates awareness for people with disabilities on the internet.
+tasks: ['Concept', 'Visual Design', 'UX', 'Audio Design', 'Web Development']
+
+image: acc_game_ill.svg
+---
+
+.columns
+    .card.cover
+        img(src="/assets/images/acc_game_levels.jpg" alt="Screenshot from Accessibility Game: showing levels")
+    .card(style="background: white")
+        img(src="/assets/images/acc_game_colorblind.svg" alt="Illustration from Accessibility Game: Colorblind")
+
+.columns
+    h2 The Problem
+    p.
+        During an intership at Stichting Accessibility I was tasked to create a game with the goal of creating <em>awareness</em> and understanding of how people with disabilities use the internet. Along with tips for designers and developers about what they can do to make life easier for people with these disabilities.
+    
+.columns
+    h2 The Client & the Users
+    div 
+        p.
+            <em>Stichting Accessibility</em>, the client, is an organisation with a mission to make the internet a more accessible place; They conduct accessibility audits, give workshops and initiate projects to increase awareness and knowledge about the subject.
+        p.
+            The <em>target user group</em> for the game is designers and developers who want to know more about accessibility. The game will be distributed online and will be used as part of the workshops offered by Stichting Accessibility.
+
+.card.cover
+    img(src="/assets/images/acc_game_tunnelvision.png" alt="Screenshot from Accessibility Game: Tunnel Vision Level")
+
+.columns
+    h2 The Solution
+    div
+        p.
+            Over the course of 3 months I created a web-game that takes the user through a series of levels that simulate having certain disabilities on the internet. One level, for example, simulates tunnel vision by hiding a large part of the screen while another level simulates being hard of hearing by manipulating the audio in such a way that people have to pay very close attention to the video to understand what is being said.
+        p.
+            I made visual illustrations and sound effects to make it more appealing and to make it feel more like a game.
+
+
+.list-container
+    h2 Tools used
+    .columns
+        .card.center 
+            h3 Eleventy
+            h4 Static Site Generator
+        .card.center 
+            h3 Pug, SCSS, Javascript
+            h4 Programming Languages
+        .card.center 
+            h3 Figma
+            h4 Visual Design & Mockups
+        .card.center 
+            h3 Ableton Live
+            h4 Audio Design
+
+.columns
+    h2 Testing with Experts
+    p.
+        Over the course of the design proces I sent out versions of the game along with questionnaires to get as much feedback as possible. I also talked to experience experts with a disability to learn how they experience the world and the internet. The design of the levels was tweaked and based on all the feedback I got, making the game a more fun and more representative product in the end.
+
+
+.card.cover
+    img(src="/assets/images/acc_game_slechthorend.png" alt="Screenshot from Accessibility Game: Hard of Hearing level tips and tricks")
+
+.highlight
+    h2 Try it live:
+    a(href="https://accessibility-game.netlify.app" target="_blank").button.arrow-right Accessibility Game

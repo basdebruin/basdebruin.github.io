@@ -1,0 +1,42 @@
+//- Mixin blocks for portfolio pages
+
+mixin logo
+    #logo
+        include ../../../assets/icons/bas-typelogo.svg
+
+mixin back
+    a#back(href="/" title="Back to Home" data-sound="click")
+        include ../../../assets/icons/back-typelogo.svg
+
+mixin contact-button
+    header
+    button#contact-button.arrow-right(onclick="openContact()" data-sound="slide-left") contact me
+
+
+mixin intro-text
+    h1.hidden.
+        I’m an All-Round Designer who loves to solve problems;
+        I combine design and technology to craft interactive experiences.
+    .intro-text-large
+        include ../../../assets/icons/intro-text-big.svg
+    .intro-text-small
+        include ../../../assets/icons/intro-text-small.svg
+
+mixin projects-button
+    a(href="#work" data-sound="click").button.arrow-down Projects
+
+
+mixin icon-button(text, link)
+    a(href=link).icon-button
+        block
+        p= text
+
+mixin theme-control
+    button#theme-control(title="expand text size changer")
+        .icon Aa
+        .content
+            .selector
+                .dark  Dark
+                .light Light
+            p A
+            p a

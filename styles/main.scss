@@ -1,0 +1,635 @@
+// MAIN scss file
+// for portfolio site
+// author: Bas de Bruin
+
+@import 'variables';
+@import 'head';
+@import 'animations';
+@import 'smooth_gradient';
+
+// containers
+main {
+    padding: $padding;
+}
+.container {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    max-width: $breakSmall;
+    padding: 0;
+}
+.container.center {
+    text-align: center;
+}
+.container.small {
+    max-width: $breakSmall * 0.5;
+}
+.columns {
+    display: block;
+    margin-bottom: 4rem;
+    > * { margin: $padding 0 }
+    @media (min-width: $breakSmall) {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: stretch; justify-content: flex-start;
+        margin-bottom: 0;
+        > * {
+            margin: 0 $padding-small;
+            width: 100%;
+
+            &:first-child {
+                margin-top: .3rem;
+                margin-left: 0;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+        > img {
+            width: 50%;
+            height: 50%;
+            object-fit: cover;
+        }
+    }
+}
+
+.padding {
+    padding: $padding;
+}
+.hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.full-height {
+    height: 100vh;
+    transition: $transition;
+}
+
+header {
+    position: fixed;
+    top: -1rem; left: 0;
+
+    width: 100%; height: 10rem;
+
+    background: linear-gradient(scrim-gradient($dark));
+    @media (prefers-color-scheme: light) { 
+        background: linear-gradient(scrim-gradient($light))
+    }
+
+    z-index: 900;
+    pointer-events: none;
+}
+
+// LOGO
+#logo {
+    position: fixed;
+    top: $padding;
+    left: $padding;
+
+    z-index: 999;
+}
+
+#back {
+    position: fixed;
+    top: $padding; left: $padding;
+    z-index: 999;
+
+    transition: $transition;
+    &:active {
+        transform: scale(0.95);
+    }
+}
+
+#contact-button {
+    position: fixed;
+    top: $padding;
+    right: $padding;
+
+    z-index: 999;
+}
+
+// HOME
+// -> INTRO
+
+#intro {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    max-width: $breakSmall;
+    margin: calc(-1 * #{$padding}) auto;
+    height: 100vh;
+
+    text-align: center;
+
+    svg {
+        width: 100%; height: auto;
+    }
+
+    .intro-text-small { display: none; }
+    .intro-text-large { display: block }
+
+    a.button {
+        position: absolute;
+        bottom: $padding;
+        left: calc(50% - 3rem);
+
+        // add bounce animation
+        animation: bounce 5s infinite linear;
+    }
+
+    @media (max-width: 50rem) {
+        .intro-text-small { display: block; }
+        .intro-text-large { display: none }
+    }
+}
+
+// BUTTONS
+
+.arrow-right {
+    position: relative;
+    background: $buttonGrey;
+
+    margin-right: 1em;
+    z-index: 100;
+
+    &::after {
+        content: ' ';
+        position: absolute;
+        right: -0.55em;
+        top: 0.25em;
+        display: block;
+        width:  1.3em;
+        height: 1.3em;
+        background: $buttonGrey;
+
+        border-radius: $borderRadiusSmall;
+
+        transform: rotate(45deg);
+        z-index: -1;
+
+        transition: $transition;
+    }
+
+    &:hover::after {
+        background: $buttonAccent;
+    }
+}
+.arrow-left {
+    @extend .arrow-right;
+
+    &::after {
+        right: unset;
+        left: -0.55em;
+    }
+}
+
+.arrow-down {
+    position: relative;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    z-index: 100;
+    &::after {
+        content: ' ';
+        position: absolute;
+        left: calc(50% - 0.65rem); bottom: -0.5rem;
+        display: block;
+        width: 1.3em;
+        height: 1.3em;
+        background: $buttonGrey;
+
+        border-radius: $borderRadiusSmall;
+
+        transform: rotate(45deg);
+        z-index: -1;
+
+        transition: $transition;
+    }
+
+    &:hover::after {
+        background: $buttonAccent;
+    }
+}
+
+// THEME CONTROL
+#theme-control {
+    @extend .button;
+
+    display: none;
+
+    position: fixed;
+    bottom: $padding; right: $padding;
+
+    padding: 0.5rem;
+
+    > * {
+        background: red;
+    }
+
+    z-index: 800;
+}
+
+// CONTACT
+#contact {
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 1000;
+
+    width: 100vw; height: 100vh;
+    padding: $padding;
+
+    display: none; 
+    &.open { display: flex }
+    align-items: center; justify-content: center;
+
+    background: $accent;
+    color: $dark;
+    p { opacity: 1; }
+
+    transition: transform 1s $bezierFast;
+    transform: translateX(100vw);
+    &.open { transform: translateX(0); }
+
+    box-shadow: none;
+    &.open { box-shadow: 0px 0px 4rem rgba($dark, .7); }
+
+    .columns {
+        position: static;
+        max-width: $breakSmall;
+        align-items: flex-start;
+    }
+
+    @media (max-width: $breakSmall) {
+        .columns {
+            overflow-y: scroll;
+            overflow-x: hidden;
+            padding: 4rem $padding;
+            height: 100%;
+        }
+        padding: 0;
+        padding-top: 3rem;
+    }
+
+    .about {
+        margin-bottom: 5rem;
+    }
+
+    #contact-bas, #contact-info {
+        position: relative;
+        transform: scale(2);
+        transform-origin: left;
+
+        margin-bottom: 3rem;
+    }
+
+    %small-text {
+        @extend h3;
+        font-size: 0.8rem * 0.5;
+        letter-spacing: 0.04rem;
+        color: rgba($dark, .7);
+        position: absolute;
+    }
+
+    #contact-bas::before {
+        content: 'about';
+        @extend %small-text;
+
+        top: -0.25rem; left: 0.95rem;
+    }
+
+    #contact-info::before {
+        content: 'Go ahead,';
+        @extend %small-text;
+
+        top: -0.3rem; left: 0.3rem;
+    }
+    #contact-info::after {
+        content: 'me!';
+        @extend %small-text;
+
+        bottom: -0.4rem; left: 5.1rem;
+        text-align: right;
+    }
+
+    #contact-close-button {
+        position: fixed;
+        top: $padding; right: $padding;
+        z-index: 100000;
+
+        display: flex; 
+        align-items: center; justify-content: center;
+        text-align: center;
+
+        color: black;
+        background: $light;
+
+        width: 2.4rem; height: 2.4rem;
+        border-radius: 1.2rem;
+
+        img {
+            width: auto; height: auto;
+        }
+
+        transition: $transition;
+        &:hover {
+            box-shadow: 0px 0px 0px 4px $dark;
+        }
+    }
+}
+
+.icon-button {
+    color: $light;
+    background: $dark;
+    border-radius: 0.4rem;
+
+    position: relative;
+
+    padding: 0.4rem;
+    margin: 1rem 0;
+
+    width: 9rem;
+    min-width: auto;
+    height: 3.4rem;
+
+    overflow: visible;
+    transition: $transition;
+    &:hover {
+        box-shadow: 0px 0px 0px 4px $light;
+
+        &::after {
+            box-shadow: 2.5px -2.5px 0px 1.5px $light;
+        }
+    }
+
+    p {
+        @extend h2;
+        opacity: 1;
+        font-size: 1.35rem;
+        font-weight: 600;
+
+        overflow: visible;
+
+        margin: 
+            -0.1rem 0
+            -0.6rem  0;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0.39rem; right: -0.9rem;
+
+        background: $dark;
+        display: block;
+        width: 2.6rem;
+        height: 2.6rem;
+
+        border-radius: 0.4rem;
+        transform: rotate(45deg);
+
+        transition: $transition;
+    }
+}
+
+// PORTFOLIO
+
+#work {
+    padding: 0;
+    padding-top: 6rem;
+    margin-bottom: 6rem;
+
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    
+    max-width: $breakLarge;
+
+    @media (min-width: $breakSmall) {
+        > * {
+            width: calc(50% - #{$padding-small});
+            &:nth-child(even) {
+                margin-left: $padding;
+                transform: translateY(4rem);
+            }
+        }
+    }
+}
+
+.portfolio-item {
+    display: block;
+
+    overflow: hidden;
+
+    background: rgba($light, .05);
+    @media (prefers-color-scheme: light) { background: rgba(255,255,255, .5); }
+    &.page { background: none }
+    border: solid 2px transparent;
+
+    margin: 5vw 0; //12rem
+    &.page { margin: 5rem auto }
+    box-sizing: border-box;
+    padding: 0;
+    .content { padding: $padding }
+
+    border-radius: 1rem;
+    transition: $transition;
+
+    > .image-left {
+        margin-left: -3rem;
+        width: calc(100% + 3rem);
+    }
+}
+
+.tasks {
+    display: block;
+    margin: 1.5rem 0 0 0;
+    opacity: .8;
+
+    .task {
+        display: inline-block;
+        border: solid 2px $buttonGrey;
+        padding: $buttonPadding;
+        border-radius: $borderRadiusSmall;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+
+        @extend h3;
+        font-size: 0.8rem;
+        font-family: $fontFamily;
+        color: $fg;
+    }
+}
+
+a.portfolio-item:hover {
+    background: rgba($light, .03);
+    border: solid 2px rgba($light, .2);
+
+    @media (prefers-color-scheme: light) {
+        background: white;
+        border: solid 2px rgba($dark, .2);
+    }
+}
+
+.portfolio-item-small {
+    @extend .portfolio-item;
+    position: relative;
+    height: auto;
+    padding: $padding-small;
+    margin: 1rem 0;
+
+    .tasks, .task {
+        margin-top: 0.5rem;
+        margin-bottom: 0;
+    }
+
+    > span {
+        position: absolute;
+        top: $padding-small; right: $padding-small;
+        opacity: .5;
+    }
+}
+#extra-work {
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+}
+
+
+// portfolio page
+#page-intro {
+    @extend .container;
+    margin-top: 10rem;
+    margin-bottom: 4rem;
+}
+#page-content {
+    @media (min-width: $breakSmall) {
+        .columns {
+            > *:first-child {
+                width: 40%;
+            }
+            > *:last-child {
+                width: 60%;
+            }
+        }
+    }
+}
+
+#page-intro, #page-content { > .container, > .card, > .columns {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+}}
+
+// CARD
+.card {
+    display: block;
+    width: 100%;
+    background: rgba($light, .05);
+    @media (prefers-color-scheme: light) { background: rgba(255,255,255, .5); }
+
+    margin-top: 0 !important;
+    
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: $padding;
+    border-radius: 1rem;
+    //margin: 6rem auto;
+
+    line-height: 1.2rem;
+
+    max-width: $breakSmall;
+    &.large {
+        max-width: $breakSmall*2;
+    }
+
+    &.no-padding, &.cover { padding: 0 }
+
+    > * {
+        border-radius: 0.5rem;
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+    }
+
+    &.cover > img { object-fit: cover }
+    &.align-left > img { object-position: left; }
+    &.align-right > img { object-position: right; }
+}
+.card.center {
+    display: flex;
+    flex-flow: column nowrap;
+    align-content: space-around; justify-content: center;
+}
+
+// PAGE: 
+.list-container {
+    @extend .container;
+    margin: 7rem auto 8rem auto !important;
+
+    text-align: center;
+    > :first-child {
+        margin-bottom: 2rem;
+    }
+    .columns > * {
+        width: 100% !important;
+        > :first-child {
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+.highlight {
+    @extend .container;
+    margin: 7rem auto 8rem auto !important;
+    text-align: center;
+    max-width: $breakSmall * 0.5;
+
+    h2, h3, h4 {
+        margin: 1rem 0;
+    }
+    a {
+        display: inline-block;
+        padding: 6px 8px;
+    }
+}
+
+// FOOTER
+footer {
+    //position: absolute;
+    //bottom: 2rem; left: 50%;
+    //transform: translateX(-50%);
+
+    opacity: .55;
+
+    display: block;
+    padding: 2rem 0;
+    margin-top: 6rem;
+    .center {
+        text-align: center;
+    }
+
+    .columns { 
+        overflow: visible;
+        align-items: center;
+        justify-content: space-between;
+
+        div {
+            width: auto !important;
+
+            * { display: unset }
+
+            @media (max-width: $breakSmall) {
+                display: inline-block;
+            }
+        }
+    }
+}

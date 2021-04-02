@@ -1,0 +1,14 @@
+{
+    "name": "bas-portfolio-website",
+    "description": "Personal portfolio using 11ty and pug",
+    "version": "1.0.0",
+    "scripts": {
+        "build": "eleventy",
+        "start": "eleventy --serve"
+    },
+    "dependencies": {
+        "@11ty/eleventy": "^0.5.4",
+        "eleventy-plugin-sass": "^1.1.1"
+    },
+    "license": "MIT"
+}

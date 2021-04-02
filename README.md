@@ -1,5 +1,1 @@
-# basdebruin.github.io
-
-## My public portfolio page
-
-Coded by me.
+# Bas' Website using 11ty

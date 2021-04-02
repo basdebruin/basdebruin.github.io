@@ -1,0 +1,24 @@
+include _includes/mixins/page-mixins.pug
+
+doctype html
+html
+    include _includes/layouts/head.pug
+    body
+        +contact-button
+        include _includes/layouts/contact.pug
+
+        main#swup.transition-main
+            +back
+
+            section#page-intro
+                h1= title
+                p=  discription
+
+                .tasks
+                    each task in tasks
+                        .task= task
+
+            article#page-content.container
+                | !{content}
+
+            include _includes/layouts/footer.pug

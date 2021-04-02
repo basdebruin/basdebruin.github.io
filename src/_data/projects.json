@@ -1,0 +1,22 @@
+[
+    {
+        "title": "WCAG Accessibility Statement Generator",
+        "tasks": ["Web Development", "Documentation"],
+        "link": "https://www.w3.org/WAI/planning/statements/generator/#create"
+    },
+    {
+        "title": "2d Sequence -- Creative Music App",
+        "tasks": ["Design", "Development"],
+        "link": "https://basdebruin.github.io/2d-sequence/"
+    },
+    {
+        "title": "Onboarding Animation for Stichting Accessibility",
+        "tasks": ["Visual Design", "Animation", "Audio Design"],
+        "link": "https://vimeo.com/498908072"
+    },
+    {
+        "title": "Code generated visuals",
+        "tasks": ["Development", "Art"],
+        "link": "https://instagram.com/bas.de.bruin"
+    }
+]

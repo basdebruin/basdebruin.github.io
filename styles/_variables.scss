@@ -1,0 +1,83 @@
+// VARIABLES
+// for portfolio site
+// author: Bas de Bruin
+
+// colors
+$dark: #18191A;
+$light: #efefef;
+
+$accent: #FF993C; //e08610
+
+$grey-opacity: .7;
+$grey2-opacity: .5;
+$button-grey-opacity: .1;
+
+// font
+$fontFamily:         'Inter', -apple-system, 'Roboto', sans-serif;
+$fontFamilyHeadings: 'Space Grotesk', $fontFamily;
+$fontSize:           16px;
+$fontSizeSmall:      14px;
+$fontSizeMedium:     2rem;
+$fontSizeLarge:      3rem;
+
+// breakpoints
+$breakSmall: 70rem;
+$breakLarge: 80rem;
+
+// padding
+$padding-big: 2rem; //1.3rem
+$padding-small: 1rem;
+$heroPadding: 8rem;
+$buttonPadding: 4px 8px 4px 8px;
+
+//radius
+$borderRadiusSmall: 4px;
+
+// curves
+$bezierFast: cubic-bezier(.14, .52, .25, .99);
+$transition: all .2s $bezierFast;
+
+:root {
+    color-scheme: light dark;
+
+    font-size: $fontSize;
+    --bg: #{$dark};
+    --fg: #{$light};
+
+    --grey1: #{rgba($light, $grey-opacity)};
+    --grey2: #{rgba($light, $grey2-opacity)};
+
+    --button-bg: #{mix($dark, $light, 90%)};
+    --button-bg-accent: #{mix($dark, $accent, 90%)};
+
+    --padding: #{$padding-big};
+
+    // dark mode is default
+    @media (prefers-color-scheme: light) {
+        --bg: #{$light};
+        --fg: #{$dark};
+
+        --grey1: #{rgba($dark, $grey-opacity)};
+        --grey2: #{rgba($dark, $grey2-opacity)};
+
+        --button-bg: #{mix($light, $dark, 90%)};
+        --button-bg-accent: #{mix($light, $accent, 90%)};
+    }
+
+    // mobile display
+    @media screen and (max-width: $breakLarge) {
+        --padding: #{$padding-small};
+    }
+}
+
+// Utility vars
+$bg: var(--bg);
+$fg: var(--fg);
+
+$grey:  var(--grey1);
+$grey2: var(--grey2);
+
+$buttonGrey: var(--button-bg);
+$buttonAccent: var(--button-bg-accent);
+
+$padding: var(--padding);
