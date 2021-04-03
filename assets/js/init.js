@@ -29,12 +29,12 @@ function init() {
     attachSounds();
     swup.on('contentReplaced', attachSounds);
 }
-
+ 
 // make sure height is actually 100vh
 function fixFullHeight() {
     const calcHeight = window.innerHeight;
     // apply
-    document.querySelectorAll('.full-height').forEach( function(elem) { elem.style.height = calcHeight } );
+    document.querySelectorAll('.full-height').forEach( function(elem) { elem.style.height = calcHeight + 'px' } );
 }
 
 // global sounds variable and setup function
