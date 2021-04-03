@@ -21,7 +21,7 @@ function init() {
     // fix vh
     fixFullHeight();
     swup.on('contentReplaced', fixFullHeight);
-    window.addEventListener('resize', fixFullHeight);
+    //window.addEventListener('resize', fixFullHeight);
 
     // create sounds
     setupSounds();
