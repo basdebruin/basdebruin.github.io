@@ -1,5 +1,6 @@
 // Initialiser
 // Author: Bas de Bruin
+//@ts-nocheck
 
 // trigger init()
 if (document.readyState === "complete" || document.readyState === "interactive")
