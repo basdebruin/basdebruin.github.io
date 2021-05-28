@@ -1,0 +1,12 @@
+---
+permalink: /_redirects
+eleventyExcludeFromCollections: true
+---
+
+# ignore each page
+{% for page in collections.all %}
+{{ page.url }} {{ page.url }}
+{% endfor %}
+
+# route to github if no page exists
+/* https://basdebruin.github.io/:splat
