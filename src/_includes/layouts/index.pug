@@ -1,11 +1,11 @@
-include _includes/mixins/page-mixins.pug
+include ../mixins/page-mixins.pug
 
 doctype html
 html(lang="en")
-    include _includes/layouts/head.pug
+    include head.pug
     body
         +contact-button
-        include _includes/layouts/contact.pug
+        include contact.pug
 
         +theme-control
         
@@ -13,4 +13,4 @@ html(lang="en")
             +logo
             | !{content}
         
-            include _includes/layouts/footer.pug
+            include footer.pug
