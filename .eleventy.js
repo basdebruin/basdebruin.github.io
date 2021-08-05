@@ -10,7 +10,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(sass, {
         watch: ['styles/*.scss', '!node_modules/**']
     });
-    // add esbuild
+    // add esbuild for javascript bundling
     esbuild.build({
         entryPoints: {
             main: "./scripts/main.js"
@@ -20,8 +20,7 @@ module.exports = function (eleventyConfig) {
         bundle: true,
         minify: true,
         watch: true
-    });
-    eleventyConfig.addWatchTarget('scripts');
+    });]
 
     // sort portfolio by index
     eleventyConfig.addCollection("portfolioItems", function(collect) {
