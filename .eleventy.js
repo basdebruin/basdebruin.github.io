@@ -20,7 +20,7 @@ module.exports = function (eleventyConfig) {
         bundle: true,
         minify: true,
         watch: true
-    });]
+    });
 
     // sort portfolio by index
     eleventyConfig.addCollection("portfolioItems", function(collect) {
