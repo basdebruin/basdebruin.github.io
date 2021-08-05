@@ -9,7 +9,7 @@ else
     document.addEventListener("DOMContentLoaded", init);
 
 function init() {
-    console.log('init');
+    console.log('getting ready...');
     // swup
     const swup = new Swup({
         //@ts-ignore

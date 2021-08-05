@@ -11,6 +11,7 @@
         "@jamshop/eleventy-plugin-esbuild": "^1.0.2",
         "@swup/scroll-plugin": "^1.1.0",
         "eleventy-plugin-sass": "^1.1.1",
+        "esbuild": "^0.12.18",
         "howler": "^2.2.3",
         "swup": "^2.0.14"
     },

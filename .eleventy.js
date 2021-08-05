@@ -1,6 +1,6 @@
 // settings
 const sass = require("eleventy-plugin-sass");
-const esbuild = require("@jamshop/eleventy-plugin-esbuild");
+const esbuild = require("esbuild");
 
 module.exports = function (eleventyConfig) {
 
@@ -11,15 +11,17 @@ module.exports = function (eleventyConfig) {
         watch: ['styles/*.scss', '!node_modules/**']
     });
     // add esbuild
-    eleventyConfig.addPlugin(esbuild, {
+    esbuild.build({
         entryPoints: {
-            main: "scripts/main.js"
+            main: "./scripts/main.js"
         },
-        output: "_site/js",
-        esbuild: {
-            target: ['es2016', 'safari11']
-        }
-    })
+        outdir: "./_site/js",
+        target: ['es2016', 'safari11'],
+        bundle: true,
+        minify: true,
+        watch: true
+    });
+    eleventyConfig.addWatchTarget('scripts');
 
     // sort portfolio by index
     eleventyConfig.addCollection("portfolioItems", function(collect) {
