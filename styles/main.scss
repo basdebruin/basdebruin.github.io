@@ -221,24 +221,6 @@ header {
     }
 }
 
-// THEME CONTROL
-#theme-control {
-    @extend .button;
-
-    display: none;
-
-    position: fixed;
-    bottom: $padding; right: $padding;
-
-    padding: 0.5rem;
-
-    > * {
-        background: red;
-    }
-
-    z-index: 800;
-}
-
 // CONTACT
 #contact {
     position: fixed;
