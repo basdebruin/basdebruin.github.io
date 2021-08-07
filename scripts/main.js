@@ -9,7 +9,7 @@ else
     document.addEventListener("DOMContentLoaded", init);
 
 function init() {
-    console.log('getting ready...');
+    console.log("%cHey, there!", "color: yellow; font-size: 2rem; font-family: Space Grotesk; line-height: 2");
     // swup
     const swup = new Swup({
         //@ts-ignore

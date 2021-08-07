@@ -10,6 +10,9 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(sass, {
         watch: ['styles/*.scss', '!node_modules/**']
     });
+
+    console.log('Enviroment: ', process.env.NODE_ENV);
+
     // add esbuild for javascript bundling
     esbuild.build({
         entryPoints: {
@@ -19,7 +22,7 @@ module.exports = function (eleventyConfig) {
         target: ['es2016', 'safari11'],
         bundle: true,
         minify: true,
-        watch: true
+        watch: process.env.NODE_ENV == 'development'
     });
 
     // sort portfolio by index
