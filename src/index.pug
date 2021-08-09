@@ -15,7 +15,7 @@ section#intro.full-height
 //-- const slug = str => String(str).toLowerCase().split(' ').join('-');
 section#work.container
     each item, index in collections.portfolioItems
-        a(href=item.url data-sound="click-down").portfolio-item
+        a(href=item.url data-sound="click").portfolio-item
             img(src='/assets/images/' + item.data.image alt='Image for ' + item.data.title)
             .content
                 h2= item.data.title
