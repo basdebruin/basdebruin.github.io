@@ -10,37 +10,63 @@ tasks: ['Concept', 'Visual Design', 'UX', 'Audio Design', 'Web Development']
 image: acc_game_ill.svg
 ---
 
-.columns
-    .card.cover
-        img(src="/assets/images/acc_game_levels.jpg" alt="Screenshot from Accessibility Game: showing levels")
-    .card(style="background: white")
-        img(src="/assets/images/acc_game_colorblind.svg" alt="Illustration from Accessibility Game: Colorblind")
-
+// Problem
 .columns
     h2 The Problem
     p.
-        During an intership at Stichting Accessibility I was tasked to create a game with the goal of creating <em>awareness</em> and understanding of how people with disabilities use the internet. Along with tips for designers and developers about what they can do to make life easier for people with these disabilities.
-    
+        There is a large of group of disabled people that can't use their devices like the rest of us: visually-impaired people can't see the screen so they have to rely on screenreaders, deaf people are lost when a video doesn't have subtitles and even reading the text on a page can be difficult for people with dislexia or ADHD. Things that are quick and easy for most can become massive hurdles for people with disabilities.
+// Solution
 .columns
-    h2 The Client & the Users
-    div 
-        p.
-            <em>Stichting Accessibility</em>, the client, is an organisation with a mission to make the internet a more accessible place; They conduct accessibility audits, give workshops and initiate projects to increase awareness and knowledge about the subject.
-        p.
-            The <em>target user group</em> for the game is designers and developers who want to know more about accessibility. The game will be distributed online and will be used as part of the workshops offered by Stichting Accessibility.
-
-.card.cover
-    img(src="/assets/images/acc_game_tunnelvision.png" alt="Screenshot from Accessibility Game: Tunnel Vision Level")
-
-.columns
-    h2 The Solution
+    h2 Our Solution
     div
         p.
-            Over the course of 3 months I created a web-game that takes the user through a series of levels that simulate having certain disabilities on the internet. One level, for example, simulates tunnel vision by hiding a large part of the screen while another level simulates being hard of hearing by manipulating the audio in such a way that people have to pay very close attention to the video to understand what is being said.
+            There are ways designers and developers can accomodate for people with disabilities but a lot of designers or developers don't know about accessibility or see the benefit of it. 
         p.
-            I made visual illustrations and sound effects to make it more appealing and to make it feel more like a game.
-
-
+            With the <b>Accessibility Game</b>, Stichting Accessibility and I set out to raise awareness, spread knowledge and inform people about the field of accessibility, how important it is and how they can make a difference.
+// Game images
+.columns
+    .card.cover
+        img(src="/assets/images/acc_game_levels.jpg" alt="Screenshot showing levels")
+    .card(style="background: white")
+        img(src="/assets/images/acc_game_colorblind.svg" alt="Illustration of the Colorblind level")
+// Client & Users
+.columns
+    h2 Client &amp; Users
+    div
+        p.
+            <b>Stichting Accessibility</b> is an organisation with a mission to make the internet a more accessible place; They conduct accessibility audits, give workshops and initiate projects to increase awareness and knowledge about the subject.
+        p.
+            In late 2020, as part of an internship, I was tasked with designing and developing the Accessibility Game. A web-game that takes the player through a series of levels that simulate how people with disabilities experience the web.
+        p.
+            The game will eventually be used during accessibility workshops and will be spread online through social media.
+// design process diagram
+.card.cover
+    img(src="/assets/images/acc_game_tunnelvision.png" alt="Screenshot from Accessibility Game: Tunnel Vision Level")
+// Design Process
+.columns
+    h2 Design Process
+    div 
+        p.
+            The design process consisted of constant <b>prototyping</b> and <b>iterating</b>, at every step of the way I consulted and tested with experience experts to get a grasp on how they experience the web and how I could emulate their struggles as accurately as possible.
+        p.
+            Early versions of the game were sent out to experience experts and players along with questionnaires to get feedback on as many parts of the design as possible.
+// decorative image
+.card
+    img(src="/assets/images/acc_game_design_process.svg" 
+        alt="Design Process Diagram, top to bottom:  Conceptualistation, Mockup, Early Prototype, Polished Product. Arrows point for later stages to earlier stages")
+// Design Decisions
+.columns
+    h2 Design Decisions
+    div
+        p.
+            Designing the game was a balance between realism and fun, I wanted to accurately depict the struggles of disabled people on the web but at the same time have it play like a game. We decided to implement 6 different disabilities, ranging from color-blindness to full blindness to ADHD.
+        p.
+            In order to encourage <b>replayability</b> of levels, each level gives the player a score based on how they did and how fast they completed the level. After this the player is taken to a screen that explains more about the disability, what the consequenses are for people that have it and what designers and/or developers can do to improve the situation.
+        p.
+            To make the game feel more like a game I made a bunch of playfull <b>illustrations</b> and added a wealth of <b>sound-effects</b>, especially to the ADHD level, which was designed to be as distracting as possible.
+        p.
+            I made the visuals in Figma, loosly based on the visual brand of Stichting Accessibility and made the sound-effects using Ableton Live with a combination of public domain and synthesized sounds.
+// tools used
 .list-container
     h2 Tools used
     .columns
@@ -56,16 +82,7 @@ image: acc_game_ill.svg
         .card.center 
             h3 Ableton Live
             h4 Audio Design
-
-.columns
-    h2 Testing with Experts
-    p.
-        Over the course of the design proces I sent out versions of the game along with questionnaires to get as much feedback as possible. I also talked to experience experts with a disability to learn how they experience the world and the internet. The design of the levels was tweaked and based on all the feedback I got, making the game a more fun and more representative product in the end.
-
-
-.card.cover
-    img(src="/assets/images/acc_game_slechthorend.png" alt="Screenshot from Accessibility Game: Hard of Hearing level tips and tricks")
-
+// link to game
 .highlight
     h2 Try it live:
     a(href="https://accessibility-game.netlify.app" target="_blank").button.arrow-right Accessibility Game
