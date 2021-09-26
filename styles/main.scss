@@ -234,7 +234,7 @@ header {
     &.open { display: flex }
     align-items: center; justify-content: center;
 
-    background: $accent;
+    background: $accent-on-dark;
     color: $dark;
     p { opacity: 1; }
 

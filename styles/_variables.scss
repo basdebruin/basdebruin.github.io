@@ -3,10 +3,11 @@
 // author: Bas de Bruin
 
 // colors
-$dark: #18191A;
-$light: #f4f4f4;
+$dark: #1C1F23; //#18191A
+$light: #f4f4f5; // #f4f4f4
 
-$accent: #FF993C; //e08610
+$accent-on-dark: #FFA73B; //FF993C
+$accent-on-light: #DF791C;
 
 $grey-opacity: .7;
 $grey2-opacity: .5;
@@ -44,11 +45,13 @@ $transition: all .2s $bezierFast;
     --bg: #{$dark};
     --fg: #{$light};
 
+    --accent: #{$accent-on-dark};
+
     --grey1: #{rgba($light, $grey-opacity)};
     --grey2: #{rgba($light, $grey2-opacity)};
 
     --button-bg: #{mix($dark, $light, 90%)};
-    --button-bg-accent: #{mix($dark, $accent, 90%)};
+    --button-bg-accent: #{mix($dark, $accent-on-dark, 90%)};
 
     --padding: #{$padding-big};
 
@@ -57,11 +60,13 @@ $transition: all .2s $bezierFast;
         --bg: #{$light};
         --fg: #{$dark};
 
+        --accent: #{$accent-on-light};
+
         --grey1: #{rgba($dark, $grey-opacity)};
         --grey2: #{rgba($dark, $grey2-opacity)};
 
         --button-bg: #{mix($light, $dark, 90%)};
-        --button-bg-accent: #{mix($light, $accent, 90%)};
+        --button-bg-accent: #{mix($light, $accent-on-light, 90%)};
     }
 
     // mobile display
@@ -73,6 +78,7 @@ $transition: all .2s $bezierFast;
 // Utility vars
 $bg: var(--bg);
 $fg: var(--fg);
+$accent: var(--accent);
 
 $grey:  var(--grey1);
 $grey2: var(--grey2);
