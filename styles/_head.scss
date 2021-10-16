@@ -7,7 +7,7 @@ html, body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    min-height: -webkit-fill-available;
+   // min-height: -webkit-fill-available;
 }
 body {
     box-sizing: border-box;
@@ -44,32 +44,31 @@ main {
 h1, h2 {
     font-family: $fontFamilyHeadings;
     font-size: $fontSizeLarge;
-    font-weight: 550;
+    font-weight: normal;
+    letter-spacing: .02rem;
+    line-height: 1.5;
 }
 h2 {
     font-size: $fontSizeMedium;
-    font-weight: 500;
+    font-weight: normal;
 }
 h3, h4 {
-    font-size: $fontSizeSmall;
+    font-size: 1.2rem;
     font-weight: 500;
-    text-transform: uppercase;
-    color: $grey;
-    letter-spacing: 0.05rem;
-}
-h4 {
-    color: $grey2;
+    margin: 1rem 0 0 0;
+    letter-spacing: .03rem;
 }
 
 p {
     line-height: 1.5em;
-    letter-spacing: 0.025rem;
-    margin: 1rem 0;
+    letter-spacing: .05rem;
+    margin: .5rem 0;
     opacity: .8;
 }
 
 em, b {
     font-weight: 600;
+    letter-spacing: .01rem;
 }
 
 li {
@@ -82,6 +81,12 @@ a {
     color: $fg;
     text-decoration: none;
     cursor: pointer;
+    line-height: 1.4;
+}
+
+button {
+    all: unset;
+    cursor: pointer;
 }
 
 img {
@@ -93,34 +98,126 @@ img {
     z-index: 0;
 }
 
-button, .button {
+
+.button {
     display: inline-block;
     border: none;
-    background: $buttonGrey;
+    background: $primary;
     padding: $buttonPadding;
     border-radius: $borderRadiusSmall;
 
-    @extend h3;
     font-family: $fontFamily;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.5;
     color: $fg;
 
     transition: $transition;
     &:hover {
-        background: $buttonAccent;
-        color: $accent;
+        background: $secondary;
+        color: $bg;
     }
 
     &:active {
         transform: scale(0.95);
     }
+
+    &.secondary {
+        background: $secondary;
+        color: $bg;
+    }
+}
+.arrow-right {
+    position: relative;
+    background: $primary;
+
+    margin-right: 1em;
+    z-index: 100;
+
+    &::after {
+        content: ' ';
+        position: absolute;
+        right: -0.55em;
+        top: 0.25em;
+        display: block;
+        width:  1.7em;
+        height: 1.7em;
+        background: $primary;
+
+        border-radius: $borderRadiusSmall;
+
+        transform: rotate(45deg);
+        z-index: -1;
+
+        transition: $transition;
+    }
+
+    &:hover::after {
+        background: $secondary;
+    }
+}
+.arrow-left {
+    @extend .arrow-right;
+
+    margin: 0;
+    margin-left: 1rem;
+
+    &::after {
+        right: unset;
+        left: -0.55em;
+    }
+    &.secondary::after {
+        background-color: $secondary;
+    }
+}
+
+.arrow-down {
+    position: relative;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    z-index: 100;
+    &::after {
+        content: ' ';
+        position: absolute;
+        left: calc(50% - 0.65rem); bottom: -0.5rem;
+        display: block;
+        width: 1.3em;
+        height: 1.3em;
+        background: $buttonGrey;
+
+        border-radius: $borderRadiusSmall;
+
+        transform: rotate(45deg);
+        z-index: -1;
+
+        transition: $transition;
+    }
+
+    &:hover::after {
+        background: $buttonAccent;
+    }
+}
+
+.link {
+    display: inline-block;
+    font-weight: bold;
+    opacity: 1;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+
+    transition: $transition;
+    &:hover {
+        opacity: .7;
+        text-decoration: none;
+    }
 }
 
 // selection
-p, h1, h2, h3, h4, a { &::selection {
+*::selection {
     color: $bg;
     background: $fg;
     opacity: 1;
-}}
+}
 
 .padding {
     padding: $padding;

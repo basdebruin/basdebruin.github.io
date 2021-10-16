@@ -1,0 +1,127 @@
+// HEAD general styles
+// for portfolio site
+// author: Bas de Bruin
+
+html, body {
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    min-height: -webkit-fill-available;
+}
+body {
+    box-sizing: border-box;
+    * { box-sizing: border-box; }
+    width: 100%;
+
+    // style
+    background: $dark;
+    background: $bg;
+    color: $light;
+    color: $fg;
+
+    //fonts
+    font-family: $fontFamily;
+}
+
+main {
+    position: relative;
+    display: block;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: unset;
+    height: auto;
+
+    // padding for footer
+    padding-bottom: 8rem;
+    @media (max-width: $breakLarge) {
+        padding-bottom: 12rem;
+    }
+}
+
+
+// Headings
+h1, h2 {
+    font-family: $fontFamilyHeadings;
+    font-size: $fontSizeLarge;
+    font-weight: 550;
+}
+h2 {
+    font-size: $fontSizeMedium;
+    font-weight: 500;
+}
+h3, h4 {
+    font-size: $fontSizeSmall;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: $grey;
+    letter-spacing: 0.05rem;
+}
+h4 {
+    color: $grey2;
+}
+
+p {
+    line-height: 1.5em;
+    letter-spacing: 0.025rem;
+    margin: 1rem 0;
+    opacity: .8;
+}
+
+em, b {
+    font-weight: 600;
+}
+
+li {
+    @extend p;
+    margin:  0;
+}
+
+a {
+    display: block;
+    color: $fg;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    width: 100%;
+    max-height: 90vh;
+    object-fit: cover;
+
+    z-index: 0;
+}
+
+button, .button {
+    display: inline-block;
+    border: none;
+    background: $buttonGrey;
+    padding: $buttonPadding;
+    border-radius: $borderRadiusSmall;
+
+    @extend h3;
+    font-family: $fontFamily;
+    color: $fg;
+
+    transition: $transition;
+    &:hover {
+        background: $buttonAccent;
+        color: $accent;
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+}
+
+// selection
+p, h1, h2, h3, h4, a { &::selection {
+    color: $bg;
+    background: $fg;
+    opacity: 1;
+}}
+
+.padding {
+    padding: $padding;
+}

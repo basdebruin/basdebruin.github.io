@@ -1,0 +1,109 @@
+// colors
+$dark: #1C1F23; //#18191A
+$light: #f4f4f5; // #f4f4f5
+
+$theme-light: (
+    "bg": #F1F2F4,
+    "fg": #1D252B,
+
+    "primary": #FFC569,
+    "secondary": #6C8DEB,
+    "raised": white,
+
+    "contact-page": #FFC569,
+);
+$theme-light-classic: (
+    "bg": #f4f4f5,
+    "fg": #1C1F23,
+
+    "primary": #FFD451,
+    "secondary": #2A7CCC,
+    "raised": white,
+
+    "contact-page": #FFA73B,
+);
+
+$theme-dark: (
+    "bg": #1C1F23,
+    "fg": #f4f4f5,
+
+    "primary": #2A7CCC,
+    "secondary": #FFD451,
+    "raised": mix($light, $dark, 5%),
+
+    "contact-page": #FFA73B,
+);
+
+$theme-blue: (
+    "bg": #2A7CCC,
+    "fg": #f4f4f5,
+
+    "primary": #1C1F23,
+    "secondary": #FFD451,
+    "raised": mix($light, #2A7CCC, 5%),
+
+    "contact-page": #FFA73B,
+);
+
+$theme-yellow: (
+    "bg": #FFD451,
+    "fg": #1C1F23,
+
+    "primary": #2A7CCC,
+    "secondary": #f4f4f5,
+    "raised": mix($light, #f4f4f5, 5%),
+
+    "contact-page": #2A7CCC,
+);
+
+$theme-green: (
+    "bg": #004643,
+    "fg": #fffffe,
+
+    "primary": #f9bc60,
+    "secondary": #abd1c6,
+    "raised": #001e1d,
+
+    "contact-page": #e16162,
+);
+
+$theme-dark-pink: (
+    "bg": #232946,
+    "fg": #fffffe,
+
+    "primary": #eebbc3,
+    "secondary": #fffffe,
+    "raised": #121629,
+
+    "contact-page": #b8c1ec,
+);
+
+$theme-contrast: (
+    "bg": black,
+    "fg": white,
+
+    "primary": green,
+    "secondary": yellow,
+    "raised": mix(white, black, 10%),
+
+    "contact-page": white,
+);
+
+
+$theme-list: (
+    "light":    $theme-light,
+    "dark":     $theme-dark,
+    "blue":     $theme-blue,
+    "yellow":   $theme-yellow,
+    "green":    $theme-green,
+    "pink":     $theme-dark-pink,
+    "contrast": $theme-contrast
+);
+
+
+@mixin apply-theme($theme) {
+    @each $key, $color in $theme {
+        --#{$key}: #{$color};
+    }
+}
+

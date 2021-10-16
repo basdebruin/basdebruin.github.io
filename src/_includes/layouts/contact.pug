@@ -19,25 +19,39 @@ script.
     }
 
 #contact(aria-hidden="true")
-    button#contact-close-button(onclick="closeContact()" title="Close" data-sound="slide-right")
-        img(src="/assets/icons/close-icon.svg" alt="close icon")
-    
-    .columns
+    .content
+        button#contact-close-button(onclick="closeContact()" title="Close" data-sound="slide-right")
+            img(src="/assets/icons/close-icon.svg" alt="close icon")
+        
+        .big-text
+            p.
+                Let's get in contact!
+                <br>
+                Send me an #[a(href="mailto:bruin998@gmail.com") email] <br>
+                ...or check me out on #[a(href="https://www.instagram.com/bas.de.bruin/" target="_blank") instagram].
 
-        .about
-            #contact-bas
-                include ../../../assets/icons/bas-typelogo-filled.svg
-            p.
-                I combine interactive-, audio-, visual- and experience design with programming and technology. <br>
-                Hit me up! -> I'm always open to learn new things.        
-        .contact-info
-            #contact-info
-                include ../../../assets/icons/contact-typelogo-filled.svg
-            p.
-                Shoot me an email or check out my instagram, where I post experiments and current projects:
             
-            +icon-button('email', 'mailto:bruin998@gmail.com')
-                include ../../../assets/icons/icon-email.svg
-            +icon-button('instagram', 'https://www.instagram.com/bas.de.bruin')
-                include ../../../assets/icons/icon-insta.svg
+
+//- #contact(aria-hidden="true")
+//-     button#contact-close-button(onclick="closeContact()" title="Close" data-sound="slide-right")
+//-         img(src="/assets/icons/close-icon.svg" alt="close icon")
+    
+//-     .columns
+
+//-         .about
+//-             #contact-bas
+//-                 include ../../../assets/icons/bas-typelogo-filled.svg
+//-             p.
+//-                 I combine interactive-, audio-, visual- and experience design with programming and technology. <br>
+//-                 Hit me up! -> I'm always open to learn new things.        
+//-         .contact-info
+//-             #contact-info
+//-                 include ../../../assets/icons/contact-typelogo-filled.svg
+//-             p.
+//-                 Shoot me an email or check out my instagram, where I post experiments and current projects:
+            
+//-             +icon-button('email', 'mailto:bruin998@gmail.com')
+//-                 include ../../../assets/icons/icon-email.svg
+//-             +icon-button('instagram', 'https://www.instagram.com/bas.de.bruin')
+//-                 include ../../../assets/icons/icon-insta.svg
             

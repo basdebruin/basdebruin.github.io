@@ -5,12 +5,11 @@ mixin logo
         include ../../../assets/icons/bas-typelogo.svg
 
 mixin back
-    a#back(href="/" title="Back to Home" data-sound="click-down")
-        include ../../../assets/icons/back-typelogo.svg
+    a#back(href="/" title="Back to Home" data-sound="click-down").button.secondary.arrow-left Back
 
 mixin contact-button
-    header
-    button#contact-button.arrow-right(onclick="openContact()" data-sound="slide-left") contact me
+    //- header
+    button#contact-button.button.arrow-right(onclick="openContact()" data-sound="slide-left") Contact
 
 
 mixin intro-text

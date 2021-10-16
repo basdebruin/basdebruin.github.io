@@ -2,24 +2,19 @@
 // for portfolio site
 // author: Bas de Bruin
 
-// colors
-$dark: #1C1F23; //#18191A
-$light: #f4f4f5; // #f4f4f4
-
-$accent-on-dark: #FFA73B; //FF993C
-$accent-on-light: #DF791C;
+@import 'themes';
 
 $grey-opacity: .7;
 $grey2-opacity: .5;
 $button-grey-opacity: .1;
 
 // font
-$fontFamily:         'Inter', -apple-system, 'Roboto', sans-serif;
-$fontFamilyHeadings: 'Space Grotesk', $fontFamily;
+$fontFamily:         'Manrope', -apple-system, 'Roboto', sans-serif;
+$fontFamilyHeadings: $fontFamily;
 $fontSize:           16px;
 $fontSizeSmall:      14px;
 $fontSizeMedium:     2rem;
-$fontSizeLarge:      3rem;
+$fontSizeLarge:      3.4rem;
 
 // breakpoints
 $breakSmall: 70rem;
@@ -29,49 +24,41 @@ $breakLarge: 80rem;
 $padding-big: 2rem; //1.3rem
 $padding-small: 1rem;
 $heroPadding: 8rem;
-$buttonPadding: 4px 8px 4px 8px;
+$buttonPadding: .5rem 1rem;
 
 //radius
-$borderRadiusSmall: 4px;
+$borderRadiusSmall: .5rem;
 
 // curves
 $bezierFast: cubic-bezier(.14, .52, .25, .99);
-$transition: all .2s $bezierFast;
+$transition: all .15s $bezierFast;
 
 :root {
     color-scheme: light dark;
 
     font-size: $fontSize;
-    --bg: #{$dark};
-    --fg: #{$light};
 
-    --accent: #{$accent-on-dark};
-
-    --grey1: #{rgba($light, $grey-opacity)};
-    --grey2: #{rgba($light, $grey2-opacity)};
-
-    --button-bg: #{mix($dark, $light, 90%)};
-    --button-bg-accent: #{mix($dark, $accent-on-dark, 90%)};
+    @include apply-theme($theme-light);
 
     --padding: #{$padding-big};
 
-    // dark mode is default
-    @media (prefers-color-scheme: light) {
-        --bg: #{$light};
-        --fg: #{$dark};
-
-        --accent: #{$accent-on-light};
-
-        --grey1: #{rgba($dark, $grey-opacity)};
-        --grey2: #{rgba($dark, $grey2-opacity)};
-
-        --button-bg: #{mix($light, $dark, 90%)};
-        --button-bg-accent: #{mix($light, $accent-on-light, 90%)};
+    // set dark mode if user preference
+    @media (prefers-color-scheme: dark) {
+        @include apply-theme($theme-dark);
     }
 
-    // mobile display
+    // change padding on mobile
     @media screen and (max-width: $breakLarge) {
         --padding: #{$padding-small};
+    }
+}
+
+// apply themes based on classes on <html>
+@each $name, $theme in $theme-list {
+    html {
+        &.#{$name} {
+            @include apply-theme($theme);
+        }
     }
 }
 
@@ -79,6 +66,11 @@ $transition: all .2s $bezierFast;
 $bg: var(--bg);
 $fg: var(--fg);
 $accent: var(--accent);
+
+$primary: var(--primary);
+$secondary: var(--secondary);
+$raised: var(--raised);
+$contact-page-color: var(--contact-page);
 
 $grey:  var(--grey1);
 $grey2: var(--grey2);

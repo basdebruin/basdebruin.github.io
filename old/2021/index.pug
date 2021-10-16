@@ -1,0 +1,40 @@
+---
+layout: layouts/index
+title: Bas de Bruin
+---
+include _includes/mixins/page-mixins.pug
+
+// Intro text
+section#intro.full-height
+    +intro-text
+    +projects-button
+
+
+// PORTFOLIO
+//- quick slugify algorithm for id's
+//-- const slug = str => String(str).toLowerCase().split(' ').join('-');
+section#work.container
+    each item, index in collections.portfolioItems
+        a(href=item.url data-sound="click").portfolio-item
+            img(src='/assets/images/' + item.data.image alt='Image for ' + item.data.title)
+            .content
+                h2= item.data.title
+                p= item.data.discription
+                .tasks
+                    each task in item.data.tasks
+                        .task= task
+
+.container.center
+    h3 More projects
+
+section#extra-work.container
+    each item in projects
+        a(href=item.link data-sound="click" target="_blank").portfolio-item-small
+            div
+                h3= item.title
+            if item.tasks
+                .tasks
+                    each task in item.tasks
+                        .task= task
+            span
+                include ../assets/icons/arrow_up_right.svg

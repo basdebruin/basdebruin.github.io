@@ -24,12 +24,11 @@
 footer.container
     //- INDEX
     if layout == 'layouts/index'
-        .columns.center
-            div
-                p.
-                    Want to see more? Check out my instagram &rarr;
-            div
-                a.button.arrow-right(href="https://www.instagram.com/bas.de.bruin" data-sound="click") @bas.de.bruin
+        .center: p.
+            This site is made my Bas using #[a(href="https://www.11ty.dev").link 11ty] and #[a(href="https://esbuild.github.io").link esbuild]. Hosted on #[a(href="https://www.netlify.com").link Netlify]. 
+            <br>
+            Check out the #[a(href="https://github.com/basdebruin/basdebruin.github.io").link code] if you want!
+    
     //- PAGE
     else
         .center: p.

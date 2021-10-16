@@ -29,6 +29,8 @@ function init() {
     // attach sounds
     attachSounds();
     swup.on('contentReplaced', attachSounds);
+
+    //setTheme('contrast');
 }
 
 // make sure height is actually 100vh
@@ -37,4 +39,11 @@ function fixFullHeight() {
     // apply
     //@ts-ignore
     document.querySelectorAll('.full-height').forEach( function(elem) { elem.style.height = calcHeight + 'px' } );
+}
+
+/**
+ * @param {string} theme
+ */
+function setTheme(theme) {
+    document.documentElement.className = theme;
 }

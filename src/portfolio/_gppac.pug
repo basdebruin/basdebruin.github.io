@@ -1,0 +1,55 @@
+---
+index: 2
+layout: layouts/page.pug
+title: GPPAC Annual Report
+client: GPPAC
+discription: A simple 3 page microsite to show the work of peace organisation GPPAC
+tasks: ['Web Development', 'UX']
+
+image: gppac_map.png
+---
+
+.card.no-padding.cover(style="height: 40rem")
+    img(src="/assets/images/gppac_map.jpg" alt="gppac website screenshot")
+
+.columns
+    h2 The Problem
+    p.
+        Each year, peace organisation GPPAC creates an annual report to recap on the things they did last year and how they spent their money. This used to be a simple pdf but this year we wanted to do something special, we decided to make a standalone three-page microsite that would highlight the <em>people, stories and data</em> of GPPAC's 2019.
+
+.columns
+    .card.cover.no-padding
+        img(src="/assets/images/gppac_logo.jpg" alt="gppac website screenshot")
+    .card.cover.no-padding
+        img(src="/assets/images/gppac_hero.jpg" alt="gppac website screenshot")
+
+.columns
+    h2 Visualising stories
+    p.
+        In assignment of design studio De Zaak P. I developed a 3 page site for peace organisation GPPAC. The site includes 100% custom styling, scroll animations and an interactive map showing all gppac related organisations across the world. The website was written in Pug with SCSS for styling and javascript for simple interactions.
+
+.list-container
+    h2 Tools used
+    .columns
+        .card.center
+            h3 PugJS
+            h4 Static site generation
+        .card.center
+            h3 AOS Library
+            h4 Scroll animations
+        .card.center
+            h3 Sketch
+            h4 Mockups and Asset creation
+        .card.center
+            h3 Photoshop
+            h4 Image optimization and cropping
+
+.columns
+    .card.cover.align-left
+        img(src="/assets/images/gppac_what_we_do.png" alt="GPPAC Website Screenshot: List of Cards")
+    .card.cover
+        img(src="/assets/images/gppac_quote.jpg" alt="GPPAC Website Screenshot: Quote by Gus from GPPAC")
+
+.highlight
+    h2 See it live:
+    a(href="https://annual-report2019.gppac.net" target="_blank").button.arrow-right GPPAC Annual Report

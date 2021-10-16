@@ -4,37 +4,75 @@ title: Bas de Bruin
 ---
 include _includes/mixins/page-mixins.pug
 
-// Intro text
-section#intro.full-height
-    +intro-text
-    +projects-button
+// INTRO TEXT
+section#intro
+    h1.
+        Hi! I'm 
+        <span> Bas,
+            <div> <img src="https://placekitten.com/400/400"> </div>
+        </span>
+        <br>
+        multidisciplinary designer from 
+        <span> Utrecht. 
+            <div>
+                <iframe
+                    width="100%"
+                    height="100%"
+                    style="border:0"
+                    loading="lazy"
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDi0J1DPsLI-Jq6RT6R2MBmntJytSaVQ3A&q=Utrecht,Netherlands">
+                </iframe>
+            </div>
+        </span>
+        I make stuff that 
+        <span> looks good
+            <div>
+                <i> &#127912;</i>
+                <p>
+                    I've been doing professional digital and print related graphic design work for about 5 years and I always make sure that the things I make look sleek and profesh!
+                </p>
+            </div>
+        </span>,
+        <span> sounds good
+             <div>
+                <i>&#128264;</i>
+                <p>
+                    I'm studying Music &amp; Technology at the HKU in Utrecht and have experience with music production, composition and recording.
+                </p>
+            </div>
+        </span>
+         and 
+        <span>actually works.
+             <div>
+                <i>&#128187;</i>
+                <p>
+                    Using my knowledge of User Experience Design and development I can make products that are polished and fully functional.
+                </p>
+            </div>
+        </span>
+        <br><br>
+        Let's get in 
+        <button onclick="openContact()" data-sound="slide-left"> contact
+        </button>
+        &rarr; 
+        <br>
+        But check out my 
+        <span> 
+         <a href="#work">projects</a>
+        </span>
+        first &darr;
 
 
-// PORTFOLIO
-//- quick slugify algorithm for id's
-//-- const slug = str => String(str).toLowerCase().split(' ').join('-');
-section#work.container
+
+// PORTFOLIO ITEMS
+section#work
     each item, index in collections.portfolioItems
-        a(href=item.url data-sound="click").portfolio-item
+        .portfolio-item
             img(src='/assets/images/' + item.data.image alt='Image for ' + item.data.title)
             .content
                 h2= item.data.title
                 p= item.data.discription
-                .tasks
-                    each task in item.data.tasks
-                        .task= task
-
-.container.center
-    h3 More projects
-
-section#extra-work.container
-    each item in projects
-        a(href=item.link data-sound="click" target="_blank").portfolio-item-small
-            div
-                h3= item.title
-            if item.tasks
-                .tasks
-                    each task in item.tasks
-                        .task= task
-            span
-                include ../assets/icons/arrow_up_right.svg
+                if item.data.link_to && item.data.link_text
+                    a(href=item.data.link_to target="_blank" data-sound="click").button.arrow-right=  item.data.link_text
+                else
+                    a(href=item.url data-sound="click").button.arrow-right= item.data.link_text || "Read more"

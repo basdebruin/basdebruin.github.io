@@ -38,6 +38,7 @@ main {
             width: 100%;
 
             &:first-child {
+                margin-top: .3rem;
                 margin-left: 0;
             }
             &:last-child {
@@ -99,6 +100,11 @@ header {
     position: fixed;
     top: $padding; left: $padding;
     z-index: 999;
+
+    transition: $transition;
+    &:active {
+        transform: scale(0.95);
+    }
 }
 
 #contact-button {
@@ -111,93 +117,107 @@ header {
 
 // HOME
 // -> INTRO
+
 #intro {
-    //margin-top: 2rem;
-    line-height: 1.2;
-    @media (min-width: $breakSmall) {
-        max-width: 66vw;
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    max-width: $breakSmall;
+    margin: calc(-1 * #{$padding}) auto;
+    height: 100vh;
+
+    text-align: center;
+
+    svg {
+        width: 100%; height: auto;
     }
-    // small text on mobile
-    @media (max-width: 700px) {
-        h1 {
-            font-size: 2rem;
-        }
+
+    .intro-text-small { display: none; }
+    .intro-text-large { display: block }
+
+    a.button {
+        position: absolute;
+        bottom: $padding;
+        left: calc(50% - 3rem);
+
+        // add bounce animation
+        animation: bounce 5s infinite linear;
     }
 
-    span, a, button {
-        position: relative;
-        display: inline-block;
-
-        font-size: inherit;
-
-        // yellow hightlight
-        &::after {
-            display: block;
-            position: absolute;
-            content: '';
-            top: 7%; left: -.75rem;
-            width: 100%; height: 90%;
-            padding: 0 .75rem;
-            background: $primary;
-            border-radius: .5rem;
-            z-index: -10;
-            @media (max-width: $breakSmall) {
-                padding: 0 .5rem;
-                left: -.5rem;
-            }
-        }
-        &:hover::after {
-            opacity: .7;
-        }
-
-        > div {
-            display: none;
-            transform: scale(.8);
-            transition: $transition;
-        }
-
-
-        // hover overlay
-        @media (min-width: $breakSmall) {
-            &:hover > div {
-                display: flex;
-                position: absolute;
-                top: -2rem; left: -2rem;
-                width: 25rem; height: 25rem;
-                flex-flow: column nowrap;
-                justify-content: center;
-                text-align: center;
-
-                border-radius: 1rem;
-                overflow: hidden;
-
-                background: $raised;
-                opacity: .98;
-                border: solid .5rem $raised;
-                transform: scale(1);
-
-                font-size: initial;
-
-                > i {
-                    font-size: 3rem;
-                }
-                > p {
-                    padding: 2rem;
-                    margin: 0;
-                    font-size: 1.5rem;
-                    line-height: 1.5;
-                }
-
-                z-index: 999;
-            }
-        }
+    @media (max-width: 50rem) {
+        .intro-text-small { display: block; }
+        .intro-text-large { display: none }
     }
 }
 
-.big-text {
-    @extend #intro;
-    > * {
-        @extend h1;
+// BUTTONS
+
+.arrow-right {
+    position: relative;
+    background: $buttonGrey;
+
+    margin-right: 1em;
+    z-index: 100;
+
+    &::after {
+        content: ' ';
+        position: absolute;
+        right: -0.55em;
+        top: 0.25em;
+        display: block;
+        width:  1.3em;
+        height: 1.3em;
+        background: $buttonGrey;
+
+        border-radius: $borderRadiusSmall;
+
+        transform: rotate(45deg);
+        z-index: -1;
+
+        transition: $transition;
+    }
+
+    &:hover::after {
+        background: $buttonAccent;
+    }
+}
+.arrow-left {
+    @extend .arrow-right;
+
+    &::after {
+        right: unset;
+        left: -0.55em;
+    }
+}
+
+.arrow-down {
+    position: relative;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    z-index: 100;
+    &::after {
+        content: ' ';
+        position: absolute;
+        left: calc(50% - 0.65rem); bottom: -0.5rem;
+        display: block;
+        width: 1.3em;
+        height: 1.3em;
+        background: $buttonGrey;
+
+        border-radius: $borderRadiusSmall;
+
+        transform: rotate(45deg);
+        z-index: -1;
+
+        transition: $transition;
+    }
+
+    &:hover::after {
+        background: $buttonAccent;
     }
 }
 
@@ -214,71 +234,99 @@ header {
     &.open { display: flex }
     align-items: center; justify-content: center;
 
-    transition: background 1s $bezierFast;
-    background: transparent;
-    &.open { background: rgba($light, .8); }
-    color: $bg;
+    background: $accent-on-dark;
+    color: $dark;
     p { opacity: 1; }
 
-    
+    transition: transform 1s $bezierFast;
+    transform: translateX(100vw);
+    &.open { transform: translateX(0); }
 
-    .content {
-        transform: translateX(100vw);
-        transition: transform 1s $bezierFast;
+    box-shadow: none;
+    &.open { box-shadow: 0px 0px 4rem rgba($dark, .7); }
+
+    .columns {
+        position: static;
+        max-width: $breakSmall;
+        align-items: flex-start;
     }
-    &.open .content { transform: translateX(0); }
 
-    //box-shadow: none;
-    //&.open { box-shadow: 0px 0px 4rem rgba($dark, .7); }
+    @media (max-width: $breakSmall) {
+        .columns {
+            overflow-y: scroll;
+            overflow-x: hidden;
+            padding: 4rem $padding;
+            height: 100%;
+        }
+        padding: 0;
+        padding-top: 3rem;
+    }
 
-    // content
-    .content {
+    .about {
+        margin-bottom: 5rem;
+    }
+
+    #contact-bas, #contact-info {
         position: relative;
-        width: 100%;
-        height: 100%;
-        max-width: 60rem;
-        max-height: 40rem;
-        border-radius: 2rem;
+        transform: scale(2);
+        transform-origin: left;
 
-        padding: 2rem;
-
-        background: $fg;
-
-        // items in content
-        span, a, button {
-            color: $bg;
-            &::after {
-                background: $secondary;
-            }
-        }
-
-        #contact-close-button {
-            position: absolute;
-            top: $padding; right: $padding;
-            z-index: 100000;
-    
-            display: flex; 
-            align-items: center; justify-content: center;
-            text-align: center;
-    
-            color: black;
-            background: $light;
-    
-            width: 2.4rem; height: 2.4rem;
-            border-radius: 1.2rem;
-    
-            img {
-                width: auto; height: auto;
-            }
-    
-            transition: $transition;
-            &:hover {
-                box-shadow: 0px 0px 0px 4px $dark;
-            }
-        }
+        margin-bottom: 3rem;
     }
 
+    %small-text {
+        @extend h3;
+        font-size: 0.8rem * 0.5;
+        letter-spacing: 0.04rem;
+        color: rgba($dark, .7);
+        position: absolute;
+    }
 
+    #contact-bas::before {
+        content: 'about';
+        @extend %small-text;
+
+        top: -0.25rem; left: 0.95rem;
+    }
+
+    #contact-info::before {
+        content: 'Go ahead,';
+        @extend %small-text;
+
+        top: -0.3rem; left: 0.3rem;
+    }
+    #contact-info::after {
+        content: 'me!';
+        @extend %small-text;
+
+        bottom: -0.4rem; left: 5.1rem;
+        text-align: right;
+    }
+
+    #contact-close-button {
+        position: fixed;
+        top: $padding; right: $padding;
+        z-index: 100000;
+
+        display: flex; 
+        align-items: center; justify-content: center;
+        text-align: center;
+
+        color: black;
+        background: $light;
+
+        width: 2.4rem; height: 2.4rem;
+        border-radius: 1.2rem;
+
+        img {
+            width: auto; height: auto;
+        }
+
+        transition: $transition;
+        &:hover {
+            box-shadow: 0px 0px 0px 4px $dark;
+        }
+    }
 }
 
 .icon-button {
@@ -340,69 +388,104 @@ header {
 #work {
     padding: 0;
     padding-top: 6rem;
+    margin-bottom: 6rem;
+
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    
+    max-width: $breakLarge;
+
+    @media (min-width: $breakSmall) {
+        > * {
+            width: calc(50% - #{$padding-small});
+            &:nth-child(even) {
+                margin-left: $padding;
+                transform: translateY(4rem);
+            }
+        }
+    }
 }
 
 .portfolio-item {
     display: block;
-    background: $raised;
-    width: 100%;
-    @media (min-width: $breakSmall) {
-        max-height: 35rem;
-    }    
 
-    margin-bottom: 2rem;
+    overflow: hidden;
+
+    background: rgba($light, .05);
+    @media (prefers-color-scheme: light) { background: rgba(255,255,255, .5); }
+    &.page { background: none }
+    border: solid 2px transparent;
+
+    margin: 5vw 0; //12rem
+    &.page { margin: 5rem auto }
+    box-sizing: border-box;
+    padding: 0;
+    .content { padding: $padding }
 
     border-radius: 1rem;
-    padding: .5rem;
+    transition: $transition;
 
-    img {
-        border-radius: .5rem;
-    }
-    .content {
-        padding: $padding;
-        > *:not(a) {
-            margin-bottom: 2rem;
-        }
-    }
-
-    @media (min-width: $breakSmall) {
-        display: flex;
-        flex-flow: row-reverse nowrap;
-
-        > * {
-            width: 50%;
-        }
-
-        .content {
-            display: flex;
-            flex-flow: column nowrap;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 6rem;
-        }
+    > .image-left {
+        margin-left: -3rem;
+        width: calc(100% + 3rem);
     }
 }
 
 .tasks {
     display: block;
     margin: 1.5rem 0 0 0;
+    opacity: .8;
 
     .task {
         display: inline-block;
-        border: solid 2px $secondary;
+        border: solid 2px $buttonGrey;
         padding: $buttonPadding;
         border-radius: $borderRadiusSmall;
         margin-right: 0.5rem;
         margin-bottom: 0.5rem;
 
+        @extend h3;
         font-size: 0.8rem;
         font-family: $fontFamily;
-        text-transform: uppercase;
-        font-weight: bold;
-        letter-spacing: .1rem;
-        color: $secondary;
+        color: $fg;
     }
 }
+
+a.portfolio-item:hover {
+    background: rgba($light, .03);
+    border: solid 2px rgba($light, .2);
+
+    @media (prefers-color-scheme: light) {
+        background: white;
+        border: solid 2px rgba($dark, .2);
+    }
+}
+
+.portfolio-item-small {
+    @extend .portfolio-item;
+    position: relative;
+    height: auto;
+    padding: $padding-small;
+    margin: 1rem 0;
+
+    .tasks, .task {
+        margin-top: 0.5rem;
+        margin-bottom: 0;
+    }
+
+    > span {
+        position: absolute;
+        top: $padding-small; right: $padding-small;
+        opacity: .5;
+    }
+}
+#extra-work {
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+}
+
 
 // portfolio page
 #page-intro {
@@ -503,19 +586,17 @@ header {
 
 // FOOTER
 footer {
-    opacity: .7;
+    //position: absolute;
+    //bottom: 2rem; left: 50%;
+    //transform: translateX(-50%);
+
+    opacity: .55;
+
     display: block;
-
-    > * {
-        padding: 1rem 0;
-    }
-
+    padding: 2rem 0;
+    margin-top: 6rem;
     .center {
         text-align: center;
-    }
-
-    a {
-        display: inline-block;
     }
 
     .columns { 
