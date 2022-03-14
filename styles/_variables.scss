@@ -14,7 +14,7 @@ $fontFamilyHeadings: "Generale Station", $fontFamily;
 $fontSize:           16px;
 $fontSizeSmall:      14px;
 $fontSizeMedium:     2rem;
-$fontSizeLarge:      3.4rem;
+$fontSizeLarge:      3rem;
 
 // breakpoints
 $breakSmall: 70rem;
@@ -24,10 +24,10 @@ $breakLarge: 80rem;
 $padding-big: 2rem; //1.3rem
 $padding-small: 1rem;
 $heroPadding: 8rem;
-$buttonPadding: .5rem 1rem;
+$buttonPadding: .3rem .8rem;
 
 //radius
-$borderRadiusSmall: .5rem;
+$borderRadiusSmall: 0;
 
 // curves
 $bezierFast: cubic-bezier(.14, .52, .25, .99);

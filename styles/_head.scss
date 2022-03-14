@@ -107,8 +107,9 @@ img {
     padding: $buttonPadding;
     border-radius: $borderRadiusSmall;
 
-    font-family: $fontFamily;
-    font-size: 1.2rem;
+    font-family: $fontFamilyHeadings;
+    text-transform: lowercase;
+    font-size: 1.5rem;
     font-weight: 500;
     line-height: 1.5;
     color: $fg;
@@ -116,7 +117,7 @@ img {
     transition: $transition;
     &:hover {
         background: $secondary;
-        color: $bg;
+        //color: $bg;
     }
 
     &:active {
@@ -125,7 +126,12 @@ img {
 
     &.secondary {
         background: $secondary;
-        color: $bg;
+        &:hover {
+            background: $primary;
+            &::after {
+                background: $primary;
+            }
+        }
     }
 }
 .arrow-right {
@@ -138,11 +144,11 @@ img {
     &::after {
         content: ' ';
         position: absolute;
-        right: -0.55em;
-        top: 0.25em;
+        right: -.65em;
+        top: 0.27em;
         display: block;
-        width:  1.7em;
-        height: 1.7em;
+        width:  1.36em;
+        height: 1.36em;
         background: $primary;
 
         border-radius: $borderRadiusSmall;
@@ -165,7 +171,7 @@ img {
 
     &::after {
         right: unset;
-        left: -0.55em;
+        left: -0.65em;
     }
     &.secondary::after {
         background-color: $secondary;

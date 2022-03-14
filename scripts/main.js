@@ -22,7 +22,7 @@ function init() {
     });
 
     // fix vh
-    fixFullHeight();
+    //fixFullHeight();
 
     // create sounds
     setupSounds();

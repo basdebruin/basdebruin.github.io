@@ -112,93 +112,15 @@ header {
 // HOME
 // -> INTRO
 #intro {
-    //margin-top: 2rem;
-    line-height: 1.2;
-    @media (min-width: $breakSmall) {
-        max-width: 66vw;
-    }
-    // small text on mobile
-    @media (max-width: 700px) {
-        h1 {
-            font-size: 2rem;
-        }
+    @extend .container;
+
+    p {
+        font-size: 1.5rem;
+        max-width: 40rem;
     }
 
-    span, a, button {
-        position: relative;
-        display: inline-block;
-
-        font-size: inherit;
-
-        // yellow hightlight
-        &::after {
-            display: block;
-            position: absolute;
-            content: '';
-            top: 7%; left: -.75rem;
-            width: 100%; height: 90%;
-            padding: 0 .75rem;
-            background: $primary;
-            border-radius: .5rem;
-            z-index: -10;
-            @media (max-width: $breakSmall) {
-                padding: 0 .5rem;
-                left: -.5rem;
-            }
-        }
-        &:hover::after {
-            opacity: .7;
-        }
-
-        > div {
-            display: none;
-            transform: scale(.8);
-            transition: $transition;
-        }
-
-
-        // hover overlay
-        @media (min-width: $breakSmall) {
-            &:hover > div {
-                display: flex;
-                position: absolute;
-                top: -2rem; left: -2rem;
-                width: 25rem; height: 25rem;
-                flex-flow: column nowrap;
-                justify-content: center;
-                text-align: center;
-
-                border-radius: 1rem;
-                overflow: hidden;
-
-                background: $raised;
-                opacity: .98;
-                border: solid .5rem $raised;
-                transform: scale(1);
-
-                font-size: initial;
-
-                > i {
-                    font-size: 3rem;
-                }
-                > p {
-                    padding: 2rem;
-                    margin: 0;
-                    font-size: 1.5rem;
-                    line-height: 1.5;
-                }
-
-                z-index: 999;
-            }
-        }
-    }
-}
-
-.big-text {
-    @extend #intro;
-    > * {
-        @extend h1;
-    }
+    margin-top: 12rem;
+    margin-bottom: 12rem;
 }
 
 // CONTACT
@@ -216,7 +138,7 @@ header {
 
     transition: background 1s $bezierFast;
     background: transparent;
-    &.open { background: rgba($light, .8); }
+    &.open { background: $contact-page-color; }
     color: $bg;
     p { opacity: 1; }
 
@@ -228,21 +150,15 @@ header {
     }
     &.open .content { transform: translateX(0); }
 
-    //box-shadow: none;
-    //&.open { box-shadow: 0px 0px 4rem rgba($dark, .7); }
-
     // content
     .content {
         position: relative;
         width: 100%;
-        height: 100%;
+        height: auto;
         max-width: 60rem;
         max-height: 40rem;
-        border-radius: 2rem;
 
         padding: 2rem;
-
-        background: $fg;
 
         // items in content
         span, a, button {
@@ -337,48 +253,45 @@ header {
 
 // PORTFOLIO
 
-#work {
-    padding: 0;
-    padding-top: 6rem;
-}
-
 .portfolio-item {
     display: block;
-    background: $raised;
+    position: relative;
+    background: $fg;
     width: 100%;
+    height: 27rem;
     @media (min-width: $breakSmall) {
         max-height: 35rem;
     }    
 
     margin-bottom: 2rem;
-
-    border-radius: 1rem;
     padding: .5rem;
-
+    
+    > *, > *::after {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+    }
     img {
-        border-radius: .5rem;
+        object-fit: cover;
+
+        background-color: $fg;
     }
+    .color-overlay {
+        background-color: $bg;
+        mix-blend-mode: color;
+    }
+
     .content {
-        padding: $padding;
-        > *:not(a) {
-            margin-bottom: 2rem;
-        }
-    }
-
-    @media (min-width: $breakSmall) {
         display: flex;
-        flex-flow: row-reverse nowrap;
+        flex-flow: column nowrap;
+        justify-content: space-between;
 
-        > * {
-            width: 50%;
-        }
+        padding: 4rem;
+        background-color: $raised;
 
-        .content {
+        .description {
             display: flex;
-            flex-flow: column nowrap;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 6rem;
+            justify-content: space-between;
         }
     }
 }
@@ -531,6 +444,6 @@ footer {
             @media (max-width: $breakSmall) {
                 display: inline-block;
             }
+            }
         }
     }
-}

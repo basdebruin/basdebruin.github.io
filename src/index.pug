@@ -20,10 +20,12 @@ section#work
     each item, index in collections.portfolioItems
         .portfolio-item
             img(src='/assets/images/' + item.data.image alt='Image for ' + item.data.title)
+            .color-overlay(aria-hidden=true)
             .content
                 h2= item.data.title
-                p= item.data.discription
-                if item.data.link_to && item.data.link_text
-                    a(href=item.data.link_to target="_blank" data-sound="click").button.arrow-right=  item.data.link_text
-                else
-                    a(href=item.url data-sound="click").button.arrow-right= item.data.link_text || "Read more"
+                .description
+                    p= item.data.discription
+                    if item.data.link_to && item.data.link_text
+                        a(href=item.data.link_to target="_blank" data-sound="click").button.arrow-right=  item.data.link_text
+                    else
+                        a(href=item.url data-sound="click").button.arrow-right= item.data.link_text || "Read more"

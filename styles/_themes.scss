@@ -8,9 +8,9 @@ $theme-light: (
 
     "primary": #EF9271,
     "secondary": #6DB3AF,
-    "raised": #272753,
+    "raised": rgba(#272753, .5),
 
-    "contact-page": #EF9271,
+    "contact-page": rgba(#EF9271, .95),
 );
 $theme-dark: (
     "bg": #272753,
@@ -18,9 +18,9 @@ $theme-dark: (
 
     "primary": #6DB3AF,
     "secondary": #EF9271,
-    "raised": #272753,
+    "raised": rgba(#272753, .8),
 
-    "contact-page": #EF9271,
+    "contact-page": rgba(#EF9271, .95),
 );
 
 
