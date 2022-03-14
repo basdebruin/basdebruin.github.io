@@ -45,6 +45,7 @@ h1, h2 {
     font-family: $fontFamilyHeadings;
     font-size: $fontSizeLarge;
     font-weight: normal;
+    text-transform: lowercase;
     letter-spacing: .02rem;
     line-height: 1.5;
 }
