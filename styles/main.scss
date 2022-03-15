@@ -253,6 +253,10 @@ header {
 
 // PORTFOLIO
 
+#work {
+    @extend .container;
+}
+
 .portfolio-item {
     display: block;
     position: relative;
