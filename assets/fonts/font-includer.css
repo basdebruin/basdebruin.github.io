@@ -6,9 +6,34 @@
 */
 
 @font-face {
-    font-family: "Generale Station";
-    src: url("generale-station/generalestation-webfont.woff2") format("woff2"),
-         url("generale-station/generalestation-webfont.woff") format("woff");
+    font-family: "Space Grotesk";
+    src: url("webfont/SpaceGrotesk-Regular.woff2") format("woff2"),
+         url("webfont/SpaceGrotesk-Regular.woff") format("woff");
     font-weight: normal;
     font-style:  normal;
+}
+
+@font-face {
+    font-family: "Space Grotesk";
+    src: url("webfont/SpaceGrotesk-SemiBold.woff2") format("woff2"),
+        url("webfont/SpaceGrotesk-SemiBold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Space Grotesk";
+    src: url("webfont/SpaceGrotesk-Bold.woff2") format("woff2"),
+        url("webfont/SpaceGrotesk-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* VARIABLE */
+
+@font-face {
+    font-family: "Space Grotesk";
+    src: url("variable/SpaceGroteskVariable.ttf");
+    font-weight: 1 999;
+    font-style: normal;
 }

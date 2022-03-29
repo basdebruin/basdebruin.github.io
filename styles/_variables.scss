@@ -2,23 +2,17 @@
 // for portfolio site
 // author: Bas de Bruin
 
-@import 'themes';
-
-$grey-opacity: .7;
-$grey2-opacity: .5;
-$button-grey-opacity: .1;
-
 // font
 $fontFamily:         'Inter', -apple-system, 'Roboto', sans-serif;
-$fontFamilyHeadings: "Generale Station", $fontFamily;
+$fontFamilyHeadings: "Space Grotesk", $fontFamily;
 $fontSize:           16px;
 $fontSizeSmall:      14px;
-$fontSizeMedium:     2rem;
-$fontSizeLarge:      3rem;
+$fontSizeMedium:     3rem;
+$fontSizeLarge:      6rem;
 
 // breakpoints
-$breakSmall: 70rem;
-$breakLarge: 80rem;
+$breakSmall: 100rem;
+$breakLarge: 120rem;
 
 // padding
 $padding-big: 2rem; //1.3rem
@@ -38,34 +32,45 @@ $transition: all .15s $bezierFast;
 
     font-size: $fontSize;
 
-    @include apply-theme($theme-light);
-
     --padding: #{$padding-big};
-
-    // set dark mode if user preference
-    @media (prefers-color-scheme: dark) {
-        @include apply-theme($theme-dark);
-    }
-
     // change padding on mobile
     @media screen and (max-width: $breakLarge) {
         --padding: #{$padding-small};
     }
-}
 
-// apply themes based on classes on <html>
-@each $name, $theme in $theme-list {
-    html {
-        &.#{$name} {
-            @include apply-theme($theme);
-        }
+    //light colors
+    --bg: #F9F9F9;
+    --fg: #1E1E23;
+
+    --light: #F9F9F9;
+    --dark: #1E1E23;
+
+    --primary: #F2C045;
+    --secondary: #EF9271;
+    --raised: rgba(#1E1E23, .8);
+
+    --contact-page: rgba(#F2C045, .95);
+    // set dark mode if user preference
+    @media (prefers-color-scheme: dark) {
+        // dark colors
+        --bg: #1E1E23;
+        --fg: #F9F9F9;
+
+        --primary: #F2C045;
+        --secondary: #EF9271;
+        --raised: rgba(#1E1E23, .8);
+
+        --contact-page: rgba(#F2C045, .95);
     }
+
 }
 
 // Utility vars
 $bg: var(--bg);
 $fg: var(--fg);
-$accent: var(--accent);
+
+$light: var(--light);
+$dark: var(--dark);
 
 $primary: var(--primary);
 $secondary: var(--secondary);
