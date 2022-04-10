@@ -1,40 +1,6 @@
 //- FOOTER
 
-//- Compile time script to get Page
-- 
-    // get current index within portfolioItems
-    let pageIndex = 0;
-    let i = 0;
-    for (let item of collections.portfolioItems) {
-        if (page.url == item.url) pageIndex = i;
-        i++;
-    }
 
-    // get page at index with wrapping
-    const getPage = index => {
-        const l = collections.portfolioItems.length;
-        if (index < 0)
-            return collections.portfolioItems[l+index];
-        if (index > l-1)
-            return collections.portfolioItems[index-l];
-        if (collections.portfolioItems[index]) 
-            return collections.portfolioItems[index];
-    }
-
-footer.container
-    //- INDEX
-    if layout == 'layouts/index'
-        .center: p.
-            This site is made my Bas using #[a(href="https://www.11ty.dev").link 11ty] and #[a(href="https://esbuild.github.io").link esbuild]. Hosted on #[a(href="https://www.netlify.com").link Netlify]. 
-            <br>
-            Check out the #[a(href="https://github.com/basdebruin/basdebruin.github.io").link code] if you want!
-    
-    //- PAGE
-    else
-        .center: p.
-            View other projects:
-        .columns.center
-            div
-                a.button.arrow-left(href=getPage(pageIndex-1).url data-sound="click")= getPage(pageIndex-1).data.title
-            div
-                a.button.arrow-right(href=getPage(pageIndex-1).url data-sound="click")= getPage(pageIndex+1).data.title
+footer.container.
+    This website is made by me using Eleventy, Esbuild and Netlify <br>
+    Check out the #[a(href="https://github.com/basdebruin/basdebruin.github.io").link code] if you want!

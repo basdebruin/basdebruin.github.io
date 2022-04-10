@@ -31,47 +31,45 @@ main {
     overflow-x: hidden;
     max-height: unset;
     height: auto;
-
-    // padding for footer
-    padding-bottom: 8rem;
-    @media (max-width: $breakLarge) {
-        padding-bottom: 12rem;
-    }
 }
 
 
 // Headings
-h1, h2 {
+h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
     font-family: $fontFamilyHeadings;
-    font-size: $fontSizeLarge;
-    font-weight: 450;
-    line-height: 1.1;
-
-    @media (max-width: 800px) {
-        font-size: $fontSizeMedium;
-    }
-}
-h2 {
-    font-size: $fontSizeMedium;
     font-weight: normal;
+    line-height: 1.1;
 }
-h3, h4 {
+h1, .h1 {
+    font-size: 2.4rem;
+    margin-bottom: 2.4rem;
+}
+h2, .h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1.6rem;
+}
+h3, h4, .h3, .h4 {
     font-size: 1.2rem;
     font-weight: 500;
-    margin: 1rem 0 0 0;
     letter-spacing: .03rem;
+    opacity: .8;
 }
+
+// TODO: mobile font sizes
 
 p {
     line-height: 1.5em;
     letter-spacing: .05rem;
     margin: .5rem 0;
-    opacity: .8;
 }
 
 em, b {
     font-weight: 600;
     letter-spacing: .01rem;
+}
+
+strong {
+    @extend h2;
 }
 
 li {
@@ -99,126 +97,6 @@ img {
     object-fit: cover;
 
     z-index: 0;
-}
-
-
-.button {
-    display: inline-block;
-    border: none;
-    background: $primary;
-    padding: $buttonPadding;
-    border-radius: $borderRadiusSmall;
-
-    font-family: $fontFamilyHeadings;
-    text-transform: lowercase;
-    font-size: 1.5rem;
-    font-weight: 500;
-    line-height: 1.5;
-    color: $light;
-
-    transition: $transition;
-    &:hover {
-        background: $secondary;
-        //color: $bg;
-    }
-
-    &:active {
-        transform: scale(0.95);
-    }
-
-    &.secondary {
-        background: $secondary;
-        &:hover {
-            background: $primary;
-            &::after {
-                background: $primary;
-            }
-        }
-    }
-}
-.arrow-right {
-    position: relative;
-    background: $primary;
-
-    margin-right: 1em;
-    z-index: 100;
-
-    &::after {
-        content: ' ';
-        position: absolute;
-        right: -.65em;
-        top: 0.27em;
-        display: block;
-        width:  1.36em;
-        height: 1.36em;
-        background: $primary;
-
-        border-radius: $borderRadiusSmall;
-
-        transform: rotate(45deg);
-        z-index: -1;
-
-        transition: $transition;
-    }
-
-    &:hover::after {
-        background: $secondary;
-    }
-}
-.arrow-left {
-    @extend .arrow-right;
-
-    margin: 0;
-    margin-left: 1rem;
-
-    &::after {
-        right: unset;
-        left: -0.65em;
-    }
-    &.secondary::after {
-        background-color: $secondary;
-    }
-}
-
-.arrow-down {
-    position: relative;
-    padding-top: 0.3rem;
-    padding-bottom: 0.3rem;
-    z-index: 100;
-    &::after {
-        content: ' ';
-        position: absolute;
-        left: calc(50% - 0.65rem); bottom: -0.5rem;
-        display: block;
-        width: 1.3em;
-        height: 1.3em;
-        background: $buttonGrey;
-
-        border-radius: $borderRadiusSmall;
-
-        transform: rotate(45deg);
-        z-index: -1;
-
-        transition: $transition;
-    }
-
-    &:hover::after {
-        background: $buttonAccent;
-    }
-}
-
-.link {
-    display: inline-block;
-    font-weight: bold;
-    opacity: 1;
-    text-decoration: underline;
-    text-decoration-thickness: 1.5px;
-
-    transition: $transition;
-    &:hover {
-        opacity: .7;
-        text-decoration: none;
-    }
 }
 
 // selection

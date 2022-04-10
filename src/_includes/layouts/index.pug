@@ -4,6 +4,14 @@ doctype html
 html(lang="en")
     include head.pug
     body
+        header
+            .container
+                em#name Bas de Bruin
+                ul#menu
+                    li About
+                    li Work
+                    li Contact
+
         main#swup.transition-main
             | !{content}
         

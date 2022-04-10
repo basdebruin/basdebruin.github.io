@@ -21,9 +21,6 @@ main {
 .container.center {
     text-align: center;
 }
-.container.small {
-    max-width: $breakSmall * 0.5;
-}
 .columns {
     display: block;
     margin-bottom: 4rem;
@@ -66,177 +63,45 @@ main {
     width: 1px;
 }
 
-.full-height {
-    height: 100vh;
-    transition: $transition;
-}
-
 header {
     position: fixed;
-    top: -1rem; left: 0;
+    top: 9rem; left: 0;
 
-    width: 100%; height: 10rem;
-
-    background: linear-gradient(scrim-gradient($dark));
-    @media (prefers-color-scheme: light) { 
-        background: linear-gradient(scrim-gradient($light))
-    }
+    width: 100%;
 
     z-index: 900;
-    pointer-events: none;
-}
 
-#back {
-    position: fixed;
-    top: $padding; left: $padding;
-    z-index: 999;
-}
+    .container {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
 
-#contact-button {
-    position: fixed;
-    top: $padding;
-    right: $padding;
+        * {
+            @extend h3;
+        }
+    }
 
-    z-index: 999;
+    #name {
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: .12rem;
+    }
+
+    #menu {
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 1rem;
+    }
 }
 
 // HOME
 // -> INTRO
 #intro {
     @extend .container;
-    width: calc(100% - 300px);
-    @media (max-width: 800px) {
-        width: calc(100% - 6rem);
-    }
-    margin: 0;
-    margin-bottom: 2rem;
-}
+    margin: 18rem auto 10rem auto;
 
-// CONTACT
-#contact {
-    position: fixed;
-    top: 0; left: 0;
-    z-index: 1000;
-
-    width: 100vw; height: 100vh;
-    padding: $padding;
-
-    display: none; 
-    &.open { display: flex }
-    align-items: center; justify-content: center;
-
-    transition: background 1s $bezierFast;
-    background: transparent;
-    &.open { background: $contact-page-color; }
-    color: $bg;
-    p { opacity: 1; }
-
-    
-
-    .content {
-        transform: translateX(100vw);
-        transition: transform 1s $bezierFast;
-    }
-    &.open .content { transform: translateX(0); }
-
-    // content
-    .content {
-        position: relative;
-        width: 100%;
-        height: auto;
-        max-width: 60rem;
-        max-height: 40rem;
-
-        padding: 2rem;
-
-        // items in content
-        span, a, button {
-            color: $bg;
-            &::after {
-                background: $secondary;
-            }
-        }
-
-        #contact-close-button {
-            position: absolute;
-            top: $padding; right: $padding;
-            z-index: 100000;
-    
-            display: flex; 
-            align-items: center; justify-content: center;
-            text-align: center;
-    
-            color: black;
-            background: $light;
-    
-            width: 2.4rem; height: 2.4rem;
-            border-radius: 1.2rem;
-    
-            img {
-                width: auto; height: auto;
-            }
-    
-            transition: $transition;
-            &:hover {
-                box-shadow: 0px 0px 0px 4px $dark;
-            }
-        }
-    }
-
-
-}
-
-.icon-button {
-    color: $light;
-    background: $dark;
-    border-radius: 0.4rem;
-
-    position: relative;
-
-    padding: 0.4rem;
-    margin: 1rem 0;
-
-    width: 9rem;
-    min-width: auto;
-    height: 3.4rem;
-
-    overflow: visible;
-    transition: $transition;
-    &:hover {
-        box-shadow: 0px 0px 0px 4px $light;
-
-        &::after {
-            box-shadow: 2.5px -2.5px 0px 1.5px $light;
-        }
-    }
-
-    p {
-        @extend h2;
-        opacity: 1;
-        font-size: 1.35rem;
-        font-weight: 600;
-
-        overflow: visible;
-
-        margin: 
-            -0.1rem 0
-            -0.6rem  0;
-    }
-
-    &::after {
-        content: '';
-        position: absolute;
-        top: 0.39rem; right: -0.9rem;
-
-        background: $dark;
-        display: block;
-        width: 2.6rem;
-        height: 2.6rem;
-
-        border-radius: 0.4rem;
-        transform: rotate(45deg);
-
-        transition: $transition;
+    > * {
+        max-width: 75%;
     }
 }
 
@@ -248,81 +113,6 @@ header {
 
 .portfolio-item {
     display: block;
-
-    .image {
-        .metadata {
-            font-size: $fontSizeSmall;
-            font-weight: 600;
-            font-family: $fontFamilyHeadings;
-    
-            display: flex;
-            justify-content: space-between;
-
-            > *:last-child {
-                text-align: right;
-            }
-        }
-        img {
-            background-color: $fg;
-        }
-
-        margin-bottom: $padding;
-    }
-
-    .content {
-        margin: $padding-big 0;
-        display: flex;
-        flex-flow: column nowrap;
-        gap: 2rem;
-
-        .title {
-            strong.type {
-                display: block;
-                font-family: $fontFamilyHeadings;
-                font-size: 1.5rem;
-                font-weight: 600;
-                margin: .5rem 0;
-            }
-        }
-
-        a, .button {
-            align-self: center;
-        }
-    }
-
-    @media (min-width: 800px) {
-        display: flex;
-        flex-flow: row-reverse nowrap;
-        justify-content: space-between;
-
-        padding: 5rem 4rem;
-
-        .image {
-            max-width: 500px;
-        }
-
-        .content {
-            justify-content: space-between;
-            > a, .button {
-                align-self: flex-start;
-            }
-            max-width: 35rem;
-            margin-right: 2rem;
-        }
-    }
-}
-svg.dashed-line {
-    overflow: hidden;
-    width: 100%;
-    height: 2rem;
-
-    line { 
-        animation: offset 3s infinite linear;
-    }
-}
-@keyframes offset {
-    from { transform: translateX(0) }
-    to   { transform: translateX(-30px) }
 }
 
 .tasks {
@@ -332,8 +122,6 @@ svg.dashed-line {
     .task {
         display: inline-block;
         border: solid 2px $secondary;
-        padding: $buttonPadding;
-        border-radius: $borderRadiusSmall;
         margin-right: 0.5rem;
         margin-bottom: 0.5rem;
 
@@ -382,7 +170,6 @@ svg.dashed-line {
     box-sizing: border-box;
     overflow: hidden;
     padding: $padding;
-    border-radius: 1rem;
     //margin: 6rem auto;
 
     line-height: 1.2rem;
@@ -395,7 +182,6 @@ svg.dashed-line {
     &.no-padding, &.cover { padding: 0 }
 
     > * {
-        border-radius: 0.5rem;
         object-fit: contain;
         width: 100%;
         height: 100%;

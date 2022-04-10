@@ -2,13 +2,9 @@
 // for portfolio site
 // author: Bas de Bruin
 
-%transition {
-    transition: all 0.4s ease-out;
-}
-
 // main content
 .transition-main {
-    @extend %transition;
+    transition: all 0.4s ease-out;
     opacity: 1;
 }
 html.is-animating .transition-main {
