@@ -65,7 +65,11 @@ main {
 
 header {
     position: fixed;
-    top: 9rem; left: 0;
+    top: 3rem; left: 0;
+    &.lowered {
+        top: 9rem;
+    }
+    transition: $transition;
 
     width: 100%;
 
@@ -78,6 +82,28 @@ header {
 
         * {
             @extend h3;
+        }
+
+        ul {
+            position: relative;
+
+            $ind-size: .7rem;
+            .indicator {
+                position: absolute;
+                bottom: -1.2rem; left: 1.5rem;
+                width: $ind-size; height: $ind-size;
+                background: $primary;
+                border-radius: 100%;
+
+                transition: $transition;
+
+                &.scrolled-to-work {
+                    left: 42%;
+                }
+                &.scrolled-to-contact {
+                    left: 80%;
+                }
+            }
         }
     }
 

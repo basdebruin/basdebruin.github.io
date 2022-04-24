@@ -4,13 +4,14 @@ doctype html
 html(lang="en")
     include head.pug
     body
-        header
+        header.lowered
             .container
                 em#name Bas de Bruin
                 ul#menu
-                    li About
-                    li Work
-                    li Contact
+                    li: a(href="#") About
+                    li: a(href="#work") Work
+                    li: a(href="#contact") Contact
+                    span.indicator
 
         main#swup.transition-main
             | !{content}
