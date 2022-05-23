@@ -8,9 +8,6 @@
 @import 'smooth_gradient';
 
 // containers
-main {
-    padding: $padding;
-}
 .container {
     display: block;
     width: 100%;
@@ -63,228 +60,95 @@ main {
     width: 1px;
 }
 
-header {
-    position: fixed;
-    top: 3rem; left: 0;
-    &.lowered {
-        top: 9rem;
-    }
-    transition: $transition;
 
+main {
     width: 100%;
-
-    z-index: 900;
-
-    .container {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-
-        * {
-            @extend h3;
-        }
-
-        ul {
-            position: relative;
-
-            $ind-size: .7rem;
-            .indicator {
-                position: absolute;
-                bottom: -1.2rem; left: 1.5rem;
-                width: $ind-size; height: $ind-size;
-                background: $primary;
-                border-radius: 100%;
-
-                transition: $transition;
-
-                &.scrolled-to-work {
-                    left: 42%;
-                }
-                &.scrolled-to-contact {
-                    left: 80%;
-                }
-            }
-        }
-    }
-
-    #name {
-        text-transform: uppercase;
-        font-weight: bold;
-        letter-spacing: .12rem;
-    }
-
-    #menu {
-        display: flex;
-        flex-flow: row nowrap;
-        gap: 1rem;
-    }
+    height: 100vh;
+    overflow-y: scroll;
 }
 
-// HOME
-// -> INTRO
+// sticky sections
+section {
+    position: sticky;
+    top: 0;
+
+    padding: $padding;
+    width: 100%;
+    height: 90vh;
+    z-index: 999;
+
+    background-color: $bg;
+}
+
 #intro {
-    @extend .container;
-    margin: 18rem auto 10rem auto;
-
-    > * {
-        max-width: 75%;
+    h1 {
+        font-size: 28vw;
+        font-weight: 900;
+        line-height: 0.8;
+        letter-spacing: -.8vw;
+    }
+    span {
+        color: $light;
+        font-size: 1.7vw;
+        font-weight: bold;
+        position: absolute;
+        bottom: -6.5vh;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
 
-// PORTFOLIO
+#about {
+    background-color: $primary;
+
+    h2 {
+        font-size: 12vw;
+        font-weight: 800;
+        letter-spacing: -.4vw;
+        line-height: 1.05;
+    }
+    h3 {
+        margin-top: .5em;
+        font-size: 4.5vw;
+    }
+}
+
+#about-2 {
+    background-color: $secondary;
+
+    h3 {
+        font-size: 5vw;
+        width: 60%;
+        line-height: 1.3;
+    }
+}
 
 #work {
-    @extend .container;
-}
+    background-color: $tertiary;
 
-.portfolio-item {
-    display: block;
-}
-
-.tasks {
-    display: block;
-    margin: 1.5rem 0 0 0;
-
-    .task {
-        display: inline-block;
-        border: solid 2px $secondary;
-        margin-right: 0.5rem;
-        margin-bottom: 0.5rem;
-
-        font-size: 0.8rem;
-        font-family: $fontFamily;
-        text-transform: uppercase;
-        font-weight: bold;
-        letter-spacing: .1rem;
-        color: $secondary;
-    }
-}
-
-// portfolio page
-#page-intro {
-    @extend .container;
-    margin-top: 10rem;
-    margin-bottom: 4rem;
-}
-#page-content {
-    @media (min-width: $breakSmall) {
-        .columns {
-            > *:first-child {
-                width: 40%;
-            }
-            > *:last-child {
-                width: 60%;
-            }
-        }
-    }
-}
-
-#page-intro, #page-content { > .container, > .card, > .columns {
-    margin-top: 6rem;
-    margin-bottom: 6rem;
-}}
-
-// CARD
-.card {
-    display: block;
-    width: 100%;
-    background: rgba($light, .05);
-    @media (prefers-color-scheme: light) { background: white; }
-
-    margin-top: 0 !important;
-    
-    box-sizing: border-box;
-    overflow: hidden;
-    padding: $padding;
-    //margin: 6rem auto;
-
-    line-height: 1.2rem;
-
-    max-width: $breakSmall;
-    &.large {
-        max-width: $breakSmall*2;
+    h2 {
+        font-size: 5vw;
+        font-weight: normal;
+        margin-bottom: .5em;
     }
 
-    &.no-padding, &.cover { padding: 0 }
-
-    > * {
-        object-fit: contain;
+    .portfolio-item {
         width: 100%;
-        height: 100%;
-    }
+        height: 30vw;
 
-    &.cover > img { object-fit: cover }
-    &.align-left > img { object-position: left; }
-    &.align-right > img { object-position: right; }
-}
-.card.center {
-    display: flex;
-    flex-flow: column nowrap;
-    align-content: space-around; justify-content: center;
-}
+        background-color: $light;
+        padding: $padding;
 
-// PAGE: 
-.list-container {
-    @extend .container;
-    margin: 7rem auto 8rem auto !important;
+        h3 {
+            font-size: 4vw;
+            font-variation-settings: "wght" 200;
+            transition: $transition;
+        }
 
-    text-align: center;
-    > :first-child {
-        margin-bottom: 2rem;
-    }
-    .columns > * {
-        width: 100% !important;
-        > :first-child {
-            margin-bottom: 1rem;
+        &:hover h3 {
+            font-weight: 700;
+            font-variation-settings: "wght" 700;
+            letter-spacing: -.04em;
         }
     }
 }
-
-.highlight {
-    @extend .container;
-    margin: 7rem auto 8rem auto !important;
-    text-align: center;
-    max-width: $breakSmall * 0.5;
-
-    h2, h3, h4 {
-        margin: 1rem 0;
-    }
-    a {
-        display: inline-block;
-        padding: 6px 8px;
-    }
-}
-
-// FOOTER
-footer {
-    opacity: .7;
-    display: block;
-
-    > * {
-        padding: 1rem 0;
-    }
-
-    .center {
-        text-align: center;
-    }
-
-    a {
-        display: inline-block;
-    }
-
-    .columns { 
-        overflow: visible;
-        align-items: center;
-        justify-content: space-between;
-
-        div {
-            width: auto !important;
-
-            * { display: unset }
-
-            @media (max-width: $breakSmall) {
-                display: inline-block;
-            }
-            }
-        }
-    }

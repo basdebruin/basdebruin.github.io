@@ -37,16 +37,14 @@ main {
 // Headings
 h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
     font-family: $fontFamilyHeadings;
-    font-weight: normal;
     line-height: 1.2;
+    margin: 0;
 }
 h1, .h1 {
     font-size: 2.4rem;
-    margin-bottom: 2.4rem;
 }
 h2, .h2 {
     font-size: 1.6rem;
-    margin-bottom: 1.6rem;
 }
 h3, h4, .h3, .h4 {
     font-size: 1.2rem;
@@ -56,8 +54,6 @@ h3, h4, .h3, .h4 {
 .light {
     opacity: .7;
 }
-
-// TODO: mobile font sizes
 
 p {
     line-height: 1.5em;
@@ -101,13 +97,12 @@ img {
     z-index: 0;
 }
 
-// selection
-*::selection {
-    color: $bg;
-    background: $fg;
-    opacity: 1;
-}
-
 .padding {
     padding: $padding;
+}
+
+@media (min-width: $breakSmall) {
+    br.s {
+        display: none;
+    }
 }

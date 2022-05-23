@@ -6,31 +6,26 @@ include _includes/mixins/page-mixins.pug
 
 // INTRO TEXT
 section#intro
-    h1.
-        Hi! ✋ I’m a designer with a background in a variety of design-disciples ✏️ 📱 🎥 🔊. <br>
-        I like to solve complex problems using research, participatory-design, accessibility and a playful approach. 😄
-    h2.light.
-        I’m currently in my last year of studying Audio Design at the HKU in Utrecht; part of playful music collective “Thinking in Sound” and doing several cool projects on the side. 
+    h1 Hi! #[br] I'm #[br.s] Bas
+    span scroll
 
+section#about
+    h2 I'm a Multidisciplinary Designer
+    h3 With a background in a variety of disciplines
+
+section#about-2
+    h3.
+        I like to combine <b>visual-</b>, <b>audio-</b> and <b>interactive</b> design to create experiences that are
+        <b>innovative</b>, <b>for everyone</b> and just a <b>joy to use!</b>
 
 // PORTFOLIO ITEMS
 section#work
-    h2.h1.line-title Some highlighted projects:
+    h2 Check out some of <br> <b>my projects &rarr; </b>
+    .columns
+        each item, index in collections.portfolioItems
+            a(href=(item.data.link_to || item.url)).portfolio-item
+                h3= item.data.title
 
-    each item, index in collections.portfolioItems
-        .portfolio-item
-            img(src='/assets/images/' + item.data.image alt='Image for ' + item.data.title)
-            
-            .content
-                .title
-                    h2= item.data.title
-                    h3= item.data.client
-                p= item.data.discription
-
-                if item.data.link_to && item.data.link_text
-                    a(href=item.data.link_to target="_blank" data-sound="click").button.arrow-right=  item.data.link_text
-                else
-                    a(href=item.url data-sound="click").button.arrow-right= item.data.link_text || "Read more"
 
 section#contact
     h2.line-title Let's get in touch!
