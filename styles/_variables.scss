@@ -19,6 +19,7 @@ $buttonPadding: .3rem .8rem;
 // curves
 $bezierFast: cubic-bezier(.14, .52, .25, .99);
 $transition: all .15s $bezierFast;
+$transition-slow: all 1s $bezierFast;
 
 // base colors
 $light: #F4F4F4;

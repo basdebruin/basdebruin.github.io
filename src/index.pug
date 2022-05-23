@@ -6,31 +6,34 @@ include _includes/mixins/page-mixins.pug
 
 // INTRO TEXT
 section#intro
-    h1 Hi! #[br] I'm #[br.s] Bas
+    h1
+        div.scroller.fade-boldify Hi! #[br] 
+        div.scroller.fade-boldify I'm #[br.s] Bas
     span scroll
 
 section#about
-    h2 I'm a Multidisciplinary Designer
-    h3 With a background in a variety of disciplines
+    h2.scroller.fade-boldify I'm a Multidisciplinary Designer
+    h3.scroller.fade-left With a background in a variety of disciplines
 
 section#about-2
-    h3.
+    h3.scroller.fade-left.
         I like to combine <b>visual-</b>, <b>audio-</b> and <b>interactive</b> design to create experiences that are
         <b>innovative</b>, <b>for everyone</b> and just a <b>joy to use!</b>
 
 // PORTFOLIO ITEMS
 section#work
-    h2 Check out some of <br> <b>my projects &rarr; </b>
+    h2 Check out some of <br> #[b.scroller.fade-boldify my projects &rarr;]
     .columns
         each item, index in collections.portfolioItems
-            a(href=(item.data.link_to || item.url)).portfolio-item
+            a(href=(item.data.link_to || item.url) class=`scroller fade-${index%2==0?'left':'right'}`).portfolio-item
                 h3= item.data.title
+                p= item.data.link_text
 
 
 section#contact
-    h2.line-title Let's get in touch!
+    h2 Let's get in contact!
 
-    strong.
+    p.
         Send me an email <br>
         Check me out on Instagram <br>
         or LinkedIn
