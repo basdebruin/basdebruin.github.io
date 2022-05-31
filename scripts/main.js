@@ -1,5 +1,5 @@
-import Swup from 'swup';
-import SwupScrollPlugin from '@swup/scroll-plugin';
+// import Swup from 'swup';
+// import SwupScrollPlugin from '@swup/scroll-plugin';
 import { setupSounds, attachSounds } from "./sounds";
 import setupAnimationElements from './scrollAnimation';
 
@@ -12,15 +12,15 @@ else
 function init() {
     console.log("%cHey, there!", "color: yellow; font-size: 2rem; font-family: Space Grotesk; line-height: 2");
     // swup
-    const swup = new Swup({
-        //@ts-ignore
-        plugins: [new SwupScrollPlugin()]
-    });
-    // scroll up on page change
-    swup.on('willReplaceContent', () => {
-        //@ts-ignore
-        swup.scrollTo(0)
-    });
+    // const swup = new Swup({
+    //     //@ts-ignore
+    //     plugins: [new SwupScrollPlugin()]
+    // });
+    // // scroll up on page change
+    // swup.on('willReplaceContent', () => {
+    //     //@ts-ignore
+    //     swup.scrollTo(0)
+    // });
 
     // handle scroll animations
     setupAnimationElements();
@@ -29,5 +29,5 @@ function init() {
     setupSounds();
     // attach sounds
     attachSounds();
-    swup.on('contentReplaced', attachSounds);
+    // swup.on('contentReplaced', attachSounds);
 }

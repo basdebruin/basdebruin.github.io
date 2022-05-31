@@ -38,17 +38,17 @@ $dark:  #131415;
     }
 
     //light colors
-    --bg: $light;
-    --fg: $dark;
+    --bg: #F4F4F4;
+    --fg: #131415;
 
 
     --primary:   #76C8F6;
-    --secondary: #FDD572;
+    --secondary: #FFD572;
     --tertiary:  #85EB93;
     // set dark mode if user preference
     @media (prefers-color-scheme: dark) {
         // dark colors
-        --bg: $dark;
+        --bg: #131415;
         --fg: #F4F4F4;
     }
 
