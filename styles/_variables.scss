@@ -38,7 +38,7 @@ $dark:  #131415;
     }
 
     //light colors
-    --bg: #F4F4F4;
+    --bg: #e7edeb;
     --fg: #131415;
 
 
@@ -49,7 +49,7 @@ $dark:  #131415;
     @media (prefers-color-scheme: dark) {
         // dark colors
         --bg: #131415;
-        --fg: #F4F4F4;
+        --fg: #e7edeb;
     }
 
 }
