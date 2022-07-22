@@ -22,8 +22,8 @@ $transition: all .15s $bezierFast;
 $transition-slow: all 1s $bezierFast;
 
 // base colors
-$light: #F4F4F4;
-$dark:  #131415;
+$light: #fff;
+$dark:  #0E1833;
 
 
 :root {
@@ -38,18 +38,21 @@ $dark:  #131415;
     }
 
     //light colors
-    --bg: #e7edeb;
-    --fg: #131415;
+    --bg: #fff;
+    --fg: #0E1833;
 
 
-    --primary:   #76C8F6;
-    --secondary: #FFD572;
-    --tertiary:  #85EB93;
+    --primary:   #45AAE7;
+    --secondary: #A2D4F3;
+    --tertiary:  #D3EBF9;
     // set dark mode if user preference
     @media (prefers-color-scheme: dark) {
         // dark colors
-        --bg: #131415;
-        --fg: #e7edeb;
+        --bg: #0E1833;
+        --fg: #fff;
+
+        --secondary: #29608D;
+        --tertiary: #1B3C60;
     }
 
 }

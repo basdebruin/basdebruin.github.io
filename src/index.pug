@@ -23,9 +23,11 @@ section#about-2
 // PORTFOLIO ITEMS
 section#work
     h2 Check out some of <br> #[b.scroller.fade-boldify my projects &rarr;]
-    .columns
+    .work-grid
         each item, index in collections.portfolioItems
             a(href=(item.data.link_to || item.url) class=`scroller fade-${index%2==0?'left':'right'}`).portfolio-item
+                .img-wrapper
+                    img(src='/assets/images/'+item.data.image alt)
                 h3= item.data.title
                 p= item.data.link_text
 

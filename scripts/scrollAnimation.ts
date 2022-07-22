@@ -11,10 +11,9 @@ export default function setupAnimationElements(className : string = 'scroller') 
     })
 
     function checkElements(entries, observer) : IntersectionObserverCallback {
-        entries.forEach(entry => {
+        return entries.forEach(entry => {
             entry.target.classList.toggle('scroller-in', entry.isIntersecting)
         });
-        return;
     }
 
     setTimeout(() => {
