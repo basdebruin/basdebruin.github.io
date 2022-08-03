@@ -7,244 +7,60 @@
 @import 'animations';
 @import 'smooth_gradient';
 
-// containers
-.container {
-    display: block;
-    width: 100%;
-    margin: 0 auto;
-    max-width: $breakSmall;
-    padding: 0;
-}
-.container.center {
-    text-align: center;
-}
-.columns {
-    display: block;
-    margin-bottom: 4rem;
-    > * { margin: $padding 0 }
-    @media (min-width: $breakSmall) {
-        display: flex;
-        flex-flow: row nowrap;
-        align-items: stretch; justify-content: flex-start;
-        margin-bottom: 0;
-        > * {
-            margin: 0 $padding-small;
-            width: 100%;
+main {
+    margin: 2rem auto;
 
-            &:first-child {
-                margin-left: 0;
-            }
-            &:last-child {
-                margin-right: 0;
-            }
-        }
-        > img {
-            width: 50%;
-            height: 50%;
-            object-fit: cover;
-        }
-    }
+
+    // grid
+    --card-size: 15rem;
+    --gap: 1rem;
+
+    width: max-content;
+
+    display: grid;
+    grid-template-columns: repeat(2, var(--card-size));
+    grid-auto-rows: auto;
+
+    gap: var(--gap);
+
+    perspective: 2000px;
+    overflow: visible;
 }
 
-.padding {
-    padding: $padding;
-}
-.hidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-}
+.card {
+    position: relative;
+    width: var(--card-size);
+    height: var(--card-size);
 
+    transform-style: preserve-3d;
+    overflow: visible;
 
-// #sticky-wrapper {
-//     width: 100%;
-//     height: 100vh;
-//     height: 100dvh;
-//     overflow-y: scroll;
+    transition: transform .5s ease-out;
 
-//     > section {
-//         position: sticky;
-//         top: 0;
-//     }
-// }
-
-// sticky sections
-section {
-    display: block;
-    padding: $padding;
-    width: 100%;
-    min-height: 50vw;
+    cursor: pointer;
     
-    background: $bg;
-}
-
-#intro {
-    h1 {
-        font-size: 28vw;
-        font-weight: 900;
-        line-height: 0.8;
-        letter-spacing: -1vw;
-    }
-    span {
-        color: $light;
-        font-size: 1.7vw;
-        font-weight: bold;
+    .front, .back {
         position: absolute;
-        bottom: -6.5vh;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    @media (max-width: $breakSmall) {
-        h1 {
-            font-size: 52vw;
-        }
-    }
-}
-
-#about {
-    background-color: $primary;
-
-    h2 {
-        font-size: 12vw;
-        font-weight: 800;
-        letter-spacing: -.4vw;
-        line-height: 1.05;
-    }
-    h3 {
-        margin-top: .5em;
-        margin-left: .2em;
-        font-size: 4.7vw;
-        letter-spacing: .01em;
-    }
-    @media (max-width: $breakSmall) {
-        h2 {
-            font-size: 12vw;
-        }
-        h3 {
-            font-size: 8.5vw;
-            margin-bottom: .5rem;
-        }
-    }
-}
-
-#about-2 {
-    background-color: $secondary;
-
-    h3 {
-        font-size: 5vw;
-        width: 60%;
-        line-height: 1.3;
-    }
-    @media (max-width: $breakSmall) {
-        h3 {
-            font-size: 8.5vw;
-            width: 100%;
-        }
-    }
-}
-
-#work {
-    background-color: $tertiary;
-
-    h2 {
-        font-size: 5vw;
-        font-weight: normal;
-        margin-bottom: .5em;
-    }
-
-    .work-grid {
-        display: grid;
-        gap: $padding;
-        margin-bottom: $padding;
-
-        grid-template-columns: 1fr;
-        @media (min-width: $breakSmall) {
-            grid-template-columns: 1fr 1fr;
-        }
-    }
-
-    .portfolio-item {
-        position: relative;
-        min-height: 40vw;
-        @media (max-width: $breakSmall) {
-            min-height: 80vw;
-        }
-
-        background-color: $light;
-        color: $dark;
+        top: 0; left: 0;
+        display: flex;
+        flex-flow: column nowrap;
+        width: 100%;
+        height: 100%;
         
-        .text-wrapper {
-            position: absolute;
-            bottom: 0; left: 0;
-            width: 100%;
+        background: var(--bg);
+        border-radius: .25rem;
 
-            padding: calc(#{$padding} / 2);
+        padding: var(--padding);
+        gap: var(--padding);
 
-            z-index: 100;
-        }
-
-        h3 {
-            font-size: 4vw;
-            font-variation-settings: "wght" 200;
-            transition: $transition;
-        }
-
-        &:hover h3 {
-            font-weight: 700;
-            font-variation-settings: "wght" 700;
-            letter-spacing: -.035em;
-        }
-
-        .img-wrapper {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 50%;
-
-            z-index: 50;
-
-            img {
-                width: 100%;
-                height: 100%;
-            }
-
-            &::after {
-                content: "";
-                position: absolute;
-                top: 0; left: 0;
-                width: 100%; height: 100%;
-
-                z-index: 90;
-
-                background: red;
-                background: linear-gradient(
-                to bottom, 
-                rgba(#fff, .0), 
-                rgba(#fff, .0)  25%,
-                rgba(#fff, .2) 25.1%,
-                rgba(#fff, .2) 50%,
-                rgba(#fff, .5)  50.1%,
-                rgba(#fff, .5)  75%,
-                rgba(#fff, .8) 75.1%,
-                rgba(#fff, .8) 100%
-            );
-            }
-        }
+        backface-visibility: hidden;
     }
 
-    @media (max-width: $breakSmall) {
-        * {
-            font-size: 8.5vw !important;
-        }
+    .back {
+        transform: rotateY(180deg);
     }
-}
 
-#contact {
-    background-color: $bg;
+    &.flipped {
+        transform: rotateY(180deg);
+    }
 }

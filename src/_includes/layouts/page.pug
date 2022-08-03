@@ -1,20 +1,9 @@
-include ../mixins/page-mixins.pug
-
 doctype html
 html(lang="en")
     include head.pug
     body
 
-        main#swup.transition-main
-            +back
-
-            section#page-intro
-                h1= title
-                p=  discription
-
-                .tasks
-                    each task in tasks
-                        .task= task
+        main
 
             article#page-content.container
                 | !{content}

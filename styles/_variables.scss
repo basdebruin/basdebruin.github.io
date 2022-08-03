@@ -3,66 +3,39 @@
 // author: Bas de Bruin
 
 // font
-$fontFamily:         "Manrope", system-ui, -apple-system, 'Roboto', sans-serif;
-$fontFamilyHeadings: $fontFamily;
-$fontSize:           100%;
+$fontFamily:    "Manrope", system-ui, -apple-system, 'Roboto', sans-serif;
+$fontSizeSmall: 30px;
+$fontSizeLarge: 30px;
 
 // breakpoints
-$breakSmall: 62rem;
-$breakLarge: 62rem;
-
-// padding
-$padding-big:   2rem; //1.3rem
-$padding-small: 1rem;
-$buttonPadding: .3rem .8rem;
+$break: 800px;
 
 // curves
 $bezierFast: cubic-bezier(.14, .52, .25, .99);
 $transition: all .15s $bezierFast;
 $transition-slow: all 1s $bezierFast;
 
-// base colors
-$light: #fff;
-$dark:  #0E1833;
-
-
 :root {
     color-scheme: light dark;
-
-    font-size: $fontSize;
-
-    --padding: #{$padding-big};
-    // change padding on mobile
-    @media screen and (max-width: $breakLarge) {
-        --padding: #{$padding-small};
-    }
+    font-size: $fontSizeSmall;
 
     //light colors
     --bg: #fff;
     --fg: #0E1833;
+    
+    --grey: #eee;
 
-
-    --primary:   #45AAE7;
-    --secondary: #A2D4F3;
-    --tertiary:  #D3EBF9;
+    --primary: #45AAE7;
     // set dark mode if user preference
     @media (prefers-color-scheme: dark) {
         // dark colors
         --bg: #0E1833;
         --fg: #fff;
 
-        --secondary: #29608D;
-        --tertiary: #1B3C60;
+        --grey: rgba(#fff, .2);
+
     }
 
+    --padding: .5rem;
+
 }
-
-// Utility vars
-$bg: var(--bg);
-$fg: var(--fg);
-
-$primary: var(--primary);
-$secondary: var(--secondary);
-$tertiary: var(--tertiary);
-
-$padding: var(--padding);

@@ -17,4 +17,15 @@ function init() {
     setupSounds();
     // attach sounds
     attachSounds();
+
+    setupCards();
+}
+
+function setupCards() {
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card =>
+        card.addEventListener('click', () => 
+            card.classList.toggle('flipped'))
+    );
 }
