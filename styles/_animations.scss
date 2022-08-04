@@ -25,6 +25,10 @@ html.is-animating .transition-main {
         transform: translateX(30%);
         opacity: 0;
     }
+    &.fade-up {
+        transform: translateY(30%);
+        opacity: 0;
+    }
     
     &.fade-boldify {
         font-variation-settings: 'wght' 200;

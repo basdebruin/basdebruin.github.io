@@ -7,7 +7,7 @@ export default function setupAnimationElements(className : string = 'scroller') 
     const elements = document.getElementsByClassName(className);
 
     const observer = new IntersectionObserver(checkElements, {
-        threshold: 0.3
+        threshold: 0.1
     })
 
     function checkElements(entries, observer) : IntersectionObserverCallback {
@@ -20,6 +20,6 @@ export default function setupAnimationElements(className : string = 'scroller') 
         for (let elem of elements) {
             observer.observe(elem);
         }
-    }, 100);
+    }, 200);
     
 }

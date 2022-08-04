@@ -1,5 +1,6 @@
 import { setupSounds, attachSounds } from "./sounds";
 import setupAnimationElements from './scrollAnimation';
+import anime from 'animejs/lib/anime.es';
 
 // trigger init()
 if (document.readyState === "complete" || document.readyState === "interactive")
@@ -10,15 +11,15 @@ else
 function init() {
     console.log("%cHey, there!", "color: yellow; font-size: 2rem; font-family: Space Grotesk; line-height: 2");
 
-    // handle scroll animations
-    setupAnimationElements();
+    enterAnimation();
+    
+    setupCards();
 
     // create sounds
     setupSounds();
     // attach sounds
     attachSounds();
 
-    setupCards();
 }
 
 function setupCards() {
@@ -28,4 +29,16 @@ function setupCards() {
         card.addEventListener('click', () => 
             card.classList.toggle('flipped'))
     );
+}
+
+function enterAnimation() {
+    // @ts-ignore
+    //document.querySelectorAll('.card .front').forEach(card => card.style.opacity = 0);
+    anime({
+        targets: '.card .front',
+        opacity: [0, 1],
+        translateY: [400, 0],
+        easing: 'easeOutBounce',
+        duration: anime.stagger(800, {start: 800})
+    });
 }

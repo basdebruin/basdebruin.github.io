@@ -4,8 +4,8 @@
 
 // font
 $fontFamily:    "Manrope", system-ui, -apple-system, 'Roboto', sans-serif;
-$fontSizeSmall: 30px;
-$fontSizeLarge: 30px;
+$fontSizeSmall: 6.3vw;
+$fontSizeLarge: 35px;
 
 // breakpoints
 $break: 800px;
@@ -13,26 +13,30 @@ $break: 800px;
 // curves
 $bezierFast: cubic-bezier(.14, .52, .25, .99);
 $transition: all .15s $bezierFast;
-$transition-slow: all 1s $bezierFast;
+$transition-slow: all .7s $bezierFast;
 
 :root {
     color-scheme: light dark;
-    font-size: $fontSizeSmall;
+    font-size: $fontSizeLarge;
+
+    @media (max-width: $break) {
+        font-size: $fontSizeSmall;
+    }
 
     //light colors
     --bg: #fff;
-    --fg: #0E1833;
+    --fg: #2B2B2B;
     
-    --grey: #eee;
+    --grey: #F2F2F2; //eee
 
     --primary: #45AAE7;
     // set dark mode if user preference
     @media (prefers-color-scheme: dark) {
         // dark colors
-        --bg: #0E1833;
+        --bg: #2B2B2B;
         --fg: #fff;
 
-        --grey: rgba(#fff, .2);
+        --grey: #1A1A1A;
 
     }
 

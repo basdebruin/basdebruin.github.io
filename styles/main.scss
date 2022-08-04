@@ -13,29 +13,36 @@ main {
 
     // grid
     --card-size: 15rem;
-    --gap: 1rem;
+    --gap: var(--padding);
 
     width: max-content;
 
     display: grid;
     grid-template-columns: repeat(2, var(--card-size));
-    grid-auto-rows: auto;
+    grid-auto-rows: calc((var(--card-size) / 2) - var(--gap) / 2);
 
     gap: var(--gap);
 
-    perspective: 2000px;
+    perspective: 3000px;
     overflow: visible;
+
+    @media (max-width: $break) {
+        margin: var(--padding) auto;
+        grid-template-columns: var(--card-size);
+    }
 }
 
 .card {
     position: relative;
     width: var(--card-size);
     height: var(--card-size);
+    width: 100%;
+    height: 100%;
 
     transform-style: preserve-3d;
     overflow: visible;
 
-    transition: transform .5s ease-out;
+    transition: transform .6s $bezierFast;
 
     cursor: pointer;
     
@@ -54,6 +61,13 @@ main {
         gap: var(--padding);
 
         backface-visibility: hidden;
+
+        //default image behavior
+        > img {
+            height: 0;
+            flex-grow: 1;
+            border-radius: .08rem;
+        }
     }
 
     .back {
@@ -62,5 +76,68 @@ main {
 
     &.flipped {
         transform: rotateY(180deg);
+    }
+
+    grid-row-end: span 2;
+
+    &.half-size {
+        grid-row-end: span 1;
+    }
+}
+
+// Specific styles
+
+#name {
+    text-align: right;
+    .front, .back {
+        padding-right: .6rem;
+    }
+    h1 {
+        font-size: 3rem;
+        line-height: 1;
+    }
+    .back h1 {
+        letter-spacing: -1px;
+    }
+}
+
+#muziekfabriek .back {
+    background-color: #F8D268;
+}
+
+
+.centered > * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem !important;
+}
+
+// Elements
+
+.button {
+    display: inline-block;
+    width: max-content;
+    padding: .25rem .5rem;
+    background: var(--fg);
+    color: var(--bg);
+
+    border-radius: 2rem;
+
+    transition: $transition;
+    &:hover {
+        transform: scale(1.05);
+        opacity: .9;
+    }
+    &:active {
+        transform: scale(.95);
+    }
+
+    &[target]::after {
+        content: "➚";
+        margin-left: .5em;
+        opacity: .5;
+        width: 0;
     }
 }
