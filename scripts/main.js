@@ -37,7 +37,7 @@ function enterAnimation() {
     anime({
         targets: '.card .front',
         opacity: [0, 1],
-        translateY: [400, 0],
+        translateY: [300, 0],
         easing: 'easeOutBounce',
         duration: anime.stagger(800, {start: 800})
     });

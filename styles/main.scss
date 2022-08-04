@@ -103,10 +103,11 @@ main {
 
 #muziekfabriek .back {
     background-color: #F8D268;
+    color: var(--dark);
 }
 
 
-.centered > * {
+.centered {
     display: flex;
     align-items: center;
     justify-content: center;
