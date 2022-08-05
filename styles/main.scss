@@ -121,8 +121,8 @@ main {
     display: inline-block;
     width: max-content;
     padding: .25rem .5rem;
-    background: var(--fg);
-    color: var(--bg);
+    background: var(--dark);
+    color: var(--light);
 
     border-radius: 2rem;
 
@@ -140,5 +140,11 @@ main {
         margin-left: .5em;
         opacity: .5;
         width: 0;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .dark-invert {
+        filter: invert(1);
     }
 }

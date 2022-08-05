@@ -37,8 +37,9 @@ function enterAnimation() {
     anime({
         targets: '.card .front',
         opacity: [0, 1],
-        translateY: [300, 0],
-        easing: 'easeOutBounce',
-        duration: anime.stagger(800, {start: 800})
+        rotateY: () => [Math.random()>.5 ? -90 : 90 , 0],
+        easing: 'easeOutElastic',
+        delay: 100,
+        duration: anime.stagger(1500, {start: 1500})
     });
 }
