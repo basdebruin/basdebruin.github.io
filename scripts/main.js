@@ -39,7 +39,7 @@ function enterAnimation() {
         opacity: [0, 1],
         rotateY: () => [Math.random()>.5 ? -90 : 90 , 0],
         easing: 'easeOutElastic',
-        delay: 100,
-        duration: anime.stagger(1500, {start: 1500})
+        delay: anime.stagger(200),
+        duration: 2500
     });
 }
