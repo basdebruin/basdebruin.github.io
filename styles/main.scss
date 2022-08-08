@@ -70,17 +70,19 @@ main {
             border-radius: .08rem;
         }
 
+        // hover corner
         &::after {
             content: '';
             position: absolute;
             bottom: 0;
             right: 0;
             width: 1rem; height: 1rem;
-            border-style: solid;
-            border-width: 0 0 1rem 1rem;
-            border-color: transparent transparent var(--fg) transparent;
-            border-bottom-right-radius: .7rem;
+            background-color: var(--fg);
             opacity: 0;
+
+            clip-path: polygon(100% 0, 100% 100%, 0 100%);
+            
+            border-bottom-right-radius: .7rem;
             transform: scale(0);
             transform-origin: bottom right;
             transition: all .3s $bezierFast;
