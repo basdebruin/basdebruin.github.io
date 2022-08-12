@@ -12,6 +12,7 @@ $break: 800px;
 
 // curves
 $bezierFast: cubic-bezier(.14, .52, .25, .99);
+$bezierBounce: cubic-bezier(0.41, 1.35, 0.58, 0.99);
 $transition: all .15s $bezierFast;
 $transition-slow: all .7s $bezierFast;
 

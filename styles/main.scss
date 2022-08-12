@@ -42,7 +42,7 @@ main {
     transform-style: preserve-3d;
     overflow: visible;
 
-    transition: transform .6s $bezierFast;
+    transition: transform .6s $bezierBounce;
 
     cursor: pointer;
     
