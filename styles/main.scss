@@ -197,6 +197,36 @@ main {
     }
 }
 
+.project-label {
+    position: absolute;
+    top: 0; left: 0;
+
+    font-size: .5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .04rem;
+
+    background: var(--bg);
+    padding: .35rem .3rem .3rem .5rem;
+
+    border-radius: .2rem;
+}
+.click-label {
+    position: absolute;
+    bottom: var(--padding);
+    right: var(--padding);
+
+    font-size: .5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    opacity: .6;
+    letter-spacing: .04rem;
+
+    @media (min-width: $break) {
+        font-size: .4rem;
+    }
+}
+
 
 // Footer
 
@@ -221,5 +251,20 @@ footer {
             text-decoration: none;
             opacity: .7;
         }
+    }
+}
+
+// case study page
+#page-content {
+    width: 100%;
+    padding: var(--padding);
+    max-width: $break;
+    margin: 2rem auto;
+
+    p {
+        font-size: .5rem;
+    }
+    * {
+        margin: 1rem 0;
     }
 }

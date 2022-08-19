@@ -3,9 +3,7 @@ html(lang="en")
     include head.pug
     body
 
-        main
+        article#page-content.container
+            | !{content}
 
-            article#page-content.container
-                | !{content}
-
-            include footer.pug
+        include footer.pug
