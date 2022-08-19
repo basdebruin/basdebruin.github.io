@@ -9,13 +9,17 @@ tasks: ['Concept', 'UX', 'Web Development']
 image: acc_game_ill.svg
 ---
 
+section
+    h1 Accessibility Game
+    h2 Case Study
+
 // Problem
-.columns
+section
     h2 The Problem
     p.
         There is a large of group of disabled people that can't use their devices like the rest of us: visually-impaired people can't see the screen so they have to rely on screenreaders, deaf people are lost when a video doesn't have subtitles and even reading the text on a page can be difficult for people with dislexia or ADHD. Things that are quick and easy for most can become massive hurdles for people with disabilities.
 // Solution
-.columns
+section
     h2 Our Solution
     div
         p.
@@ -23,13 +27,11 @@ image: acc_game_ill.svg
         p.
             With the <b>Accessibility Game</b>, Stichting Accessibility and I set out to raise awareness, spread knowledge and inform people about the field of accessibility, how important it is and how they can make a difference.
 // Game images
-.columns
-    .card.cover
-        img(src="/assets/images/acc_game_levels.jpg" alt="Screenshot showing levels")
-    .card(style="background: white")
-        img(src="/assets/images/acc_game_colorblind.svg" alt="Illustration of the Colorblind level")
+section.columns
+    img(src="/assets/images/acc_game_levels.jpg" alt="Screenshot showing levels")
+    img(src="/assets/images/acc_game_colorblind.svg" alt="Illustration of the Colorblind level")
 // Client & Users
-.columns
+section
     h2 Client &amp; Users
     div
         p.
@@ -39,10 +41,10 @@ image: acc_game_ill.svg
         p.
             The game will eventually be used during accessibility workshops and will be spread online through social media.
 // design process diagram
-.card.cover
+section
     img(src="/assets/images/acc_game_tunnelvision.png" alt="Screenshot from Accessibility Game: Tunnel Vision Level")
 // Design Process
-.columns
+section
     h2 Design Process
     div 
         p.
@@ -50,11 +52,11 @@ image: acc_game_ill.svg
         p.
             Early versions of the game were sent out to experience experts and players along with questionnaires to get feedback on as many parts of the design as possible.
 // decorative image
-.card(style="background: white")
+section
     img(src="/assets/images/acc_game_design_process.svg" 
         alt="Design Process Diagram, top to bottom:  Conceptualistation, Mockup, Early Prototype, Polished Product. Arrows point for later stages to earlier stages")
 // Design Decisions
-.columns
+section
     h2 Design Decisions
     div
         p.
@@ -66,20 +68,20 @@ image: acc_game_ill.svg
         p.
             I made the visuals in Figma, loosly based on the visual brand of Stichting Accessibility and made the sound-effects using Ableton Live with a combination of public domain and synthesized sounds.
 // tools used
-.list-container
+section
     h2 Tools used
-    .columns
-        .card.center 
-            h3 Eleventy
+    section.columns
+        div 
+            h4 Eleventy
             p Static Site Generator
-        .card.center 
-            h3 Pug, SCSS, Javascript
+        div 
+            h4 Pug, SCSS, Javascript
             p Programming Languages
-        .card.center 
-            h3 Figma
+        div 
+            h4 Figma
             p Visual Design & Mockups
-        .card.center 
-            h3 Ableton Live
+        div 
+            h4 Ableton Live
             p Audio Design
 // link to game
 .highlight

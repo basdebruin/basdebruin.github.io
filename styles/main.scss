@@ -7,7 +7,7 @@
 @import 'animations';
 @import 'smooth_gradient';
 
-main {
+.grid {
     margin: 2rem auto;
 
 
@@ -254,7 +254,7 @@ footer {
     }
 }
 
-// case study page
+// Page style
 #page-content {
     width: 100%;
     padding: var(--padding);
@@ -263,8 +263,31 @@ footer {
 
     p {
         font-size: .5rem;
+        @media (max-width: $break) {
+            font-size: .75rem;
+        }
     }
     * {
         margin: 1rem 0;
+    }
+
+}
+
+#page-content section {
+    background: var(--bg);
+    border-radius: .25rem;
+    width: 100%;
+
+    padding: .5rem 1rem;
+
+    &.columns {
+        display: flex;
+        gap: var(--padding);
+
+        flex-direction: row;
+        * {
+            width: 10%;
+            flex-grow: 1;
+        }
     }
 }
