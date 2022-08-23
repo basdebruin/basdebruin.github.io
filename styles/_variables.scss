@@ -5,6 +5,7 @@
 // font
 $fontFamily:    "Manrope", system-ui, -apple-system, 'Roboto', sans-serif;
 $fontSizeSmall: 6.3vw;
+$fontSizeMedium: 25px;
 $fontSizeLarge: 35px; // 35px
 
 // breakpoints
@@ -18,10 +19,14 @@ $transition-slow: all .7s $bezierFast;
 
 :root {
     color-scheme: light dark;
-    font-size: $fontSizeLarge;
+    font-size: $fontSizeMedium;
 
     @media (max-width: $break) {
         font-size: $fontSizeSmall;
+    }
+
+    @media (min-width: 1200px) {
+        font-size: $fontSizeLarge;
     }
 
     --light: #fff;

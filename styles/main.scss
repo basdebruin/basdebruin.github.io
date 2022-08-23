@@ -63,6 +63,10 @@
         backface-visibility: hidden;
         overflow: hidden;
 
+        h2 {
+            width: 90%;
+        }
+
         //default image behavior
         > img {
             height: 0;
@@ -263,6 +267,7 @@ footer {
 
     p {
         font-size: .5rem;
+        line-height: 1.5;
         @media (max-width: $break) {
             font-size: .75rem;
         }
@@ -278,13 +283,14 @@ footer {
     border-radius: .25rem;
     width: 100%;
 
-    padding: .5rem 1rem;
+    padding: .1rem 1rem;
 
     &.columns {
         display: flex;
         gap: var(--padding);
 
         flex-direction: row;
+        align-items: center;
         * {
             width: 10%;
             flex-grow: 1;
