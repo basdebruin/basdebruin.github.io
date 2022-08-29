@@ -263,7 +263,7 @@ footer {
     width: 100%;
     padding: var(--padding);
     max-width: $break;
-    margin: 2rem auto;
+    margin: 2rem auto 0 auto;
 
     p {
         font-size: .5rem;
@@ -303,4 +303,24 @@ footer {
         margin-left: 50%;
         translate: -50%;
     }
+}
+
+.page-name-label {
+    position: fixed;
+    top: .5rem;
+    left: .5rem;
+    font-size: .5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .02rem;
+    opacity: .7;
+    z-index: 999;
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='50' height='60' viewport='0 0 100 100' style='fill:black;font-size:30px;'><text y='50%'>✌️</text></svg>") 16 0,auto; 
+
+    transition: all .5s $bezierBounce;
+    &:hover {
+        transform: rotate(360deg);
+    }
+
+    padding: .5rem;
 }
