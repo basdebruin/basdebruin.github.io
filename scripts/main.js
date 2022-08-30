@@ -9,7 +9,7 @@ else
     document.addEventListener("DOMContentLoaded", init);
 
 function init() {
-    console.log("%cHey, there!", "color: yellow; font-size: 2rem; font-family: Space Grotesk; line-height: 2");
+    console.log("%cHey, there!", "color: yellow; font-size: 2rem; font-family: Manrope, sans-serif; line-height: 2");
 
     enterAnimation();
     
@@ -32,8 +32,6 @@ function setupCards() {
 }
 
 function enterAnimation() {
-    // @ts-ignore
-    //document.querySelectorAll('.card .front').forEach(card => card.style.opacity = 0);
     anime({
         targets: '.card .front',
         opacity: [0, 1],
