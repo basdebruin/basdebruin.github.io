@@ -7,7 +7,7 @@
         "start": "NODE_ENV=development eleventy --serve"
     },
     "dependencies": {
-        "@11ty/eleventy": "^0.12.1",
+        "@11ty/eleventy": "^1.0.2",
         "@jamshop/eleventy-plugin-esbuild": "^1.0.2",
         "@swup/scroll-plugin": "^1.2.0",
         "animejs": "^3.2.1",
